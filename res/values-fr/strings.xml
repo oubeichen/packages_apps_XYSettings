@@ -487,7 +487,7 @@
     <string name="choose_action_title">Choisir une action</string>
     <string name="choose_action_short_title">Choisir une action (Court)</string>
     <string name="choose_action_long_title">Choisir une action (Long)</string>
-    <string name="action_long_save"> Défénir comme action longue</string>
+    <string name="action_long_save">Défénir comme action longue</string>
     <string name="title_navring_amount">Nombre d\'éléments dans l\'anneau</string>
     <string name="summary_navring_amount">Choisir le nombre d\'éléments qui pourrons être affichés dans l\'anneau.</string>
     <string name="interface_navring_settings_title">Anneau de Navigation</string>
@@ -500,13 +500,13 @@
     
     <!-- Transparency, Color -->
     <string name="transparency_dialog_title">Paramètres d\'opacité</string>
-    <string name="transparency_dialog_linked_transparency">Lier opacité barre d\'état &amp; navigation</string>
+    <string name="transparency_dialog_linked_transparency">Lier l\'opacité barre d\'état / de navigation</string>
     <string name="transparency_dialog_transparency_sb_and_nv">Barre d\'état et de navigation</string>
     <string name="transparency_dialog_statusbar">Barre d\'état</string>
     <string name="transparency_dialog_navbar">Barre de navigation</string>
-    <string name="transparency_dialog_match_keyguard_alpha">Match opacité écran de verrouillage</string>
+    <string name="transparency_dialog_match_keyguard_alpha">Même opacité sur l\'écran de verrouillage</string>
     <string name="transparency_dialog_transparency">Opacité sur le lanceur</string>
-    <string name="transparency_dialog_transparency_keyguard">Opacité écran de verrouillage</string>
+    <string name="transparency_dialog_transparency_keyguard">Opacité sur l\'écran de verrouillage</string>
     <string name="navigation_bar_color_title">Couleur de la barre de navigation</string>
     <string name="status_bar_color_title">Couleur de la barre d\'état</string>
 
