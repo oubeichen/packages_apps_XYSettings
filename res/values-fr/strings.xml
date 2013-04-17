@@ -40,9 +40,9 @@
     <string name="title_statusbar_battery">Batterie</string>
     <string name="title_statusbar">Barre d\'état</string>
     <string name="title_status_extras">Divers</string>
-    <string name="title_navbar">Barre de Navigation</string>
+    <string name="title_navbar">Barre de navigation</string>
     <string name="title_spen">Gestes S Pen</string>
-    <string name="title_navring">Anneaux de Navigation</string>
+    <string name="title_navring">Anneau de navigation</string>
     <string name="title_power_menu">Menu Power</string>
     <string name="title_led_control">Gestion de la LED</string>
     <string name="title_lockscreen">Écran de verrouillage</string>
@@ -497,28 +497,18 @@
     <string name="navring_icon">Icône personnalisé</string>
     <string name="navring_target_amount_text">Nombre d\'éléments actuel</string>
     <string name="navring_target_longpress_text">Mode Appui Long</string>
-
-    <!-- SBNB Colors | Status bar background style -->
-    <string name="status_bar_transparency_title">Transparence de la barre d\'état</string>
+    
+    <!-- Transparency, Color -->
+    <string name="transparency_dialog_title">Paramètres d\'opacité</string>
+    <string name="transparency_dialog_linked_transparency">Lier opacité barre d\'état &amp; navigation</string>
+    <string name="transparency_dialog_transparency_sb_and_nv">Barre d\'état et de navigation</string>
+    <string name="transparency_dialog_statusbar">Barre d\'état</string>
+    <string name="transparency_dialog_navbar">Barre de navigation</string>
+    <string name="transparency_dialog_match_keyguard_alpha">Match opacité écran de verrouillage</string>
+    <string name="transparency_dialog_transparency">Opacité sur le lanceur</string>
+    <string name="transparency_dialog_transparency_keyguard">Opacité écran de verrouillage</string>
+    <string name="navigation_bar_color_title">Couleur de la barre de navigation</string>
     <string name="status_bar_color_title">Couleur de la barre d\'état</string>
-    <string name="status_bar_background_style">Fond de la barre d\'état</string>
-    <string name="status_bar_alpha_mode_dialog_text_title">Activer sa transparence</string>
-    <string name="status_bar_alpha_mode_text_title">Mode de transparence</string>
-    <string name="status_bar_alpha_mode_home">Sur le lanceur</string>
-    <string name="status_bar_alpha_mode_default">Sur le lanceur et l\'écran de verrouillage</string>
-    <string name="status_bar_alpha_mode_always">Toujours</string>
-    <string name="status_bar_style_reset">Réinitialiser</string>
-
-    <!-- SBNB Colors | Navigation bar background style -->
-    <string name="nav_bar_transparency_title">Transparence de la barre</string>
-    <string name="nav_bar_color_title">Couleur de la barre</string>
-    <string name="nav_bar_background_style">Fond de la barre de navigation</string>
-    <string name="nav_bar_alpha_mode_dialog_text_title">Afficher sa transparence</string>
-    <string name="nav_bar_alpha_mode_text_title">Mode de transparence</string>
-    <string name="nav_bar_alpha_mode_home">Sur le lanceur</string>
-    <string name="nav_bar_alpha_mode_default">Sur le lanceur et l\'écran de verrouillage</string>
-    <string name="nav_bar_alpha_mode_always">Toujours</string>
-    <string name="nav_bar_style_reset">Réinitialiser</string>
 
     <!-- General UI | Other Modifications unknown -->
     <string name="custom_carrier_label_title">Nom d\'opérateur personnalisé</string>
