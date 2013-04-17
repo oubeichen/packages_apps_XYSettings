@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <string name="app_name">Outils XYE</string>
+
     <!-- Header Strings -->
     <string name="user_interface">Interface Générale</string>
     <string name="bars">Interface des barres</string>
@@ -91,7 +93,6 @@
     <string name="dialog_color_picker">Sélecteur de couleur</string>
     <string name="press_color_to_apply">Appuyer sur la couleur pour valider.</string>   
     <string name="set">Ok</string>
-    <string name="ics_color">Cyan</string>
 
     <!-- Power Menu -->
     <string name="title_show_screenshot">Capture d\'écran</string>
@@ -343,37 +344,6 @@
     <string name="on_top">En haut</string>
     <string name="on_the_bottom">En bas</string>
 
-    <!-- Quick Toggles | AOKP -->
-    <string name="toggle_airplane_mode">Mode avion</string>
-    <string name="toggle_auto_rotate">Rotation Automatique</string>
-    <string name="toggle_bluetooth">Bluetooth</string>
-    <string name="toggle_fcharge">Charge Rapide (Fast)</string>
-    <string name="toggle_gps">GPS</string>
-    <string name="toggle_lte">LTE</string>
-    <string name="toggle_data">Données mobile</string>
-    <string name="toggle_nfc">NFC</string>
-    <string name="toggle_silent">Silencieux</string>
-    <string name="toggle_sync">Synchronisation</string>
-    <string name="toggle_torch">Lampe Torche</string>
-    <string name="toggle_2g">2G</string>
-    <string name="toggle_3g">3G</string>
-    <string name="toggle_usb_tether">Modem USB</string>
-    <string name="toggle_vibrate">Vibreur</string>
-    <string name="toggle_wifi_tether">Modem Wi-Fi</string>
-    <string name="toggle_wifi">Wi-Fi</string>
-    <string name="toggle_user">Utilisateur actuel</string>
-    <string name="toggle_favorite_contact">Contact Favoris</string>
-    <string name="toggle_settings">Paramètres</string>
-    <string name="toggle_signal">Réseau</string>
-    <string name="toggle_clock">Horloge</string>
-    <string name="toggle_ime">Sélecteur de clavier</string>
-    <string name="toggle_battery">Batterie</string>
-    <string name="toggle_brightness">Luminosité</string>
-    <string name="toggle_sleep">Verrouiller</string>
-    <string name="toggle_powermenu">Menu Power</string>
-    <string name="toggle_sound_state">Sonnerie/Vibreur/Silencieux</string>
-    <string name="toggle_quickrecord">Enregistreur de voix</string>
-
     <!-- Navigation Bar (Targets) -->
     <string name="right">À droite</string>
     <string name="left">À gauche</string>
@@ -397,7 +367,7 @@
     <string name="take_screenshot">Faire Capture d\'écran</string>
     <string name="ring_vib">Sonnerie/Vibreur</string>
     <string name="ring_silent">Sonnerie/Silencieux</string>
-    <string name="ring_vib_silent">Sonnerie/Vib./Sil.</string>
+    <string name="ring_vib_silent">Sonnerie/Vibreur/Silencieux</string>
     <string name="screen_off">Éteindre l\'écran</string>
     <string name="google_now">Google Now</string>
     <string name="one_target">1 élément</string>
@@ -527,9 +497,9 @@
     <string name="notification_behaviour_oldstyle">Ancien style</string>
     <string name="notification_show_wifi_ssid_title">Afficher nom du réseau WiFi</string>
     <string name="notification_show_wifi_ssid_summary">Afficher le nom du réseau Wi-Fi actuellement utilisé dans la barre de notification étendue</string>
-    <string name="notification_wallpaper_title">Choisir le fond des notifications</string>
+    <string name="notification_wallpaper_title">Choisir l\'arrière-plan des notifications</string>
     <string name="notification_wallpaper_summary">Vous pouvez enlever l\'arrière-plan en allant dans le Menu de cette fenêtre.</string>
-    <string name="notif_wallpaper_alpha_title">Opacité du fond des notifications</string>
+    <string name="notif_wallpaper_alpha_title">Opacité de l\'arrière-plan des notifications</string>
     <string name="alpha_dialog_title">Niveau d\'opacité</string>
     <string name="brightness_slider_title">Curseur de luminosité rapide</string>
     <string name="brightness_slider_summary">Cela vous permet de changer votre luminosité en faisant glisser votre doigt sur la barre d\'état. Ne fait rien si la Luminosité Auto est activée.</string>
@@ -575,10 +545,10 @@
     <string name="ram_bar_cache">Applications et cache.</string>
     <string name="ram_bar_other">Applications, cache et autres.</string>
     <string name="ram_bar_style_cat">Personnalisation de la barre de RAM</string>
-    <string name="ram_bar_color_app_mem_color">Couleur de: RAM Applications</string>
-    <string name="ram_bar_color_cache_mem_color">Couleur de: RAM Cache</string>
-    <string name="ram_bar_color_total_mem_color">Couleur de: RAM Autres</string>
-    <string name="ram_bar_color_enabled">Activée, dans la liste des appli. récentes.</string>
+    <string name="ram_bar_color_app_mem_color">Couleur des applications</string>
+    <string name="ram_bar_color_cache_mem_color">Couleur du cache</string>
+    <string name="ram_bar_color_total_mem_color">Couleur des autres choses</string>
+    <string name="ram_bar_color_enabled">Activée, dans la liste des applications récentes.</string>
     <string name="ram_bar_color_disabled">Désactivée</string>
     <string name="ram_bar_button_help">Aide</string>
     <string name="ram_bar_button_reset">Réinitialiser les couleurs</string>
@@ -729,7 +699,7 @@
     <string name="hybrid_settings_title">Paramètres Hybride</string>
 
     <string name="uimode_title">Mode d\'interface du système</string>
-    <string name="uimode_phone">Phone (360dp)</string>
+    <string name="uimode_phone">Téléphone (360dp)</string>
     <string name="uimode_phablet">Phablet (600dp)</string>
     <string name="uimode_tablet">Tablette (720/1000dp)</string>
 
@@ -777,7 +747,7 @@
     <string name="custom_dpi">DPI :</string>
     <string name="customdpigroup_group_exists">Le groupe de densité désiré existe déjà</string>
     <string name="per_app_layout_title">Per-app-Layout</string>
-    <string name="per_app_layout_summary">Définir une disposition pour chaque application</string>
+    <string name="per_app_layout_summary">Définir un mode d\'affichage pour chaque application</string>
     <string name="per_app_layout_list_title">Liste des applications</string>
     <string name="per_app_layout_alert_title">Sélectionner une disposition</string>
     <string name="widgets_title">Widgets</string>
