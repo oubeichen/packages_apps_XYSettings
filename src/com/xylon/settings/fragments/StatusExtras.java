@@ -25,17 +25,22 @@ import android.provider.MediaStore;
 import android.provider.Settings;
 import android.text.Spannable;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.AdapterView.AdapterContextMenuInfo;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
+import android.widget.TextView;
 
 
 import java.io.File;
@@ -52,6 +57,8 @@ import com.xylon.settings.util.Helpers;
 import com.xylon.settings.widgets.AlphaSeekBar;
 import com.xylon.settings.widgets.SeekBarPreference;
 
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
+
 public class StatusExtras extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
     private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
@@ -62,6 +69,8 @@ public class StatusExtras extends SettingsPreferenceFragment implements OnPrefer
     private static final String PREF_NOTIFICATION_SHOW_WIFI_SSID = "notification_show_wifi_ssid";
     private static final String PREF_NOTIFICATION_BEHAVIOUR = "notifications_behaviour";
     private static final String STATUSBAR_HIDDEN = "statusbar_hidden";
+    private static final String NAVIGATION_BAR_COLOR = "nav_bar_color";
+//    private static final String STATUS_BAR_COLOR = "stat_bar_color";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
     private static final int REQUEST_PICK_CUSTOM_ICON = 202;
@@ -78,6 +87,8 @@ public class StatusExtras extends SettingsPreferenceFragment implements OnPrefer
     CheckBoxPreference mStatusBarHide;
     CheckBoxPreference mShowWifiName;
     ListPreference mNotificationsBehavior;
+    ColorPickerPreference mNavigationColor;
+//    ColorPickerPreference mStatusColor;
 
     String mCustomLabelText = null;
 
@@ -95,6 +106,20 @@ public class StatusExtras extends SettingsPreferenceFragment implements OnPrefer
         mCustomLabel = prefSet.findPreference(PREF_CUSTOM_CARRIER_LABEL);
         updateCustomLabelTextSummary();
 
+        mNavigationColor = (ColorPickerPreference) findPreference(NAVIGATION_BAR_COLOR);
+        mNavigationColor.setOnPreferenceChangeListener(this);
+
+/**        mStatusColor = (ColorPickerPreference) findPreference(STATUS_BAR_COLOR);
+        mStatusColor.setOnPreferenceChangeListener(this);
+        int intColor = Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.STATUS_BAR_COLOR, -2);
+        if (intColor == -2) {
+            intColor = getResources().getColor(
+                    com.android.internal.R.color.black);
+        }
+        String hexColor = String.format("#%08x", (0xffffffff & intColor));
+        mStatusColor.setNewPreviewColor(intColor);
+**/
         mNotificationWallpaper = findPreference(PREF_NOTIFICATION_WALLPAPER);
         mWallpaperAlpha = (Preference) findPreference(PREF_NOTIFICATION_WALLPAPER_ALPHA);
 
@@ -130,6 +155,11 @@ public class StatusExtras extends SettingsPreferenceFragment implements OnPrefer
         } else {
             mCustomLabel.setSummary(mCustomLabelText);
         }
+    }
+
+    private void openTransparencyDialog() {
+        getFragmentManager().beginTransaction().add(new AdvancedTransparencyDialog(), null)
+                .commit();
     }
 
     @Override
@@ -255,7 +285,13 @@ public class StatusExtras extends SettingsPreferenceFragment implements OnPrefer
         } else if (preference == mShowWifiName) {
             Settings.System.putInt(getActivity().getContentResolver(), Settings.System.NOTIFICATION_SHOW_WIFI_SSID,
                     mShowWifiName.isChecked() ? 1 : 0);
+        } else if (preference.getKey().equals("transparency_dialog")) {
+            // getFragmentManager().beginTransaction().add(new
+            // TransparencyDialog(), null).commit();
+            openTransparencyDialog();
+            return true;
         }
+
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
@@ -269,6 +305,23 @@ public class StatusExtras extends SettingsPreferenceFragment implements OnPrefer
             mNotificationsBehavior.setSummary(mNotificationsBehavior.getEntries()[index]);
             Helpers.restartSystemUI();
             return true;
+        } else if (preference == mNavigationColor) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex) & 0x00FFFFFF;
+            Settings.System.putInt(mContentRes,
+                    Settings.System.NAVIGATION_BAR_COLOR, intHex);
+            return true;
+/**        } else if (preference == mStatusColor) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUS_BAR_COLOR, intHex);
+            return true;
+**/
         }
         return false;
     }
@@ -333,5 +386,186 @@ public class StatusExtras extends SettingsPreferenceFragment implements OnPrefer
         }
         in.close();
         out.close();
+    }
+
+    public static class AdvancedTransparencyDialog extends DialogFragment {
+
+        private static final int KEYGUARD_ALPHA = 112;
+
+        private static final int STATUSBAR_ALPHA = 0;
+        private static final int STATUSBAR_KG_ALPHA = 1;
+        private static final int NAVBAR_ALPHA = 2;
+        private static final int NAVBAR_KG_ALPHA = 3;
+
+        boolean linkTransparencies = true;
+        CheckBox mLinkCheckBox, mMatchStatusbarKeyguard, mMatchNavbarKeyguard;
+        ViewGroup mNavigationBarGroup;
+
+        TextView mSbLabel;
+
+        AlphaSeekBar mSeekBars[] = new AlphaSeekBar[4];
+
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setShowsDialog(true);
+            setRetainInstance(true);
+            linkTransparencies = getSavedLinkedState();
+        }
+
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            View layout = View.inflate(getActivity(), R.layout.dialog_transparency, null);
+            mLinkCheckBox = (CheckBox) layout.findViewById(R.id.transparency_linked);
+            mLinkCheckBox.setChecked(linkTransparencies);
+
+            mNavigationBarGroup = (ViewGroup) layout.findViewById(R.id.navbar_layout);
+            mSbLabel = (TextView) layout.findViewById(R.id.statusbar_label);
+            mSeekBars[STATUSBAR_ALPHA] = (AlphaSeekBar) layout.findViewById(R.id.statusbar_alpha);
+            mSeekBars[STATUSBAR_KG_ALPHA] = (AlphaSeekBar) layout
+                    .findViewById(R.id.statusbar_keyguard_alpha);
+            mSeekBars[NAVBAR_ALPHA] = (AlphaSeekBar) layout.findViewById(R.id.navbar_alpha);
+            mSeekBars[NAVBAR_KG_ALPHA] = (AlphaSeekBar) layout
+                    .findViewById(R.id.navbar_keyguard_alpha);
+
+            mMatchStatusbarKeyguard = (CheckBox) layout.findViewById(R.id.statusbar_match_keyguard);
+            mMatchNavbarKeyguard = (CheckBox) layout.findViewById(R.id.navbar_match_keyguard);
+
+            try {
+                // restore any saved settings
+                int alphas[] = new int[2];
+                final String sbConfig = Settings.System.getString(getActivity()
+                        .getContentResolver(),
+                        Settings.System.STATUS_BAR_ALPHA_CONFIG);
+                if (sbConfig != null) {
+                    String split[] = sbConfig.split(";");
+                    alphas[0] = Integer.parseInt(split[0]);
+                    alphas[1] = Integer.parseInt(split[1]);
+
+                    mSeekBars[STATUSBAR_ALPHA].setCurrentAlpha(alphas[0]);
+                    mSeekBars[STATUSBAR_KG_ALPHA].setCurrentAlpha(alphas[1]);
+
+                    mMatchStatusbarKeyguard.setChecked(alphas[1] == KEYGUARD_ALPHA);
+
+                    if (linkTransparencies) {
+                        mSeekBars[NAVBAR_ALPHA].setCurrentAlpha(alphas[0]);
+                        mSeekBars[NAVBAR_KG_ALPHA].setCurrentAlpha(alphas[1]);
+                    } else {
+                        final String navConfig = Settings.System.getString(getActivity()
+                                .getContentResolver(),
+                                Settings.System.NAVIGATION_BAR_ALPHA_CONFIG);
+                        if (navConfig != null) {
+                            split = navConfig.split(";");
+                            alphas[0] = Integer.parseInt(split[0]);
+                            alphas[1] = Integer.parseInt(split[1]);
+                            mSeekBars[NAVBAR_ALPHA].setCurrentAlpha(alphas[0]);
+                            mSeekBars[NAVBAR_KG_ALPHA].setCurrentAlpha(alphas[1]);
+
+                            mMatchNavbarKeyguard.setChecked(alphas[1] == KEYGUARD_ALPHA);
+                        }
+                    }
+                }
+            } catch (Exception e) {
+                resetSettings();
+            }
+
+            updateToggleState();
+            mMatchStatusbarKeyguard.setOnCheckedChangeListener(mUpdateStatesListener);
+            mMatchNavbarKeyguard.setOnCheckedChangeListener(mUpdateStatesListener);
+            mLinkCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    linkTransparencies = isChecked;
+                    saveSavedLinkedState(isChecked);
+                    updateToggleState();
+                }
+            });
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            builder.setView(layout);
+            builder.setTitle(getString(R.string.transparency_dialog_title));
+            builder.setNegativeButton(R.string.cancel, null);
+            builder.setPositiveButton(R.string.save, new DialogInterface.OnClickListener() {
+
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    if (linkTransparencies) {
+                        String config = mSeekBars[STATUSBAR_ALPHA].getCurrentAlpha() + ";" +
+                                mSeekBars[STATUSBAR_KG_ALPHA].getCurrentAlpha();
+                        Settings.System.putString(getActivity().getContentResolver(),
+                                Settings.System.STATUS_BAR_ALPHA_CONFIG, config);
+                        Settings.System.putString(getActivity().getContentResolver(),
+                                Settings.System.NAVIGATION_BAR_ALPHA_CONFIG, config);
+                    } else {
+                        String sbConfig = mSeekBars[STATUSBAR_ALPHA].getCurrentAlpha() + ";" +
+                                mSeekBars[STATUSBAR_KG_ALPHA].getCurrentAlpha();
+                        Settings.System.putString(getActivity().getContentResolver(),
+                                Settings.System.STATUS_BAR_ALPHA_CONFIG, sbConfig);
+
+                        String nbConfig = mSeekBars[NAVBAR_ALPHA].getCurrentAlpha() + ";" +
+                                mSeekBars[NAVBAR_KG_ALPHA].getCurrentAlpha();
+                        Settings.System.putString(getActivity().getContentResolver(),
+                                Settings.System.NAVIGATION_BAR_ALPHA_CONFIG, nbConfig);
+                    }
+                }
+            });
+
+            return builder.create();
+        }
+
+        private void resetSettings() {
+            Settings.System.putString(getActivity().getContentResolver(),
+                    Settings.System.STATUS_BAR_ALPHA_CONFIG, null);
+            Settings.System.putString(getActivity().getContentResolver(),
+                    Settings.System.NAVIGATION_BAR_ALPHA_CONFIG, null);
+        }
+
+        private void updateToggleState() {
+            if (linkTransparencies) {
+                mSbLabel.setText(R.string.transparency_dialog_transparency_sb_and_nv);
+                mNavigationBarGroup.setVisibility(View.GONE);
+            } else {
+                mSbLabel.setText(R.string.transparency_dialog_statusbar);
+                mNavigationBarGroup.setVisibility(View.VISIBLE);
+            }
+
+            mSeekBars[STATUSBAR_KG_ALPHA]
+                    .setEnabled(!mMatchStatusbarKeyguard.isChecked());
+            mSeekBars[NAVBAR_KG_ALPHA]
+                    .setEnabled(!mMatchNavbarKeyguard.isChecked());
+
+            // disable keyguard alpha if needed
+            if (!mSeekBars[STATUSBAR_KG_ALPHA].isEnabled()) {
+                mSeekBars[STATUSBAR_KG_ALPHA].setCurrentAlpha(KEYGUARD_ALPHA);
+            }
+            if (!mSeekBars[NAVBAR_KG_ALPHA].isEnabled()) {
+                mSeekBars[NAVBAR_KG_ALPHA].setCurrentAlpha(KEYGUARD_ALPHA);
+            }
+        }
+
+        @Override
+        public void onDestroyView() {
+            if (getDialog() != null && getRetainInstance())
+                getDialog().setDismissMessage(null);
+            super.onDestroyView();
+        }
+
+        private CompoundButton.OnCheckedChangeListener mUpdateStatesListener = new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                updateToggleState();
+            }
+        };
+
+        private boolean getSavedLinkedState() {
+            return getActivity().getSharedPreferences("transparency", Context.MODE_PRIVATE)
+                    .getBoolean("link", true);
+        }
+
+        private void saveSavedLinkedState(boolean v) {
+            getActivity().getSharedPreferences("transparency", Context.MODE_PRIVATE).edit()
+                    .putBoolean("link", v).commit();
+        }
     }
 }

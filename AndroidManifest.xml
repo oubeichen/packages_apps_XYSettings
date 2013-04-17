@@ -135,6 +135,16 @@
               </intent-filter>
         </activity>
         <activity
+            android:name=".fragments.TransparencyDialog"
+            android:theme="@android:style/Theme.Dialog"
+            android:label="@string/title_general_ui" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.xylon.settings.SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".fragments.LEDControl"
             android:label="@string/title_led_control" >
             <intent-filter>
@@ -179,8 +189,6 @@
                 <category android:name="com.xylon.settings.SHORTCUT" />
               </intent-filter>
         </activity>
-        <activity android:name=".activities.StatusBarStyle" />
-        <activity android:name=".activities.NavBarStyle" />
         <activity android:name=".activities.RamBar" />
         <activity
  	    android:name=".ShareToClipboard"

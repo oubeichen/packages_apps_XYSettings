@@ -554,27 +554,17 @@
     <string name="navring_target_amount_text">Current number of targets</string>
     <string name="navring_target_longpress_text">Longpress status</string>
 
-    <!-- SBNB Colors | Status bar background style -->
-    <string name="status_bar_transparency_title">Status bar transparency</string>
-    <string name="status_bar_color_title">Status bar color</string>
-    <string name="status_bar_background_style">Status bar background</string>
-    <string name="status_bar_alpha_mode_dialog_text_title">Show navigation and status bar transparency</string>
-    <string name="status_bar_alpha_mode_text_title">Transparency mode</string>
-    <string name="status_bar_alpha_mode_home">on launcher</string>
-    <string name="status_bar_alpha_mode_default">on launcher and lockscreen</string>
-    <string name="status_bar_alpha_mode_always">always</string>
-    <string name="status_bar_style_reset">Reset</string>
-
-    <!-- SBNB Colors | Navigation bar background style -->
-    <string name="nav_bar_transparency_title">Navigation bar transparency</string>
-    <string name="nav_bar_color_title">Navigation bar color</string>
-    <string name="nav_bar_background_style">Navigation bar background</string>
-    <string name="nav_bar_alpha_mode_dialog_text_title">Show navigation and status bar transparency</string>
-    <string name="nav_bar_alpha_mode_text_title">Transparency mode</string>
-    <string name="nav_bar_alpha_mode_home">on launcher</string>
-    <string name="nav_bar_alpha_mode_default">on launcher and lockscreen</string>
-    <string name="nav_bar_alpha_mode_always">always</string>
-    <string name="nav_bar_style_reset">Reset</string>
+    <!-- Transparency, Color -->
+    <string name="transparency_dialog_title">Transparency settings</string>
+    <string name="transparency_dialog_linked_transparency">Link Statusbar &amp; NavBar alpha</string>
+    <string name="transparency_dialog_transparency_sb_and_nv">Statusbar and navigation bar</string>
+    <string name="transparency_dialog_statusbar">Statusbar</string>
+    <string name="transparency_dialog_navbar">Navigation Bar</string>
+    <string name="transparency_dialog_match_keyguard_alpha">Match lockscreen alpha</string>
+    <string name="transparency_dialog_transparency">Homescreen alpha</string>
+    <string name="transparency_dialog_transparency_keyguard">Lockscreen alpha</string>
+    <string name="navigation_bar_color_title">Navigation Bar color</string>
+    <string name="status_bar_color_title">Status Bar color</string>
 
     <!-- General UI | Other Modifications unknown -->
 
