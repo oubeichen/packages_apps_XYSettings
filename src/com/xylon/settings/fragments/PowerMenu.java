@@ -3,11 +3,11 @@ package com.xylon.settings.fragments;
 
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceScreen;
+import android.preference.SwitchPreference;
 import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
 
@@ -23,11 +23,11 @@ public class PowerMenu extends SettingsPreferenceFragment implements OnPreferenc
     private static final String PREF_NAVBAR_HIDE = "show_navbar_hide";
     private static final String PREF_REBOOT_KEYGUARD = "show_reboot_keyguard";
 
-    CheckBoxPreference mShowScreenShot;
-    CheckBoxPreference mShowAirplaneToggle;
     ListPreference mExpandedDesktopPref;
-    CheckBoxPreference mShowNavBarHide;
-    CheckBoxPreference mShowRebootKeyguard;
+    SwitchPreference mShowScreenShot;
+    SwitchPreference mShowAirplaneToggle;
+    SwitchPreference mShowNavBarHide;
+    SwitchPreference mShowRebootKeyguard;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -36,15 +36,17 @@ public class PowerMenu extends SettingsPreferenceFragment implements OnPreferenc
         // Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.power_menu_settings);
 
-        mShowScreenShot = (CheckBoxPreference) findPreference(PREF_SCREENSHOT);
+        mShowScreenShot = (SwitchPreference) findPreference(PREF_SCREENSHOT);
         mShowScreenShot.setChecked(Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_SCREENSHOT,
                 0) == 1);
+        mShowScreenShot.setOnPreferenceChangeListener(this);
 
-        mShowAirplaneToggle = (CheckBoxPreference) findPreference(PREF_AIRPLANE_TOGGLE);
+        mShowAirplaneToggle = (SwitchPreference) findPreference(PREF_AIRPLANE_TOGGLE);
         mShowAirplaneToggle.setChecked(Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_AIRPLANE_TOGGLE,
                 1) == 1);
+        mShowAirplaneToggle.setOnPreferenceChangeListener(this);
 
         PreferenceScreen prefSet = getPreferenceScreen();
         mExpandedDesktopPref = (ListPreference) prefSet.findPreference(PREF_EXPANDED_DESKTOP);
@@ -53,57 +55,53 @@ public class PowerMenu extends SettingsPreferenceFragment implements OnPreferenc
         mExpandedDesktopPref.setValue(String.valueOf(expandedDesktopValue));
         updateExpandedDesktopSummary(expandedDesktopValue);
 
-        mShowNavBarHide = (CheckBoxPreference) findPreference(PREF_NAVBAR_HIDE);
+        mShowNavBarHide = (SwitchPreference) findPreference(PREF_NAVBAR_HIDE);
         mShowNavBarHide.setChecked(Settings.System.getBoolean(getActivity()
                 .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_NAVBAR_HIDE, false));
+        mShowNavBarHide.setOnPreferenceChangeListener(this);
 
-        mShowRebootKeyguard = (CheckBoxPreference) findPreference(PREF_REBOOT_KEYGUARD);
+        mShowRebootKeyguard = (SwitchPreference) findPreference(PREF_REBOOT_KEYGUARD);
         mShowRebootKeyguard.setChecked(Settings.System.getBoolean(getActivity()
                 .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_REBOOT_KEYGUARD, true));
+        mShowRebootKeyguard.setOnPreferenceChangeListener(this);
 
     }
 
-    @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        boolean value;
-
-        if (preference == mShowScreenShot) {
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.POWER_DIALOG_SHOW_SCREENSHOT,
-                    ((CheckBoxPreference)preference).isChecked() ? 1 : 0);
-            return true;
-        } else if (preference == mShowAirplaneToggle) {
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.POWER_DIALOG_SHOW_AIRPLANE_TOGGLE,
-                    ((CheckBoxPreference)preference).isChecked() ? 1 : 0);
-            return true;
-        } else if (preference == mShowNavBarHide) {
-            Settings.System.putBoolean(getActivity().getContentResolver(),
-                    Settings.System.POWER_DIALOG_SHOW_NAVBAR_HIDE,
-                    ((CheckBoxPreference)preference).isChecked());
-            return true;
-        } else if (preference == mShowRebootKeyguard) {
-            Settings.System.putBoolean(getActivity().getContentResolver(),
-                    Settings.System.POWER_DIALOG_SHOW_REBOOT_KEYGUARD,
-                    ((CheckBoxPreference)preference).isChecked());
-            return true;
-        }
-
-        return super.onPreferenceTreeClick(preferenceScreen, preference);
-    }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        boolean value;
+
         if (preference == mExpandedDesktopPref) {
             int expandedDesktopValue = Integer.valueOf((String) newValue);
             Settings.System.putInt(getContentResolver(),
                     Settings.System.EXPANDED_DESKTOP_STYLE, expandedDesktopValue);
             updateExpandedDesktopSummary(expandedDesktopValue);
             return true;
+        if (preference == mShowScreenShot) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.POWER_DIALOG_SHOW_SCREENSHOT,
+                    (Boolean) value ? 1 : 0);
+            return true;
+        } else if (preference == mShowAirplaneToggle) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.POWER_DIALOG_SHOW_AIRPLANE_TOGGLE,
+                    (Boolean) value ? 1 : 0);
+            return true;
+        } else if (preference == mShowNavBarHide) {
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.POWER_DIALOG_SHOW_NAVBAR_HIDE,
+                    (Boolean) value);
+            return true;
+        } else if (preference == mShowRebootKeyguard) {
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.POWER_DIALOG_SHOW_REBOOT_KEYGUARD,
+                    (Boolean) value);
+            return true;
         }
         return false;
     }
 
-private void updateExpandedDesktopSummary(int value) {
+    private void updateExpandedDesktopSummary(int value) {
         Resources res = getResources();
 
         if (value == 0) {

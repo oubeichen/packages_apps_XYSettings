@@ -68,7 +68,7 @@ public class StatusExtras extends SettingsPreferenceFragment implements OnPrefer
     private static final String PREF_NOTIFICATION_WALLPAPER_ALPHA = "notification_wallpaper_alpha";
     private static final String PREF_NOTIFICATION_SHOW_WIFI_SSID = "notification_show_wifi_ssid";
     private static final String PREF_NOTIFICATION_BEHAVIOUR = "notifications_behaviour";
-    private static final String STATUSBAR_HIDDEN = "statusbar_hidden";
+    private static final String STATUS_BAR_AUTO_HIDE = "status_bar_auto_hide";
     private static final String NAVIGATION_BAR_COLOR = "nav_bar_color";
 //    private static final String STATUS_BAR_COLOR = "stat_bar_color";
 
@@ -84,7 +84,7 @@ public class StatusExtras extends SettingsPreferenceFragment implements OnPrefer
     Preference mWallpaperAlpha;
     CheckBoxPreference mStatusBarNotifCount;
     CheckBoxPreference mStatusbarSliderPreference;
-    CheckBoxPreference mStatusBarHide;
+    CheckBoxPreference mStatusBarAutoHide;
     CheckBoxPreference mShowWifiName;
     ListPreference mNotificationsBehavior;
     ColorPickerPreference mNavigationColor;
@@ -123,9 +123,9 @@ public class StatusExtras extends SettingsPreferenceFragment implements OnPrefer
         mNotificationWallpaper = findPreference(PREF_NOTIFICATION_WALLPAPER);
         mWallpaperAlpha = (Preference) findPreference(PREF_NOTIFICATION_WALLPAPER_ALPHA);
 
-        mStatusBarHide = (CheckBoxPreference) findPreference(STATUSBAR_HIDDEN);
-        mStatusBarHide.setChecked(Settings.System.getBoolean(getActivity().getContentResolver(),
-                Settings.System.STATUSBAR_HIDDEN, false));
+        mStatusBarAutoHide = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_AUTO_HIDE);
+        mStatusBarAutoHide.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                Settings.System.AUTO_HIDE_STATUSBAR, 0) == 1));
 
         mStatusBarNotifCount = (CheckBoxPreference) prefSet.findPreference(PREF_STATUS_BAR_NOTIF_COUNT);
         mStatusBarNotifCount.setChecked(Settings.System.getBoolean(getActivity().getContentResolver(), 
@@ -278,10 +278,11 @@ public class StatusExtras extends SettingsPreferenceFragment implements OnPrefer
             .create()
             .show();
             return true;
-        } else if (preference == mStatusBarHide) {
-            boolean checked = ((CheckBoxPreference)preference).isChecked();
-            Settings.System.putBoolean(getActivity().getContentResolver(),
-                    Settings.System.STATUSBAR_HIDDEN, checked ? true : false);
+        } else if (preference == mStatusBarAutoHide) {
+            value = mStatusBarAutoHide.isChecked();
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.AUTO_HIDE_STATUSBAR, value ? 1 : 0);
+            return true;
         } else if (preference == mShowWifiName) {
             Settings.System.putInt(getActivity().getContentResolver(), Settings.System.NOTIFICATION_SHOW_WIFI_SSID,
                     mShowWifiName.isChecked() ? 1 : 0);
