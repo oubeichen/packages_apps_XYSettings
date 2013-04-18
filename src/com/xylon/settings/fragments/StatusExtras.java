@@ -164,6 +164,8 @@ public class StatusExtras extends SettingsPreferenceFragment implements OnPrefer
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        boolean value;
+
         if (preference == mCustomLabel) {
             AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
 
