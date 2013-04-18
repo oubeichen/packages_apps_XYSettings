@@ -60,7 +60,7 @@ public class SPenGestures extends SettingsPreferenceFragment implements
                 Settings.System.ENABLE_SPEN_ACTIONS, false));
         mEnableSPen.setOnPreferenceChangeListener(this);
 
-        mEnableIcon = (CheckBoxPreference) findPreference("enable_stylus pointer");
+        mEnableIcon = (SwitchPreference) findPreference("enable_stylus pointer");
         mEnableIcon.setChecked(Settings.System.getBoolean(getContentResolver(),
                 Settings.System.STYLUS_ICON_ENABLED, true));
         mEnableIcon.setOnPreferenceChangeListener(this);
