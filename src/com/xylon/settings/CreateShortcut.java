@@ -62,6 +62,8 @@ public class CreateShortcut extends LauncherActivity {
             return R.drawable.ic_xy_settings_navigation_bar;
         else if (c.equals("QuickToggles"))
             return R.drawable.ic_xy_settings_quick_toggles;
+        else if (c.equals("PowerWidget"))
+            return R.drawable.ic_xy_settings_power_widget;
         else if (c.equals("StatusBarClock"))
             return R.drawable.ic_xy_settings_clock;
         else if (c.equals("StatusBarSignal"))

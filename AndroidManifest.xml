@@ -189,6 +189,15 @@
                 <category android:name="com.xylon.settings.SHORTCUT" />
               </intent-filter>
         </activity>
+        <activity
+            android:name=".fragments.PowerWidget"
+            android:label="@string/title_power_widget" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.xylon.settings.SHORTCUT" />
+              </intent-filter>
+        </activity>
         <activity android:name=".activities.RamBar" />
         <activity
  	    android:name=".ShareToClipboard"
