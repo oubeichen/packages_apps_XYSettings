@@ -38,6 +38,7 @@ import android.preference.PreferenceActivity;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
+import android.preference.SwitchPreference;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.text.TextUtils;
@@ -109,7 +110,7 @@ public class NavigationBar extends SettingsPreferenceFragment implements
     ListPreference menuDisplayLocation;
     ListPreference mNavBarMenuDisplay;
     ListPreference mNavBarButtonQty;
-    CheckBoxPreference mEnableNavigationBar;
+    SwitchPreference mEnableNavigationBar;
 //    ListPreference mNavigationBarHeight;
 //    ListPreference mNavigationBarHeightLandscape;
 //    ListPreference mNavigationBarWidth;
@@ -215,9 +216,10 @@ public class NavigationBar extends SettingsPreferenceFragment implements
 
         boolean hasNavBarByDefault = mContext.getResources().getBoolean(
                 com.android.internal.R.bool.config_showNavigationBar);
-        mEnableNavigationBar = (CheckBoxPreference) findPreference(ENABLE_NAVIGATION_BAR);
+        mEnableNavigationBar = (SwitchPreference) findPreference(ENABLE_NAVIGATION_BAR);
         mEnableNavigationBar.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.NAVIGATION_BAR_SHOW, hasNavBarByDefault ? 1 : 0) == 1);
+        mEnableNavigationBar.setOnPreferenceChangeListener(this);
 
         mWidthHelp = (Preference) findPreference("width_help");
 
@@ -365,13 +367,7 @@ public class NavigationBar extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
             Preference preference) {
-        if (preference == mEnableNavigationBar) {
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.NAVIGATION_BAR_SHOW,
-                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
-            Helpers.restartSystemUI();
-            return true;
-        } else if (preference == mNavBarHideEnable) {
+        if (preference == mNavBarHideEnable) {
 
             Settings.System.putBoolean(getActivity().getContentResolver(),
                     Settings.System.NAV_HIDE_ENABLE,
@@ -407,7 +403,12 @@ public class NavigationBar extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == menuDisplayLocation) {
+        if (preference == mEnableNavigationBar) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.NAVIGATION_BAR_SHOW,
+                    (Boolean) newValue) ? 1 : 0);
+            return true;
+        } else if (preference == menuDisplayLocation) {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.MENU_LOCATION, Integer.parseInt((String) newValue));
             refreshSettings();

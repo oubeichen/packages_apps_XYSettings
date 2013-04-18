@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
+        <SwitchPreference
+            android:key="pie_controls"
+            android:title="@string/enable_pie_title"
+            android:defaultValue="false" />
+
         <PreferenceScreen
             android:key="pie_color"
             android:title="@string/pie_color_title"
@@ -9,11 +14,6 @@
     <PreferenceCategory
         android:key="toolbar_pie_controls"
         android:title="@string/pie_controls_title" >
-
-        <CheckBoxPreference
-            android:key="pie_controls"
-            android:title="@string/enable_pie_title"
-            android:defaultValue="false" />
 
         <ListPreference
             android:key="pie_trigger"

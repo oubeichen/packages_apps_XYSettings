@@ -29,6 +29,7 @@ import android.preference.PreferenceCategory;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.SwitchPreference;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
@@ -83,12 +84,12 @@ public class Pie extends SettingsPreferenceFragment implements OnPreferenceChang
     private static final String PIE_STICK = "pie_stick";
     private static final String PIE_RESTART = "pie_restart_launcher";
 
+    SwitchPreference mPieControls;
     ListPreference mPieMode;
     ListPreference mPieSize;
     ListPreference mPieGravity;
     ListPreference mPieTrigger;
     ListPreference mPieGap;
-    CheckBoxPreference mPieControls;
     CheckBoxPreference mPieMenu;
     CheckBoxPreference mPieLastApp;
     CheckBoxPreference mPieSearch;
@@ -105,9 +106,10 @@ public class Pie extends SettingsPreferenceFragment implements OnPreferenceChang
 
         PreferenceScreen prefSet = getPreferenceScreen();
 
-        mPieControls = (CheckBoxPreference) findPreference(PIE_CONTROLS);
+        mPieControls = (SwitchPreference) findPreference(PIE_CONTROLS);
         mPieControls.setChecked((Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.PIE_CONTROLS, 0) == 1));
+        mPieControls.setOnPreferenceChangeListener(this);
 
         mPieGravity = (ListPreference) prefSet.findPreference(PIE_GRAVITY);
         int pieGravity = Settings.System.getInt(mContext.getContentResolver(),
@@ -172,11 +174,7 @@ public class Pie extends SettingsPreferenceFragment implements OnPreferenceChang
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mPieControls) {
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.PIE_CONTROLS, mPieControls.isChecked() ? 1 : 0);
-            Helpers.restartSystemUI();
-        } else if (preference == mPieMenu) {
+        if (preference == mPieMenu) {
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.PIE_MENU, mPieMenu.isChecked() ? 1 : 0);
         } else if (preference == mPieLastApp) {
@@ -201,7 +199,12 @@ public class Pie extends SettingsPreferenceFragment implements OnPreferenceChang
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mPieMode) {
+        if (preference == mPieControls) {
+            Settings.System.putInt(getActivity().getApplicationContext()
+                    .getContentResolver(), Settings.System.PIE_CONTROLS,
+                (Boolean) newValue) ? 1 : 0);
+            return true;
+        } else if (preference == mPieMode) {
             int pieMode = Integer.valueOf((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.PIE_MODE, pieMode);

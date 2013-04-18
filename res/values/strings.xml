@@ -167,7 +167,7 @@
     <!-- Pie controls -->
     <string name="pie_controls_title">Controls</string>
     <string name="pie_controls_summary">@null</string>
-    <string name="enable_pie_title">Enable PIE</string>
+    <string name="enable_pie_title">PIE</string>
     <string name="pie_targets_title">Targets</string>
 
     <!-- The Gravity -->
@@ -412,7 +412,7 @@
 
     <!-- Powerwidget -->
     <string name="power_widget_summary">Customize the elements of powerwidget.</string>
-    <string name="title_expanded_widget">Powerwidget</string>
+    <string name="title_expanded_widget">Power Widget</string>
     <string name="power_widget_buttons">Widget Buttons</string>
     <string name="power_widget_behavior">Widget Behavior</string>
     <string name="title_expanded_hide_onchange">Close Drawer (On Change)</string>
@@ -551,7 +551,7 @@
     <string name="navbar_width_help_summary">100 is 70\%% of screen width, 5 is 30\%% of screen width. 0 will default to per button width.</string>
     <string name="width_port_title">Combined bar width port</string>
     <string name="width_land_title">Combined bar width land</string>
-    <string name="navbar_enable_bar">Enable bar</string>
+    <string name="navbar_enable_bar">Navigation Bar</string>
     <string name="navigation_bar_height_title">Navigation bar height</string>
     <string name="navigation_bar_height_summary">Navigation Bar height while in portrait.</string>
     <string name="navigation_bar_height_landscape_title">Navigation bar height landscape</string>

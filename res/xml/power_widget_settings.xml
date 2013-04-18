@@ -21,7 +21,7 @@
     <PreferenceCategory
        android:title="@string/power_widget_buttons">
 
-        <CheckBoxPreference
+        <SwitchPreference
             android:key="expanded_widget"
             android:title="@string/title_expanded_widget"
             android:defaultValue="false" />

@@ -38,6 +38,7 @@ import android.preference.MultiSelectListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
+import android.preference.SwitchPreference;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
@@ -65,7 +66,7 @@ public class PowerWidget extends SettingsPreferenceFragment implements
     private static final String UI_EXP_WIDGET_HAPTIC_FEEDBACK = "expanded_haptic_feedback";
     private static final String PREF_BRIGHTNESS_LOC = "brightness_location";
 
-    private CheckBoxPreference mPowerWidget;
+    private SwitchPreference mPowerWidget;
     private CheckBoxPreference mPowerWidgetHideOnChange;
     private CheckBoxPreference mPowerWidgetHideScrollBar;
     private ListPreference mPowerWidgetHapticFeedback;
@@ -80,7 +81,9 @@ public class PowerWidget extends SettingsPreferenceFragment implements
 
             PreferenceScreen prefSet = getPreferenceScreen();
 
-            mPowerWidget = (CheckBoxPreference) prefSet.findPreference(UI_EXP_WIDGET);
+            mPowerWidget = (SwitchPreference) prefSet.findPreference(UI_EXP_WIDGET);
+            mPowerWidget.setOnPreferenceChangeListener(this);
+
             mPowerWidgetHideOnChange = (CheckBoxPreference) prefSet
                     .findPreference(UI_EXP_WIDGET_HIDE_ONCHANGE);
             mPowerWidgetHideScrollBar = (CheckBoxPreference) prefSet
@@ -114,7 +117,12 @@ public class PowerWidget extends SettingsPreferenceFragment implements
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mPowerWidgetHapticFeedback) {
+        if (preference == mPowerWidget) {
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.EXPANDED_VIEW_WIDGET,
+                    (Boolean) newValue ? 1 : 0);
+            return true;
+        } else if (preference == mPowerWidgetHapticFeedback) {
             int intValue = Integer.parseInt((String) newValue);
             int index = mPowerWidgetHapticFeedback.findIndexOfValue((String) newValue);
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
@@ -135,12 +143,7 @@ public class PowerWidget extends SettingsPreferenceFragment implements
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         boolean value;
 
-        if (preference == mPowerWidget) {
-            value = mPowerWidget.isChecked();
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.EXPANDED_VIEW_WIDGET,
-                    value ? 1 : 0);
-        } else if (preference == mPowerWidgetHideOnChange) {
+        if (preference == mPowerWidgetHideOnChange) {
             value = mPowerWidgetHideOnChange.isChecked();
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.EXPANDED_HIDE_ONCHANGE,
