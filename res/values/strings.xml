@@ -313,7 +313,6 @@
     <string name="summary_settings_behavior_reverse">Short press for Toggles, Long press for Settings</string>
     <string name="title_toggles_autohide">Auto hide toggles</string>
     <string name="summary_toggles_autohide">Hide toggles after drawer closes.</string>
-    <string name="brightness_location_title">Brightness location</string>
     <string name="reset_toggles_title">Reset toggles</string>
     <string name="reset_toggles_summary">Reset all toggles and their order</string>
     <string name="toggle_button_alpha_title">Toggle indicator alpha</string>
@@ -460,8 +459,6 @@
     <string name="pref_flash_mode_title">Flash Mode</string>
     <string name="expanded_haptic_feedback_title">Haptic Feedback</string>
     <string name="power_widget_additional_options_cat">Additional options</string>
-    <string name="right_clock">Right clock</string>
-    <string name="center_clock">Center clock</string>
     <string name="brightness_location_title">Brightness slider location</string>
     <string name="brightness_slider_top">On top</string>
     <string name="brightness_slider_bottom">On the bottom</string>

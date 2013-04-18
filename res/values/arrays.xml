@@ -546,13 +546,6 @@
         <item>3</item>
     </string-array>
 
-    <!-- Brightness slider -->
-    <string-array name="brightness_location_entries" translatable="false">
-        <item>@string/on_top</item>
-        <item>@string/on_the_bottom</item>
-        <item>@string/dont_show</item>
-    </string-array>
-
     <!-- Enable Fast-Toggle -->
     <string-array name="choose_toggle_side_entries" translatable="false">
         <item>@string/right</item>
