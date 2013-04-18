@@ -14,6 +14,7 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceScreen;
+import android.preference.SwitchPreference;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
@@ -40,27 +41,29 @@ public class SPenGestures extends SettingsPreferenceFragment implements
     ListPreference mDown;
     ListPreference mDouble;
     ListPreference mLong;
-    CheckBoxPreference mEnableSPen;
-    CheckBoxPreference mEnableIcon;
+    SwitchPreference mEnableSPen;
+    SwitchPreference mEnableIcon;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle(R.string.title_spen);
         // Load the preferences from an XML resource
-        addPreferencesFromResource(R.xml.prefs_spen);
+        addPreferencesFromResource(R.xml.spen_settings);
 
         PreferenceScreen prefs = getPreferenceScreen();
 
         mPicker = new ShortcutPickerHelper(this, this);
 
-        mEnableSPen = (CheckBoxPreference) findPreference("enable_spen");
+        mEnableSPen = (SwitchPreference) findPreference("enable_spen");
         mEnableSPen.setChecked(Settings.System.getBoolean(getContentResolver(),
                 Settings.System.ENABLE_SPEN_ACTIONS, false));
+        mEnableSPen.setOnPreferenceChangeListener(this);
 
         mEnableIcon = (CheckBoxPreference) findPreference("enable_stylus pointer");
         mEnableIcon.setChecked(Settings.System.getBoolean(getContentResolver(),
                 Settings.System.STYLUS_ICON_ENABLED, true));
+        mEnableIcon.setOnPreferenceChangeListener(this);
 
         mLeft = (ListPreference) findPreference("spen_left");
         mLeft.setOnPreferenceChangeListener(this);
@@ -89,29 +92,22 @@ public class SPenGestures extends SettingsPreferenceFragment implements
     }
 
     @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
-            Preference preference) {
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        boolean result = false;
+
         if (preference == mEnableSPen) {
 
             Settings.System.putBoolean(getActivity().getContentResolver(),
                     Settings.System.ENABLE_SPEN_ACTIONS,
-                    ((CheckBoxPreference) preference).isChecked());
+                    (Boolean) newValue).isChecked());
             return true;
         } else if (preference == mEnableIcon) {
 
             Settings.System.putBoolean(getActivity().getContentResolver(),
                     Settings.System.STYLUS_ICON_ENABLED,
-                    ((CheckBoxPreference) preference).isChecked());
+                    (Boolean) newValue).isChecked());
             return true;
-        }
-        return super.onPreferenceTreeClick(preferenceScreen, preference);
-    }
-
-    @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        boolean result = false;
-
-        if (preference == mLeft) {
+        } else if (preference == mLeft) {
             mPreference = preference;
             mString = Settings.System.SPEN_ACTIONS[SWIPE_LEFT];
             if (newValue.equals(AwesomeConstant.ACTION_APP.value())) {
