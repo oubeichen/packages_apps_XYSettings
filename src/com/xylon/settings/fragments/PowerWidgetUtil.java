@@ -17,7 +17,7 @@
 package com.xylon.settings.fragments;
 
 import com.android.internal.telephony.PhoneConstants;
-import com.android.settings.R;
+import com.xylon.settings.R;
 
 import android.content.Context;
 import android.net.wimax.WimaxHelper;

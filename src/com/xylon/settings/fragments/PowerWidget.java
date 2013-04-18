@@ -50,9 +50,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.android.internal.telephony.Phone;
+
 import com.xylon.settings.R;
 import com.xylon.settings.SettingsPreferenceFragment;
-import com.xylon.settings.widget.TouchInterceptor;
+import com.xylon.settings.widgets.TouchInterceptor;
 
 public class PowerWidget extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -293,7 +294,7 @@ public class PowerWidget extends SettingsPreferenceFragment implements
 
                 // specific checks for availability on some platforms
                 if (PowerWidgetUtil.BUTTON_FLASHLIGHT.equals(button.getId()) &&
-                        !getResources().getBoolean(R.bool.has_led_flash)) {
+                        !getResources().getBoolean(R.bool.has_torch)) {
                     // disable flashlight if it's not supported
                     cb.setEnabled(false);
                     mFlashMode.setEnabled(false);
