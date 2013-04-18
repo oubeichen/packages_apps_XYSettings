@@ -202,7 +202,7 @@ public class Pie extends SettingsPreferenceFragment implements OnPreferenceChang
         if (preference == mPieControls) {
             Settings.System.putInt(getActivity().getApplicationContext()
                     .getContentResolver(), Settings.System.PIE_CONTROLS,
-                (Boolean) newValue) ? 1 : 0);
+                (Boolean) newValue ? 1 : 0);
             return true;
         } else if (preference == mPieMode) {
             int pieMode = Integer.valueOf((String) newValue);

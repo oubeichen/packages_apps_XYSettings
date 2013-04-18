@@ -406,7 +406,7 @@ public class NavigationBar extends SettingsPreferenceFragment implements
         if (preference == mEnableNavigationBar) {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.NAVIGATION_BAR_SHOW,
-                    (Boolean) newValue) ? 1 : 0);
+                    (Boolean) newValue ? 1 : 0);
             return true;
         } else if (preference == menuDisplayLocation) {
             Settings.System.putInt(getActivity().getContentResolver(),

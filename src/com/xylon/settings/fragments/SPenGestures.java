@@ -99,13 +99,13 @@ public class SPenGestures extends SettingsPreferenceFragment implements
 
             Settings.System.putBoolean(getActivity().getContentResolver(),
                     Settings.System.ENABLE_SPEN_ACTIONS,
-                    (Boolean) newValue).isChecked());
+                    (Boolean) newValue);
             return true;
         } else if (preference == mEnableIcon) {
 
             Settings.System.putBoolean(getActivity().getContentResolver(),
                     Settings.System.STYLUS_ICON_ENABLED,
-                    (Boolean) newValue).isChecked());
+                    (Boolean) newValue);
             return true;
         } else if (preference == mLeft) {
             mPreference = preference;
