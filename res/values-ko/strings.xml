@@ -3,7 +3,7 @@
     <string name="app_name">XY 설정</string>
 
     <!-- Header Strings -->
-    <string name="user_interface">메인 인터페이스</string>
+    <string name="user_interface">인터페이스</string>
     <string name="bars">바 인터페이스</string>
     <string name="system">시스템</string>
     <string name="cancel">취소</string>
@@ -16,6 +16,7 @@
     <string name="clock">시계</string>
     <string name="signal">신호</string>
     <string name="quick_toggles">빠른 토글</string>
+    <string name="power_widget">전원 위젯</string>
     <string name="status_extras">기타</string>
     <string name="status_bar">상태바</string>
     <string name="others">기타</string>
@@ -38,6 +39,7 @@
     <string name="title_general_ui">환경</string>
     <string name="title_statusbar_clock">시계</string>
     <string name="title_quick_toggles">빠른 토글</string>
+    <string name="title_power_widget">전원 위젯</string>
     <string name="title_statusbar_signal">신호</string>
     <string name="title_statusbar">상태바</string>
     <string name="title_navbar">소프트 키</string>
@@ -118,11 +120,11 @@
     <string name="title_show_airplane_toggle">비행기 모드</string>
     <string name="power_menu_expanded_desktop">확장 데스크톱</string>
     <string name="summary_expanded_desktop">%1$s</string>
-    <string name="expanded_desktop_summary_status_bar">상태바 가시성</string>
-    <string name="expanded_desktop_summary_no_status_bar">상태바 숨김</string>
+    <string name="expanded_desktop_summary">확장 데스크톱 모드를 보거나 변경</string>
     <string name="expanded_desktop_disabled">꺼짐</string>
-    <string name="expanded_desktop_status_bar">상태바 보임</string>
-    <string name="expanded_desktop_no_status_bar">상태바 숨김</string>
+    <string name="expanded_desktop_only_nav_bar">소프트 키 숨김</string>
+    <string name="expanded_desktop_only_status_bar">상태바 숨김</string>
+    <string name="expanded_desktop_both_hidden">상태바 및 소프트 키 숨김</string>
     <string name="title_show_navbar_hide">소프트 키 메뉴</string>
     <string name="title_show_reboot_keyguard">잠금화면에서 다시 부팅 메뉴 보이기</string>
 
@@ -158,7 +160,7 @@
     <string name="clock_date_display_summary">시계 앞에 사용자 지정 스타일의 날짜를 표시합니다.</string>
     <string name="clock_date_style">날짜 스타일</string>
     <string name="clock_date_format">날짜 형식</string>
-    <string name="clock_date_string_edittext_title">MM/dd/yy과 같은 식으로 날짜 형식이 갖춰져야합니다. </string>
+    <string name="clock_date_string_edittext_title">MM/dd/yy과 같은 식으로 날짜 형식이 갖춰져야합니다.</string>
     <string name="clock_date_string_edittext_summary">문구 입력</string>
     <string name="dont_show_default">보이지 않음 (기본값)</string>
     <string name="normal">보통</string>
@@ -291,8 +293,6 @@
     <string name="show_with_dbm">dBm 단위와 같이 표시</string>
 
     <!-- Statusbar | Clock -->
-    <string name="right_clock">오른쪽 시계</string>
-    <string name="center_clock">중앙 시계</string>
     <string name="no_clock">시계 제거</string>
     <string name="dont_show">보이지 않음</string>
     <string name="small_am_pm">작게 표시</string>
@@ -316,7 +316,6 @@
     <string name="summary_settings_behavior_reverse">짧게 눌러 토글, 길게 눌러 설정</string>
     <string name="title_toggles_autohide">토글 자동 숨기기</string>
     <string name="summary_toggles_autohide">알림창이 닫힐 때 토글을 자동으로 숨깁니다.</string>
-    <string name="brightness_location_title">밝기 위치</string>
     <string name="reset_toggles_title">토글 초기화</string>
     <string name="reset_toggles_summary">모든 토글의 위치와 기능을 초기화합니다.</string>
     <string name="toggle_button_alpha_title">Toggle indicator alpha</string>
@@ -413,6 +412,60 @@
     <string name="quicksettings_theme_style">홀로</string>
     <string name="quicksettings_theme_style_summary">홀로 다크 또는 홀로 화이트를 선택합니다.</string>
     <string name="quick_text_color_title">텍스트 색상</string>
+
+    <!-- Powerwidget -->
+    <string name="power_widget_summary">전원 위젯에 사용할 항목을 사용자화합니다.</string>
+    <string name="title_expanded_widget">전원 위젯</string>
+    <string name="power_widget_buttons">위젯 버튼</string>
+    <string name="power_widget_behavior">위젯 설정</string>
+    <string name="title_expanded_hide_onchange">상태 변경 후 서랍 닫기</string>
+    <string name="title_expanded_hide_indicator">상태 표시 숨기기</string>
+    <string name="title_expanded_hide_scrollbar">스크롤바 숨기기</string>
+    <string name="title_widget_picker">위젯 버튼</string>
+    <string name="summary_widget_picker">사용할 버튼 확인 또는 변경</string>
+    <string name="title_widget_order">위젯 버튼을 순서</string>
+    <string name="summary_widget_order">버튼의 순서 확인 또는 변경</string>
+    <string name="title_buttons">버튼</string>
+    <string name="title_toggle_wifi">Wi-Fi</string>
+    <string name="title_toggle_bluetooth">블루투스</string>
+    <string name="title_toggle_gps">GPS</string>
+    <string name="title_toggle_sound">벨소리</string>
+    <string name="title_toggle_brightness">화면 밝기</string>
+    <string name="title_toggle_sync">동기화</string>
+    <string name="title_toggle_wifiap">Wi-Fi 핫스팟</string>
+    <string name="title_toggle_screentimeout">절전 모드</string>
+    <string name="title_toggle_mobiledata">모바일 데이터</string>
+    <string name="title_toggle_lockscreen">잠금 화면</string>
+    <string name="title_toggle_networkmode">네트워크 모드</string>
+    <string name="title_toggle_autorotate">자동 회전</string>
+    <string name="title_toggle_airplane">비행기 모드</string>
+    <string name="title_toggle_flashlight">LED 손전등</string>
+    <string name="title_toggle_sleep">화면 끄기</string>
+    <string name="title_toggle_media_play_pause">미디어: 재생/일시 정지</string>
+    <string name="title_toggle_media_previous">미디어: 이전</string>
+    <string name="title_toggle_media_next">미디어 : 다음</string>
+    <string name="title_toggle_lte">LTE</string>
+    <string name="title_toggle_wimax">WiMAX</string>
+    <string name="title_button_modes">버튼 설정</string>
+    <string name="pref_brightness_mode_title">밝기</string>
+    <string name="pref_brightness_mode_summary">밝기 버튼 설정 확인 또는 변경</string>
+    <string name="cm_brightness_mode_auto">자동</string>
+    <string name="cm_brightness_mode_dim">조명 끄기</string>
+    <string name="pref_network_mode_title">네트워크 타일</string>
+    <string name="pref_screentimeout_mode_title">절전 모드 타일</string>
+    <string name="pref_ring_mode_title">벨소리 타일</string>
+    <string name="pref_ring_mode_summary">벨소리 타일 설정 확인 또는 변경</string>
+    <string name="cm_sound_mode_silent">무음</string>
+    <string name="cm_sound_mode_vibrate">진동</string>
+    <string name="cm_sound_mode_sound">소리</string>
+    <string name="cm_sound_mode_soundVibrate">소리 + 진동</string>
+    <string name="pref_flash_mode_title">손전등</string>
+    <string name="expanded_haptic_feedback_title">터치 시 진동 반응</string>
+    <string name="power_widget_additional_options_cat">부가 옵션</string>
+    <string name="brightness_location_title">밝기 조정 바 위치</string>
+    <string name="brightness_slider_top">위</string>
+    <string name="brightness_slider_bottom">아래</string>
+    <string name="brightness_slider_none">보이지 않음</string>
 
     <!-- Navigation Bar (Targets) -->
     <string name="right">오른쪽</string>
@@ -526,6 +579,10 @@
     <string name="navbar_icon_menu">사용자 지정 아이콘</string>
     <string name="navbar_delete_menu">소프트 키 제거</string>
 
+    <!-- Auto-Hide Status Bar -->
+    <string name="auto_hide_statusbar">상태바 자동 숨김</string>
+    <string name="auto_hide_statusbar_summary">알림이 없을 때에 상태바가 자동으로 숨겨집니다.</string>
+
     <!-- Nav Bar Widgets -->
     <string name="navbar_widgets">소프트 키 위젯</string>
     <string name="navbar_widgets_instructions">넘겨서 보기 - 터치하여 선택</string>
@@ -560,27 +617,17 @@
     <string name="navring_target_amount_text">현재 소프트 키 링 타켓의 수</string>
     <string name="navring_target_longpress_text">길게 누름 활성화</string>
 
-    <!-- SBNB Colors | Status bar background style -->
-    <string name="status_bar_transparency_title">상태바 투명도 설정</string>
-    <string name="status_bar_color_title">상태바 색상</string>
-    <string name="status_bar_background_style">상태바 배경</string>
-    <string name="status_bar_alpha_mode_dialog_text_title">소프트 키 및 상태바의 투명도 보이기</string>
-    <string name="status_bar_alpha_mode_text_title">투명도 모드</string>
-    <string name="status_bar_alpha_mode_home">런쳐에서</string>
-    <string name="status_bar_alpha_mode_default">런쳐와 잠금화면에서</string>
-    <string name="status_bar_alpha_mode_always">항상</string>
-    <string name="status_bar_style_reset">초기화</string>
-
-    <!-- SBNB Colors | Navigation bar background style -->
-    <string name="nav_bar_transparency_title">소프트 키 투명도 설정</string>
-    <string name="nav_bar_color_title">소프트 키 색상</string>
-    <string name="nav_bar_background_style">소프트 키 배경</string>
-    <string name="nav_bar_alpha_mode_dialog_text_title">소프트 키 및 상태바의 투명도 보이기</string>
-    <string name="nav_bar_alpha_mode_text_title">투명도 모드</string>
-    <string name="nav_bar_alpha_mode_home">런쳐에서</string>
-    <string name="nav_bar_alpha_mode_default">런쳐와 잠금화면에서</string>
-    <string name="nav_bar_alpha_mode_always">항상</string>
-    <string name="nav_bar_style_reset">초기화</string>
+    <!-- Transparency, Color -->
+    <string name="transparency_dialog_title">투명도 설정</string>
+    <string name="transparency_dialog_linked_transparency">상태바와 소프트 키의 투명도 연동</string>
+    <string name="transparency_dialog_transparency_sb_and_nv">상태바 및 소프트 키</string>
+    <string name="transparency_dialog_statusbar">상태바</string>
+    <string name="transparency_dialog_navbar">소프트 키</string>
+    <string name="transparency_dialog_match_keyguard_alpha">잠금 화면의 투명도에 맞춤</string>
+    <string name="transparency_dialog_transparency">홈 화면 투명도</string>
+    <string name="transparency_dialog_transparency_keyguard">잠금 화면 투명도</string>
+    <string name="navigation_bar_color_title">소프트 키 배경 색상</string>
+    <string name="status_bar_color_title">상태바 배경 색상</string>
 
     <!-- General UI | Other Modifications unknown -->
 
@@ -614,8 +661,6 @@
     <string name="tablet_cat">태블릿 옵션</string>
     <string name="hide_extras">엑스트라 숨기기</string>
     <string name="hide_extras_summary">시스템 바 항목 숨기기</string>
-    <string name="multipane_ui">듀얼 패널 활성화</string>
-    <string name="multipane_ui_summary">듀얼 패널을 활성화합니다. (다시 부팅 필요)</string>
 
     <!-- General UI | CRT Animation Modifications -->
 
