@@ -103,6 +103,10 @@ public class Applications {
         setProperty(mContext, "", "%user_default_layout", layout, false);
     }
 
+    public static void addHybridLayout(Context mContext, String layout) {
+        setProperty(mContext, "", "%hybrid_mode", layout, false);
+    }
+
     public static void addProperty(Context mContext, String property, int value, boolean restartui) {
         setProperty(mContext, "com.android.systemui", property, String.valueOf(value), restartui);
     }

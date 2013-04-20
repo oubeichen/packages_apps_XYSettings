@@ -1003,6 +1003,15 @@
         <item>1000</item>
     </string-array>
 
+    <string-array name="hybridmode_entries">
+        <item>@string/hybridmode_off</item>
+        <item>@string/hybridmode_on</item>
+    </string-array>
+    <string-array name="hybridmode_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
     <!-- Arrays required by Notification Widgets. -->
     <string-array name="entries_brightness_widget" formatted="false" translatable="false">
         <item>@string/cm_brightness_mode_auto</item>

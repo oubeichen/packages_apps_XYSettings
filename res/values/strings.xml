@@ -899,6 +899,10 @@
     <!-- Hybrid -->
     <string name="hybrid_settings_title">Hybrid settings</string>
 
+    <string name="hybridmode_title">Hyrbid Mode</string>
+    <string name="hybridmode_on">Enabled</string>
+    <string name="hybridmode_off">Disabled</string>
+
     <string name="uimode_title">UI Mode</string>
     <string name="uimode_phone">Phone (360dp)</string>
     <string name="uimode_phablet">Phablet (600dp)</string>

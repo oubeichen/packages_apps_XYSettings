@@ -107,6 +107,8 @@ public class NavigationBar extends SettingsPreferenceFragment implements
     private static final int DIALOG_NAVBAR_ENABLE = 203;
     private static final int DIALOG_NAVBAR_HEIGHT_REBOOT = 204;
 
+    private int mNavbarHeightProgress;
+
     // What?
     ColorPickerPreference mNavigationBarColor;
     CheckBoxPreference mColorizeAllIcons;

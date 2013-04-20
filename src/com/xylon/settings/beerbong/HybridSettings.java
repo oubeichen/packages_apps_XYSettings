@@ -25,6 +25,7 @@ public class HybridSettings extends SettingsPreferenceFragment implements
 
     private PreferenceScreen mDpiScreen;
     private Preference mAppsDpi;
+    private ListPreference mHybrid;
     private ListPreference mUimode;
     private ListPreference mAppsUimode;
     private CheckBoxPreference mAutoBackup;
@@ -32,8 +33,6 @@ public class HybridSettings extends SettingsPreferenceFragment implements
     private Preference mRestore;
 
     private Context mContext;
-
-    private int mNavbarHeightProgress;
 
     private int mAppDpiProgress;
 
@@ -66,6 +65,17 @@ public class HybridSettings extends SettingsPreferenceFragment implements
         mAppsUimode.setValue(String.valueOf(aprop));
         mAppsUimode.setSummary(mAppsUimode.getEntry());
         mAppsUimode.setOnPreferenceChangeListener(this);
+
+        mHybrid = (ListPreference) findPreference("hybrid_mode");
+
+        int hyprop = ExtendedPropertiesUtils
+                .getActualProperty(ExtendedPropertiesUtils.BEERBONG_PREFIX + "hybrid_mode");
+        if (hyprop == 0) {
+            hyprop = prop;
+        }
+        mHybrid.setValue(String.valueOf(aprop));
+        mHybrid.setSummary(mAppsUimode.getEntry());
+        mHybrid.setOnPreferenceChangeListener(this);
 
         mAutoBackup = (CheckBoxPreference) findPreference("dpi_groups_auto_backup");
         mBackup = findPreference("dpi_groups_backup");
@@ -105,7 +115,11 @@ public class HybridSettings extends SettingsPreferenceFragment implements
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         final String key = preference.getKey();
-        if ("ui_mode".equals(key)) {
+        if ("hybrid_mode".equals(key)) {
+            String layout = (String) objValue;
+            Applications.addHybridLayout(mContext, layout);
+            Utils.reboot(mContext);
+        } else if ("ui_mode".equals(key)) {
             String layout = (String) objValue;
             Applications.addSystemLayout(mContext, layout);
         } else if ("apps_ui_mode".equals(key)) {
@@ -145,6 +159,15 @@ public class HybridSettings extends SettingsPreferenceFragment implements
         }
         index = mAppsUimode.findIndexOfValue(String.valueOf(alayout));
         mAppsUimode.setSummary(mAppsUimode.getEntries()[index]);
+
+        int hylayout = ExtendedPropertiesUtils
+                .getActualProperty(ExtendedPropertiesUtils.BEERBONG_PREFIX + "hybrid_mode");
+        if (hylayout == 0) {
+            hylayout = layout;
+        }
+        index = mHybrid.findIndexOfValue(String.valueOf(alayout));
+        mHybrid.setSummary(mHybrid.getEntries()[index]);
+
 
         mRestore.setEnabled(Applications.backupExists());
     }

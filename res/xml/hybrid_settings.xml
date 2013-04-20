@@ -6,6 +6,12 @@
         android:title="@string/hybrid_settings_title">
 
         <ListPreference
+            android:key="hybrid_mode"
+            android:entries="@array/hybridmode_entries"
+            android:entryValues="@array/hybridmode_values"
+            android:title="@string/hybridmode_title" />
+
+        <ListPreference
             android:key="ui_mode"
             android:entries="@array/uimode_entries"
             android:entryValues="@array/uimode_values"
