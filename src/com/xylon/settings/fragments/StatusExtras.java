@@ -147,6 +147,26 @@ public class StatusExtras extends SettingsPreferenceFragment implements OnPrefer
                 Settings.System.NOTIFICATION_SHOW_WIFI_SSID, 0) == 1);
     }
 
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.status_extras, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
+        switch (item.getItemId()) {
+            case R.id.remove_wallpaper:
+                File f = new File(mContext.getFilesDir(), WALLPAPER_NAME);
+                mContext.deleteFile(WALLPAPER_NAME);
+                Helpers.restartSystemUI();
+                return true;
+            default:
+                return super.onContextItemSelected(item);
+        }
+    }
+
     private void updateCustomLabelTextSummary() {
         mCustomLabelText = Settings.System.getString(getActivity().getContentResolver(),
                 Settings.System.CUSTOM_CARRIER_LABEL);
@@ -327,26 +347,6 @@ public class StatusExtras extends SettingsPreferenceFragment implements OnPrefer
 **/
         }
         return false;
-    }
-
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(R.menu.status_extras, menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
-        switch (item.getItemId()) {
-            case R.id.remove_wallpaper:
-                File f = new File(mContext.getFilesDir(), WALLPAPER_NAME);
-                mContext.deleteFile(WALLPAPER_NAME);
-                Helpers.restartSystemUI();
-                return true;
-            default:
-                return super.onContextItemSelected(item);
-        }
     }
 
     private Uri getNotificationExternalUri() {
