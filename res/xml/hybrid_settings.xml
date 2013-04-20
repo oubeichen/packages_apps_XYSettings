@@ -46,10 +46,6 @@
             android:title="@string/widgets_title"
             android:summary="@string/widgets_summary" />
 
-        <Preference
-            android:key="navbar_height"
-            android:title="@string/navbar_height_title" />
-
     </PreferenceCategory>
 
     <PreferenceCategory
