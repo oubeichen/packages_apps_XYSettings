@@ -892,6 +892,10 @@
     <!-- Hybrid -->
     <string name="hybrid_settings_title">하이브리드 설정</string>
 
+    <string name="hybridmode_title">하이브리드 모드</string>
+    <string name="hybridmode_on">켬</string>
+    <string name="hybridmode_off">끔</string>
+
     <string name="uimode_title">UI 모드</string>
     <string name="uimode_phone">폰 (360dp)</string>
     <string name="uimode_phablet">패블릿 (600dp)</string>
