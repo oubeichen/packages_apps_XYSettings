@@ -98,13 +98,13 @@
     <string name="title_show_screenshot">Capture d\'écran</string>
     <string name="title_show_airplane_toggle">Mode avion</string>
     <string name="power_menu_expanded_desktop">Bureau étendu</string>
-    <string name="expanded_desktop_summary_status_bar">Barre d\'état visible</string>
-    <string name="expanded_desktop_summary_no_status_bar">Barre d\'état masquée</string>
+    <string name="expanded_desktop_summary">Afficher ou modifier les modes de bureau étendu</string>
     <string name="expanded_desktop_disabled">Off</string>
-    <string name="expanded_desktop_status_bar">Barre d\'état visible</string>
-    <string name="expanded_desktop_no_status_bar">Barre d\'état masquée</string>
+    <string name="expanded_desktop_only_nav_bar">Barre de navigation masquée</string>
+    <string name="expanded_desktop_only_status_bar">Barre d\'état masquée</string>
+    <string name="expanded_desktop_both_hidden">Barre de navigation et d\'état masquée</string>
     <string name="title_show_navbar_hide">Raccourcis de navigation</string>
-    <string name="title_show_reboot_keyguard">Redémarrage (écran de verrouillage)</string>
+    <string name="title_show_reboot_keyguard">Redémarrer</string>
 
     <!-- Status Bar Headers -->
     <string name="status_bar_clock_header">Horloge</string>
@@ -290,7 +290,6 @@
     <string name="summary_settings_behavior_reverse">Appui court pour Toggles, Appui long pour Paramètres</string>
     <string name="title_toggles_autohide">Masquer les Toggles automatiquement</string>
     <string name="summary_toggles_autohide">Masquer les Toggles après la fermeture du Drawer.</string>
-    <string name="brightness_location_title">Emplacement de la luminosité</string>
     <string name="reset_toggles_title">Réinitialiser les Toggles</string>
     <string name="reset_toggles_summary">Réinitialiser tous les Toggles et leur ordre.</string>
     <string name="toggle_text_color_title">Couleur du texte des Toggles</string>
@@ -340,10 +339,6 @@
     <string name="long_collapse">A l\'appui long</string>
     <string name="both_collapse">Les deux, long et court</string>
 
-     <!-- Brightness slider -->
-    <string name="on_top">En haut</string>
-    <string name="on_the_bottom">En bas</string>
-
     <!-- Navigation Bar (Targets) -->
     <string name="right">À droite</string>
     <string name="left">À gauche</string>
@@ -390,6 +385,54 @@
     <string name="center_mirrored">Centrer, mode miroir</string>
     <string name="size_0_dp">0 dp (Off)</string>
 
+    <!-- Powerwidget -->
+    <string name="power_widget_summary">Modifier les éléments des power widget.</string>
+    <string name="title_expanded_widget">Power Widget</string>
+    <string name="power_widget_buttons">Boutons</string>
+    <string name="power_widget_behavior">Comportement</string>
+    <string name="title_expanded_hide_onchange">Fermer (Après action)</string>
+    <string name="title_expanded_hide_indicator">Masquer indicateurs</string>
+    <string name="title_expanded_hide_scrollbar">Masquer barre de défilement</string>
+    <string name="title_widget_picker">Boutons affichés</string>
+    <string name="summary_widget_picker">Afficher ou modifier les boutons affichés</string>
+    <string name="title_widget_order">Ordre des boutons</string>
+    <string name="summary_widget_order">Afficher ou modifier l\'ordre des boutons</string>
+    <string name="title_buttons">Boutons</string>
+    <string name="title_toggle_sound">Son</string>
+    <string name="title_toggle_brightness">Luminosité</string>
+    <string name="title_toggle_sync">Synchronisation</string>
+    <string name="title_toggle_screentimeout">Délai extinction écran</string>
+    <string name="title_toggle_mobiledata">Données mobile</string>
+    <string name="title_toggle_lockscreen">Écran de verrouillage</string>
+    <string name="title_toggle_networkmode">Mode de connexion</string>
+    <string name="title_toggle_autorotate">Rotation automatique</string>
+    <string name="title_toggle_airplane">Mode avion</string>
+    <string name="title_toggle_flashlight">Torche</string>
+    <string name="title_toggle_sleep">Verrouiller</string>
+    <string name="title_toggle_media_play_pause">Lire/Pause (Musique)</string>
+    <string name="title_toggle_media_previous">Musique précédente</string>
+    <string name="title_toggle_media_next">Musique suivante</string>
+    <string name="title_button_modes">Configuration des boutons</string>
+    <string name="pref_brightness_mode_title">Mode de luminosité</string>
+    <string name="pref_brightness_mode_summary">Afficher ou modifier les modes de luminosité</string>
+    <string name="cm_brightness_mode_auto">Auto</string>
+    <string name="cm_brightness_mode_dim">Minimum</string>
+    <string name="pref_network_mode_title">Mode de connexion</string>
+    <string name="pref_screentimeout_mode_title">Délais avant extinction écran</string>
+    <string name="pref_ring_mode_title">Mode de son</string>
+    <string name="pref_ring_mode_summary">Afficher ou modifier les modes de son utilisés</string>
+    <string name="cm_sound_mode_silent">Silencieux</string>
+    <string name="cm_sound_mode_vibrate">Vibreur</string>
+    <string name="cm_sound_mode_sound">Sonnerie</string>
+    <string name="cm_sound_mode_soundVibrate">Sonnerie &amp; Vibreur</string>
+    <string name="pref_flash_mode_title">Mode de Torche</string>
+    <string name="expanded_haptic_feedback_title">Retour haptique</string>
+    <string name="power_widget_additional_options_cat">Options supplémentaires</string>
+    <string name="brightness_location_title">Emplacement du curseur de luminosité</string>
+    <string name="brightness_slider_top">Au-dessus</string>
+    <string name="brightness_slider_bottom">En-dessous</string>
+    <string name="brightness_slider_none">Ne pas l\'afficher</string>
+
     <!-- Navigation Bar (Strings) -->
     <string name="navbar_button_cat">Boutons de la barre de navigation</string>
     <string name="navbar_hide">Options du Hide NavBar</string>
@@ -421,8 +464,6 @@
     <string name="navigation_bar_glow_tint_summary">Quand vous appuyez sur un bouton, il y a une lueur. Utiliser ceci pour changer sa couleur.</string>
     <string name="navigation_bar_menu_arrow_keys_title">Touches fléchées</string>
     <string name="navigation_bar_menu_arrow_keys_summary">Afficher deux touches fléchées dans la barre de navigation lorsque vous écrivez.</string>
-    <string name="statusbar_hide_title">Barre d\'état masquée</string>
-    <string name="statusbar_hide_summary">Autoriser la barre d\'état à être masquée.</string>
     <string name="navigation_bar_alpha_title">Opacité barre d\'état et barre de navigation.</string>
     <string name="navbar_hide_enable_title">Activer Hidden Navbar</string>
     <string name="drag_handle_opacity_title">Opacité de la poignée</string>
@@ -436,6 +477,10 @@
     <string name="navbar_icon_menu">Icône personnalisé</string>
     <string name="navbar_delete_menu">Supprimer le bouton</string>
     
+    <!-- Auto-Hide Status Bar -->
+    <string name="auto_hide_statusbar">Masquer auto la barre d\'état</string>
+    <string name="auto_hide_statusbar_summary">La barre d\'état sera masquée automatiquement quand il n\'y aura pas de notifications</string>
+
     <!-- Nav Bar Widgets -->
     <string name="navbar_widgets">Widgets - Barre de Navigation</string>
     <string name="navbar_widgets_instructions">Swipe pour voir - Appuyer pour choisir</string>
@@ -697,6 +742,10 @@
 
     <!-- Hybrid -->
     <string name="hybrid_settings_title">Paramètres Hybride</string>
+    
+    <string name="hybridmode_title">Mode Hyrbide</string>
+    <string name="hybridmode_on">Activé</string>
+    <string name="hybridmode_off">Désactivé</string>
 
     <string name="uimode_title">Mode d\'interface du système</string>
     <string name="uimode_phone">Téléphone (360dp)</string>
