@@ -73,8 +73,8 @@ public class HybridSettings extends SettingsPreferenceFragment implements
         if (hyprop == 0) {
             hyprop = prop;
         }
-        mHybrid.setValue(String.valueOf(aprop));
-        mHybrid.setSummary(mAppsUimode.getEntry());
+        mHybrid.setValue(String.valueOf(hyprop));
+        mHybrid.setSummary(mHybrid.getEntry());
         mHybrid.setOnPreferenceChangeListener(this);
 
         mAutoBackup = (CheckBoxPreference) findPreference("dpi_groups_auto_backup");
@@ -159,15 +159,6 @@ public class HybridSettings extends SettingsPreferenceFragment implements
         }
         index = mAppsUimode.findIndexOfValue(String.valueOf(alayout));
         mAppsUimode.setSummary(mAppsUimode.getEntries()[index]);
-
-        int hylayout = ExtendedPropertiesUtils
-                .getActualProperty(ExtendedPropertiesUtils.BEERBONG_PREFIX + "hybrid_mode");
-        if (hylayout == 0) {
-            hylayout = layout;
-        }
-        index = mHybrid.findIndexOfValue(String.valueOf(alayout));
-        mHybrid.setSummary(mHybrid.getEntries()[index]);
-
 
         mRestore.setEnabled(Applications.backupExists());
     }
