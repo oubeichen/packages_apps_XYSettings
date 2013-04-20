@@ -609,10 +609,10 @@
     <string name="led_custom_app">"Application : "</string>
     <string name="led_custom_default">Par défaut</string>
     <string name="led_change_app">Changer</string>
-    <string name="led_delete_app">Supprimer </string>
+    <string name="led_delete_app">Supprimer</string>
     <string name="led_keep_app">Garder</string>
     <string name="led_custom_title">LED Personnalisée</string>
-    <string name="led_custom_message">Que voulez-vous faire de l\'application: </string>
+    <string name="led_custom_message">"Que voulez-vous faire de l\'application: "</string>
     <string name="led_edit_button">X</string>
     <string name="led_test_notification">Tester la LED</string>
     <string name="led_test_notification_message_now">Test de la LED pour : </string>
