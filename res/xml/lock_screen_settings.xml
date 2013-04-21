@@ -31,6 +31,13 @@
             android:entries="@array/lockscreen_background_entries"
             android:entryValues="@array/lockscreen_background_values" />
 
+	<net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="lock_color_alpha"
+            android:title="@string/ls_color_alpha_title"
+            android:summary="@string/ls_color_alpha_summary"
+            android:defaultValue="0x70000000"
+            alphaSlider="true" />
+
         <CheckBoxPreference
             android:key="see_through"
             android:title="@string/see_through_title"
