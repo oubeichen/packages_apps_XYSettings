@@ -154,6 +154,7 @@ public class Lockscreen extends SettingsPreferenceFragment implements Preference
     private void updateCustomBackgroundSummary() {
         int resId;
         boolean seeThroughState = true;
+        boolean colorState = true;
         String value = Settings.System.getString(getContentResolver(),
                 Settings.System.LOCKSCREEN_BACKGROUND);
         if (value == null) {
@@ -163,12 +164,15 @@ public class Lockscreen extends SettingsPreferenceFragment implements Preference
             resId = R.string.lockscreen_background_custom_image;
             mCustomBackground.setValueIndex(LOCKSCREEN_BACKGROUND_CUSTOM_IMAGE);
             seeThroughState = false;
+            colorState = false;
         } else {
             resId = R.string.lockscreen_background_color_fill;
             mCustomBackground.setValueIndex(LOCKSCREEN_BACKGROUND_COLOR_FILL);
+            colorState = false;            
         }
         mCustomBackground.setSummary(getResources().getString(resId));
         mSeeThrough.setEnabled(seeThroughState);
+        mLsColorAlpha.setEnabled(colorState);
     }
 
     @Override
