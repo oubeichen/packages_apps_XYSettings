@@ -891,6 +891,8 @@
     <string name="lockscreen_background_default_wallpaper">Default wallpaper</string>
     <string name="see_through_title">See through</string>
     <string name="see_through_summary">Allows to see the application behind the lock screen.</string>
+    <string name="ls_color_alpha_title">Lockscreen Tint Color</string>
+    <string name="ls_color_alpha_summary">Allows to change the tint of the lock screen.</string>
 
     <!--- Lock clock -->
     <string name="lock_clock_title">Clock widget</string>

@@ -68,6 +68,7 @@ public class Lockscreen extends SettingsPreferenceFragment implements Preference
     private static final String PREF_LOCK_CLOCK = "lock_clock";
     private static final String PREF_SEE_TRHOUGH = "see_through";
     private static final String BACKGROUND_PREF = "lockscreen_background";
+    private static final String PREF_LS_COLOR_ALPHA = "lock_color_alpha";
 
     private static final int REQUEST_CODE_BG_WALLPAPER = 199;
 
@@ -75,8 +76,7 @@ public class Lockscreen extends SettingsPreferenceFragment implements Preference
     private static final int LOCKSCREEN_BACKGROUND_CUSTOM_IMAGE = 1;
     private static final int LOCKSCREEN_BACKGROUND_DEFAULT_WALLPAPER = 2;
 
-    ListPreference mCustomBackground;
-    ListPreference mBatteryStatus;
+    ColorPickerPreference mLsColorAlpha;
     CheckBoxPreference mLockscreenAutoRotate;
     CheckBoxPreference mLockscreenAllWidgets;
     CheckBoxPreference mLockscreenUnlimitedWidgets;
@@ -85,6 +85,8 @@ public class Lockscreen extends SettingsPreferenceFragment implements Preference
     CheckBoxPreference mLockscreenLongpressChallenge;
     CheckBoxPreference mLockscreenUseCarousel;
     CheckBoxPreference mSeeThrough;
+    ListPreference mCustomBackground;
+    ListPreference mBatteryStatus;
 
     private File mWallpaperImage;
     private File mWallpaperTemporary;
@@ -139,6 +141,9 @@ public class Lockscreen extends SettingsPreferenceFragment implements Preference
         mCustomBackground = (ListPreference) prefSet.findPreference(BACKGROUND_PREF);
         mCustomBackground.setOnPreferenceChangeListener(this);
 
+        mLsColorAlpha = (ColorPickerPreference) findPreference(PREF_LS_COLOR_ALPHA);
+        mLsColorAlpha.setOnPreferenceChangeListener(this);
+
         mWallpaperImage = new File(getActivity().getFilesDir() + "/lockwallpaper");
         mWallpaperTemporary = new File(getActivity().getCacheDir() + "/lockwallpaper.tmp");
 
@@ -149,6 +154,7 @@ public class Lockscreen extends SettingsPreferenceFragment implements Preference
     private void updateCustomBackgroundSummary() {
         int resId;
         boolean seeThroughState = true;
+        boolean colorState = true;
         String value = Settings.System.getString(getContentResolver(),
                 Settings.System.LOCKSCREEN_BACKGROUND);
         if (value == null) {
@@ -158,12 +164,15 @@ public class Lockscreen extends SettingsPreferenceFragment implements Preference
             resId = R.string.lockscreen_background_custom_image;
             mCustomBackground.setValueIndex(LOCKSCREEN_BACKGROUND_CUSTOM_IMAGE);
             seeThroughState = false;
+            colorState = false;
         } else {
             resId = R.string.lockscreen_background_color_fill;
             mCustomBackground.setValueIndex(LOCKSCREEN_BACKGROUND_COLOR_FILL);
+            colorState = false;            
         }
         mCustomBackground.setSummary(getResources().getString(resId));
         mSeeThrough.setEnabled(seeThroughState);
+        mLsColorAlpha.setEnabled(colorState);
     }
 
     @Override
@@ -266,6 +275,14 @@ public class Lockscreen extends SettingsPreferenceFragment implements Preference
         } else if (preference == mCustomBackground) {
             int selection = mCustomBackground.findIndexOfValue(objValue.toString());
             return handleBackgroundSelection(selection);
+        } else if (preference == mLsColorAlpha) {
+            String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String
+                    .valueOf(objValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.LOCKSCREEN_COLOR_ALPHA, intHex);
+            return true;
         }
         return false;
     }
