@@ -877,8 +877,6 @@
     <string name="lockscreen_background_default_wallpaper">기본 배경화면 </string>
     <string name="see_through_title">들여다 보기</string>
     <string name="see_through_summary">잠금화면에서 구동중인 앱 화면을 들여다 볼 수 있습니다.</string>
-    <string name="ls_color_alpha_title">잠금화면 색조 변경</string>
-    <string name="ls_color_alpha_summary">잠금화면의 색조를 변경할 수 있도록 허가합니다.</string>
 
     <!--- Lock clock -->
     <string name="lock_clock_title">시계 위젯</string>
