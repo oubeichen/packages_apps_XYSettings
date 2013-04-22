@@ -67,6 +67,10 @@
             android:key="notification_wallpaper_alpha"
             android:title="@string/notif_wallpaper_alpha_title" />
 
+        <Preference
+            android:key="reset_wallpaper"
+            android:title="@string/menu_user_interface_reset" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

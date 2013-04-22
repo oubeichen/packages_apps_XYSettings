@@ -1,6 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.xylon.settings" >
-    
+
+    <uses-sdk android:minSdkVersion="17"/>
     <original-package android:name="com.xylon.settings" />
 
     <uses-permission android:name="android.permission.REBOOT" />
