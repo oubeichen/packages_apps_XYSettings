@@ -125,7 +125,7 @@
     <string name="expanded_desktop_only_status_bar">Hide status bar</string>
     <string name="expanded_desktop_both_hidden">Hide navigation and status bar</string>
     <string name="title_show_navbar_hide">Navigation bar menu</string>
-    <string name="title_show_reboot_keyguard">Reboot on lockscreen</string>
+    <string name="title_show_reboot_keyguard">Reboot option on lockscreen</string>
 
     <!-- Status Bar Headers -->
     <string name="status_bar_clock_header">Clock</string>
@@ -274,7 +274,7 @@
     <string name="battery_bar_style_title">Battery bar style</string>
     <string name="battery_bar_thickness_title">Battery bar thickness</string>
     <string name="battery_bar_animate_title">Charging animation</string>
-    <string name="battery_bar_animate_summary">The charging animation may result in a poor user experience. Enable at your own discretion.</string>
+    <string name="battery_bar_animate_summary">The charging animation may result in poor user experience. Enable at your own risk.</string>
 
     <!-- Statusbar | Signal -->
     <string name="signal_style">Signal text style</string>
@@ -746,7 +746,7 @@
     <string name="set_custom_density_set">Set</string>
     <string name="custom_density_dialog_title">"WARNING!"</string>
     <string name="custom_density_dialog_summary">"Changing your LCD density can cause unexpected app behavior. If you encounter market app incompatibility, please return here and restart the process from step 1."</string>
-    <string name="custom_density_dialog_button_got">Got it!</string>
+    <string name="custom_density_dialog_button_got">Okay!</string>
     <string name="custom_density_dialog_button_reboot">Reboot now</string>
 
    <!-- Ribbon -->
@@ -784,12 +784,12 @@
 
     <!-- LED -->
     <string name="led_on">LED On</string>
-    <string name="led_time_on">Time Light Is On</string>
+    <string name="led_time_on">Time LED Is On</string>
     <string name="led_off">LED Off</string>
-    <string name="led_time_off">Time Light Is Off</string>
+    <string name="led_time_off">Time LED Is Off</string>
     <string name="led_time_seconds">" seconds"</string>
     <string name="led_color_click">Click on the LED to change the color</string>
-    <string name="title_led_screen_on">LED flash while screen ON</string>
+    <string name="title_led_screen_on">LED flash while screen on</string>
     <string name="led_custom_app">Selected App</string>
     <string name="led_custom_default">Default</string>
     <string name="led_change_app">Change</string>
@@ -856,7 +856,7 @@
     <string name="icon_picker_nav_normal">Navigation</string>
     <string name="icon_picker_phone">Phone</string>
     <string name="icon_picker_podcast">Podcast</string>
-    <string name="icon_picker_rss">Rss</string>
+    <string name="icon_picker_rss">RSS</string>
     <string name="icon_picker_search">Search</string>
     <string name="icon_picker_sms">Messaging</string>
     <string name="icon_picker_twitter">Twitter</string>
