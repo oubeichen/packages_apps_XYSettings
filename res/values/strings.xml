@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <string name="app_name">XYE Tools</string>
@@ -240,10 +240,10 @@
     <string name="pie_select_title">Selection color</string>
     <string name="pie_outlines_title">Outlines color</string>
     <string name="pie_status_clock_title">Clock color</string>
-    <string name="pie_status_title">Status color</string>
+    <string name="pie_status_title">Statusbar color</string>
     <string name="pie_chevron_left_title">Left chevron color</string>
     <string name="pie_chevron_right_title">Right chevron color</string>
-    <string name="pie_juice_title">Battery juice color</string>
+    <string name="pie_juice_title">Battery icon color</string>
 
     <!-- Battery style -->
     <string name="battery_icon_title">Battery style</string>
@@ -1006,8 +1006,8 @@
 
     <string name="navbar_height_title">Navigation Bar Height</string>
 
-    <string name="alert_reboot">Reboot needed</string>
-    <string name="alert_reboot_message">This change needs a reboot to be applied. Do you want to reboot now?</string>
+    <string name="alert_reboot">A reboot is needed</string>
+    <string name="alert_reboot_message">This change needs a reboot in order to take effect, do you want to reboot now?</string>
 
 
 </resources>
