@@ -1,6 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.xylon.settings" >
-    
+
+    <uses-sdk android:minSdkVersion="17"/>
     <original-package android:name="com.xylon.settings" />
 
     <uses-permission android:name="android.permission.REBOOT" />
@@ -197,6 +198,15 @@
 
                 <category android:name="com.xylon.settings.SHORTCUT" />
               </intent-filter>
+        </activity>
+        <activity
+            android:name=".fragments.RibbonTargets"
+            android:label="@string/title_ribbon" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.xylon.settings.SHORTCUT" />
+            </intent-filter>
         </activity>
         <activity android:name=".activities.RamBar" />
         <activity

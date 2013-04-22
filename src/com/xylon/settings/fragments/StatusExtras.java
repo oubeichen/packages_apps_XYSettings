@@ -71,6 +71,7 @@ public class StatusExtras extends SettingsPreferenceFragment implements OnPrefer
     private static final String STATUS_BAR_AUTO_HIDE = "status_bar_auto_hide";
     private static final String NAVIGATION_BAR_COLOR = "nav_bar_color";
 //    private static final String STATUS_BAR_COLOR = "stat_bar_color";
+    private static final String PREF_NOTIFICATION_WALLPAPER_RESET = "reset_wallpaper";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
     private static final int REQUEST_PICK_CUSTOM_ICON = 202;
@@ -82,6 +83,7 @@ public class StatusExtras extends SettingsPreferenceFragment implements OnPrefer
     Preference mCustomLabel;
     Preference mNotificationWallpaper;
     Preference mWallpaperAlpha;
+    Preference mResetWallpaper;
     CheckBoxPreference mStatusBarNotifCount;
     CheckBoxPreference mStatusbarSliderPreference;
     CheckBoxPreference mStatusBarAutoHide;
@@ -98,7 +100,7 @@ public class StatusExtras extends SettingsPreferenceFragment implements OnPrefer
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle(R.string.title_status_extras);
-        addPreferencesFromResource(R.xml.extras_settings);
+        addPreferencesFromResource(R.xml.status_extras_settings);
 
         PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver cr = mContext.getContentResolver();
@@ -121,6 +123,7 @@ public class StatusExtras extends SettingsPreferenceFragment implements OnPrefer
         mStatusColor.setNewPreviewColor(intColor);
 **/
         mNotificationWallpaper = findPreference(PREF_NOTIFICATION_WALLPAPER);
+        mResetWallpaper = (Preference) findPreference(PREF_NOTIFICATION_WALLPAPER_RESET);
         mWallpaperAlpha = (Preference) findPreference(PREF_NOTIFICATION_WALLPAPER_ALPHA);
 
         mStatusBarAutoHide = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_AUTO_HIDE);
@@ -145,26 +148,6 @@ public class StatusExtras extends SettingsPreferenceFragment implements OnPrefer
         mShowWifiName = (CheckBoxPreference) findPreference(PREF_NOTIFICATION_SHOW_WIFI_SSID);
         mShowWifiName.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.NOTIFICATION_SHOW_WIFI_SSID, 0) == 1);
-    }
-
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(R.menu.status_extras, menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
-        switch (item.getItemId()) {
-            case R.id.remove_wallpaper:
-                File f = new File(mContext.getFilesDir(), WALLPAPER_NAME);
-                mContext.deleteFile(WALLPAPER_NAME);
-                Helpers.restartSystemUI();
-                return true;
-            default:
-                return super.onContextItemSelected(item);
-        }
     }
 
     private void updateCustomLabelTextSummary() {
@@ -308,6 +291,11 @@ public class StatusExtras extends SettingsPreferenceFragment implements OnPrefer
         } else if (preference == mShowWifiName) {
             Settings.System.putInt(getActivity().getContentResolver(), Settings.System.NOTIFICATION_SHOW_WIFI_SSID,
                     mShowWifiName.isChecked() ? 1 : 0);
+        } else if (preference == mResetWallpaper) {
+            File f = new File(mContext.getFilesDir(), WALLPAPER_NAME);
+            mContext.deleteFile(WALLPAPER_NAME);
+            Helpers.restartSystemUI();
+            return true;
         } else if (preference.getKey().equals("transparency_dialog")) {
             // getFragmentManager().beginTransaction().add(new
             // TransparencyDialog(), null).commit();
