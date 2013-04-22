@@ -39,6 +39,13 @@
         android:summary="@string/header_summary" />
 
      <header
+        android:id="@+id/ribbon_targets"
+        android:fragment="com.xylon.settings.fragments.RibbonTargets"
+        android:icon="@drawable/ic_xy_settings_ribbon"
+        android:title="@string/ribbon_settings_title"
+        android:summary="@string/header_summary" />
+
+     <header
          android:id="@+id/themes"
          android:icon="@drawable/ic_xy_settings_themes"
          android:title="@string/themes_title">

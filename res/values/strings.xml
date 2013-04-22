@@ -31,6 +31,7 @@
     <string name="hybridsettings">Hybrid Properties</string>
     <string name="lockscreen_options">Lockscreen</string>
     <string name="lockscreen">Lockscreen</string>
+    <string name="ribbon">Ribbon</string>
     <string name="weather">Weather</string>
     <string name="tools">Tools</string>
     <string name="bar_cat">Bar</string>
@@ -51,9 +52,11 @@
     <string name="title_power_menu">Power Menu</string>
     <string name="title_led_control">LED Control</string>
     <string name="title_lockscreen">Lockscreen</string>
+    <string name="title_ribbon">Ribbon</string>
     <string name="title_pie">PIE™</string>
     <string name="title_hybridsettings">Hybrid Properties</string>
     <string name="title_clipboard_share">Copy to Clipboard</string>
+    <string name="ribbon_settings_title">Ribbon options</string>
 
     <!-- T-Mobile Theme chooser settings  -->
     <string name="themes_title">Themes</string>
@@ -69,6 +72,7 @@
     <string name="menu_main_activity_change_locale">Locale</string>
     <string name="menu_user_interface_reset">Reset notification wallpaper</string>
     <string name="menu_lockscreens_reset">Reset lockscreen wallpaper</string>
+    <string name="menu_ribbon_reset">Reset ribbon</string>
 
     <!-- General Strings -->
     <string name="advanced_settings">Advanced settings</string>
@@ -496,6 +500,8 @@
     <string name="notifications">Notifications</string>
     <string name="custom_app">Custom app</string>
     <string name="menu_power">Power menu</string>
+    <string name="aokp_ribbon">AOKP Ribbon</string>
+    <string name="nav_widgets">Nav Widgets</string>
     <string name="blank">Blank</string>
     <string name="none">None</string>
     <string name="take_screenshot">Take Screenshot</string>
@@ -742,6 +748,39 @@
     <string name="custom_density_dialog_summary">"Changing your LCD density can cause unexpected app behavior. If you encounter market app incompatibility, please return here and restart the process from step 1."</string>
     <string name="custom_density_dialog_button_got">Got it!</string>
     <string name="custom_density_dialog_button_reboot">Reboot now</string>
+
+   <!-- Ribbon -->
+    <string name="ribbon_instructions">Press icon to select actions or delete</string>
+    <string name="ribbon_targets_cat">Ribbon options</string>
+    <string name="enable_ribbon_text_title">Show app name</string>
+    <string name="enable_ribbon_vibrate_title">Vibrate on touch of swipe area</string>
+    <string name="enable_ribbon_text_summary">Enable the app name text below the icon</string>
+    <string name="ribbon_icon_size_title">Icon size</string>
+    <string name="ribbon_icon_size_summary">Set size of your icons</string>
+    <string name="ribbon_lockscreen">Lockscreen ribbon</string>
+    <string name="ribbon_notifications">Notifications ribbon</string>
+    <string name="ribbon_quicksettings">Quick settings ribbon</string>
+    <string name="ribbon_swipe">AOKP swipe ribbon</string>
+    <string name="clone_title">Choose ribbon to clone</string>
+    <string name="icon_size_normal">Normal</string>
+    <string name="icon_size_20">Medium</string>
+    <string name="icon_size_15">Small</string>
+    <string name="ribbon_left_enable_title">Enable swipe from left</string>
+    <string name="ribbon_right_enable_title">Enable swipe from right</string>
+    <string name="ribbon_bottom_enable_title">Enable swipe from bottom</string>
+    <string name="ribbon_bottom_warning_title">You can not use swipe from bottom with Navbar enabled, must use Navbar AutoHide.</string>
+    <string name="ribbon_color_title">Color of Swipe Ribbon</string>
+    <string name="text_color_title">Color of app label text</string>
+    <string name="ribbon_opacity_title">Opacity of Swipe Ribbon</string>
+    <string name="timeout_spinner_title">Ribbon Auto Timeout</string>
+    <string name="ribbon_drag_handle_width_title">Drag Handle Length</string>
+    <string name="ribbon_drag_handle_height_title">Drag Handle Thickness</string>
+    <string name="ribbon_insert">Insert button</string>
+    <string name="ribbon_handle_location_title">Ribbon Handle Location</string>
+    <string name="ribbon_icon_location_title">Icon gravity</string>
+    <string name="center">Centered</string>
+    <string name="top">Top</string>
+    <string name="bottom">Bottom</string>
 
     <!-- LED -->
     <string name="led_on">LED On</string>
