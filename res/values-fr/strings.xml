@@ -608,7 +608,7 @@
     <string name="ribbon_targets_cat">Options du Ribbon</string>
     <string name="enable_ribbon_text_title">Afficher nom de l\'app</string>
     <string name="enable_ribbon_text_summary">Afficher le nom de l\'app en-dessous de l\'icône</string>
-    <string name="enable_ribbon_vibrate_title">Vibrer au toucher de l'aire de swipe</string>
+    <string name="enable_ribbon_vibrate_title">Vibrer au toucher de l\'aire de swipe</string>
     <string name="ribbon_icon_size_title">Taille des icônes</string>
     <string name="ribbon_icon_size_summary">Définir la taille de vos icônes</string>
     <string name="ribbon_lockscreen">Ribbon Écran de verr.</string>
