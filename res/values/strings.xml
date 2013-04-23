@@ -940,7 +940,7 @@
     <!-- Hybrid -->
     <string name="hybrid_settings_title">Hybrid settings</string>
 
-    <string name="hybridmode_title">Hyrbid Mode</string>
+    <string name="hybridmode_title">Hybrid Mode</string>
     <string name="hybridmode_on">On</string>
     <string name="hybridmode_off">Off</string>
 
