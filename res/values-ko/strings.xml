@@ -687,7 +687,7 @@
     <string name="keyboard_rotation_toggle_title">키보드 강제 회전</string>
     <string name="keyboard_rotation_toggle_summary">키보드가 띄워져 있을 때 화면을 강제로 자동 회전합니다.</string>
     <string name="keyboard_rotation_timeout_title">자동 회전 시간제한</string>
-    <string name="keyboard_rotation_timeout_summary">키보드가 사라진 뒤 <xliff:g id="rotate_timeout">%1$</xliff:g>초가 지난 뒤 자동 회전 센서를 비활성화 합니다.</string>
+    <string name="keyboard_rotation_timeout_summary">키보드가 사라진 뒤 <xliff:g id="rotate_timeout">%1$s</xliff:g>초가 지난 뒤 자동 회전 센서를 비활성화 합니다.</string>
     <string name="keyboard_rotation_dialog">참고 : 이 기능은 키보드가 사용될 때 일시적으로 자동 회전을 활성화합니다. 이미 자동 회전이 활성화 되어있으면 효과가 없습니다.</string>
 
     <!-- General UI | Recents Ram Bar -->
