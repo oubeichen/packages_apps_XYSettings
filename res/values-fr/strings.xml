@@ -624,7 +624,7 @@
     <string name="ribbon_left_enable_title">Swipe par la gauche</string>
     <string name="ribbon_right_enable_title">Swipe par la droite</string>
     <string name="ribbon_bottom_enable_title">Swipe par le bas</string>
-    <string name="ribbon_bottom_warning_title">Vous ne pouvez pas utiliser le Swipe par le bas en ayant la barre de navigation. Utilisez le Pie ou le Hide NavBar.</string>
+    <string name="ribbon_bottom_warning_title">Vous ne pouvez pas utiliser le Swipe par le bas en ayant la barre de navigation. Utilisez le Bureau étendu ou le Hide NavBar.</string>
     <string name="ribbon_color_title">Couleur du Ruban par Swipe</string>
     <string name="text_color_title">Couleur du nom de l\'application</string>
     <string name="ribbon_opacity_title">Opacité du Ruban par Swipe</string>
