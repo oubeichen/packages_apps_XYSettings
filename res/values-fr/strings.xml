@@ -29,6 +29,8 @@
     <string name="sound">Son</string>
     <string name="lockscreen_options">Écran de verrouillage</string>
     <string name="lockscreen">Écran de verrouillage</string>
+    <string name="ribbon">Ruban</string>
+    <string name="ribbon_settings_title">Ruban</string>
     <string name="weather">Météo</string>
     <string name="tools">Outils</string>
     <string name="bar_cat">Barres</string>
@@ -48,9 +50,9 @@
     <string name="title_power_menu">Menu Power</string>
     <string name="title_led_control">Gestion de la LED</string>
     <string name="title_lockscreen">Écran de verrouillage</string>
+    <string name="title_ribbon">Options du Ruban</string>
     <string name="title_hybridsettings">Mode Hybride</string>
     <string name="title_clipboard_share">Presse-Papiers (Copier)</string>
-    <string name="ribbon_settings_title">Options du Ribbon</string>
 
     <!-- T-Mobile Theme chooser settings  -->
     <string name="themes_title">Thèmes</string>
@@ -62,7 +64,7 @@
     <string name="menu_nav_bar_reset">Réini. la barre de nav.</string>
     <string name="menu_user_interface_reset">Réini. l\'arrière-plan de la barre de notif.</string>
     <string name="menu_lockscreens_reset">Réini. l\'arrière-plan de l\'écran de verrouillage</string>
-    <string name="menu_ribbon_reset">Réini. le ribbon</string>
+    <string name="menu_ribbon_reset">Réinitialiser le ruban</string>
 
     <!-- General Strings -->
     <string name="advanced_settings">Paramètres avancés</string>
@@ -545,7 +547,7 @@
     <string name="notification_behaviour_neverexpand">Jamais étendues</string>
     <string name="notification_behaviour_alwaysexpand">Toujours étendues</string>
     <string name="notification_behaviour_oldstyle">Ancien style</string>
-    <string name="notification_show_wifi_ssid_title">Afficher nom du réseau WiFi</string>
+    <string name="notification_show_wifi_ssid_title">Afficher nom du réseau Wi-Fi</string>
     <string name="notification_show_wifi_ssid_summary">Afficher le nom du réseau Wi-Fi actuellement utilisé dans la barre de notification étendue</string>
     <string name="notification_wallpaper_title">Choisir l\'arrière-plan des notifications</string>
     <string name="notification_wallpaper_summary">Vous pouvez enlever l\'arrière-plan en allant dans le Menu de cette fenêtre.</string>
@@ -605,17 +607,17 @@
 
    <!-- Ribbon -->
     <string name="ribbon_instructions">Appuyer sur l\'icône pour le modifier</string>
-    <string name="ribbon_targets_cat">Options du Ribbon</string>
-    <string name="enable_ribbon_text_title">Afficher nom de l\'app</string>
-    <string name="enable_ribbon_text_summary">Afficher le nom de l\'app en-dessous de l\'icône</string>
+    <string name="ribbon_targets_cat">Options du Ruban</string>
+    <string name="enable_ribbon_text_title">Afficher le nom de l\'appli</string>
+    <string name="enable_ribbon_text_summary">Afficher le nom de l\'appli en-dessous de l\'icône</string>
     <string name="enable_ribbon_vibrate_title">Vibrer au toucher de l\'aire de swipe</string>
     <string name="ribbon_icon_size_title">Taille des icônes</string>
     <string name="ribbon_icon_size_summary">Définir la taille de vos icônes</string>
-    <string name="ribbon_lockscreen">Ribbon Écran de verr.</string>
-    <string name="ribbon_notifications">Ribbon Notifications</string>
-    <string name="ribbon_quicksettings">Ribbon Quick Settings</string>
-    <string name="ribbon_swipe">Ribbon AOKP (swipe)</string>
-    <string name="clone_title">Choisir le ribbon à cloner</string>
+    <string name="ribbon_lockscreen">Ruban Écran de verrouillage</string>
+    <string name="ribbon_notifications">Ruban Notifications</string>
+    <string name="ribbon_quicksettings">Ruban Quick Settings</string>
+    <string name="ribbon_swipe">Ruban AOKP (swipe)</string>
+    <string name="clone_title">Choisir le ruban à cloner</string>
     <string name="icon_size_normal">Normal</string>
     <string name="icon_size_20">Moyen</string>
     <string name="icon_size_15">Petit</string>
@@ -623,15 +625,15 @@
     <string name="ribbon_right_enable_title">Swipe par la droite</string>
     <string name="ribbon_bottom_enable_title">Swipe par le bas</string>
     <string name="ribbon_bottom_warning_title">Vous ne pouvez pas utiliser le Swipe par le bas en ayant la barre de navigation. Utilisez le Pie ou le Hide NavBar.</string>
-    <string name="ribbon_color_title">Couleur du Ribbon Swipe</string>
-    <string name="text_color_title">Couleur du nom de l\'icône</string>
-    <string name="ribbon_opacity_title">Opacité du Ribbon Swipe</string>
-    <string name="timeout_spinner_title">Délai du Ribbon</string>
+    <string name="ribbon_color_title">Couleur du Ruban par Swipe</string>
+    <string name="text_color_title">Couleur du nom de l\'application</string>
+    <string name="ribbon_opacity_title">Opacité du Ruban par Swipe</string>
+    <string name="timeout_spinner_title">Délai avant disparition du Ruban</string>
     <string name="ribbon_drag_handle_width_title">Largeur de la poignée</string>
     <string name="ribbon_drag_handle_height_title">Hauteur de la poignée</string>
     <string name="ribbon_insert">Insérer un bouton</string>
     <string name="ribbon_handle_location_title">Emplacement de la poignée</string>
-    <string name="ribbon_icon_location_title">Gravité icône</string>
+    <string name="ribbon_icon_location_title">Gravité des icônes</string>
     <string name="center">Centrer</string>
     <string name="top">En haut</string>
     <string name="bottom">En bas</string>
