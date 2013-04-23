@@ -41,15 +41,18 @@
     <string name="title_quick_toggles">빠른 토글</string>
     <string name="title_power_widget">전원 위젯</string>
     <string name="title_statusbar_signal">신호</string>
-    <string name="title_statusbar">상태바</string>
+    <string name="title_statusbar">배터리</string>
+    <string name="title_status_extras">기타</string>
     <string name="title_navbar">소프트 키</string>
     <string name="title_spen">S펜 제스쳐</string>
     <string name="title_navring">소프트 키 링</string>
     <string name="title_power_menu">전원 메뉴</string>
-    <string name="title_led_control">LED 컨트롤</string>
+    <string name="title_led_control">LED</string>
+    <string name="title_ribbon">리본</string>
     <string name="title_pie">파이™</string>
     <string name="title_hybridsettings">하이브리드 설정</string>
     <string name="title_clipboard_share">클립보드로 공유</string>
+    <string name="ribbon_settings_title">리본</string>
 
     <!-- T-Mobile Theme chooser settings  -->
     <string name="themes_title">테마</string>
@@ -75,9 +78,10 @@
     <string name="menu_main_activity_change_locale">언어</string>
     <string name="menu_user_interface_reset">알림창 배경화면 초기화</string>
     <string name="menu_lockscreens_reset">잠금화면 배경화면 초기화</string>
+    <string name="menu_ribbon_reset">리본 초기화</string>
 
     <!-- General Strings -->
-    <string name="advanced_settings">고급 설정</string>
+    <string name="advanced_settings">고급</string>
     <string name="misc_short">기타</string>
     <string name="custom_app_icon_successfully">"의 아이콘이 정상적으로 설정됨"</string>
     <string name="select_custom_app_title">사용자 지정 앱 선택</string>
@@ -170,7 +174,7 @@
     <string name="uppercase">대문자</string>
 
     <!-- Pie controls -->
-    <string name="pie_controls_title">컨트롤</string>
+    <string name="pie_controls_title">조작</string>
     <string name="pie_controls_summary">@null</string>
     <string name="enable_pie_title">파이 활성화</string>
     <string name="pie_targets_title">타켓</string>
@@ -215,7 +219,7 @@
     <string name="pie_trigger_big">크게</string>
     <string name="pie_trigger_huge">매우 크게</string>
 
-    <string name="pie_restart_launcher_title">활성화/비활성화시 런쳐가 다시 시작합니다.</string>
+    <string name="pie_restart_launcher_title">활성화/비활성화시 런쳐 다시 시작</string>
     <string name="pie_restart_launcher_summary">화면 크기를 조정하는 것은 불리한 영향을 가져올 수 있습니다. 이 옵션은 런쳐가 정상적으로 회복하게 만들며, 약간의 블랙아웃 현상이 있습니다. (권장사항)</string>
 
     <!-- The Loner -->
@@ -305,7 +309,7 @@
     <string name="toggle_style_summary">토글이 어떻게 보일지 설정합니다.</string>
     <string name="toggles_layout_title">토글 레이아웃</string>
     <string name="toggles_per_row_title">한 줄당 토글의 수</string>
-    <string name="toggles_per_row_summary">한 줄당 몇개의 토글을 보일지 설정합니다.</string>
+    <string name="toggles_per_row_summary">한 줄당 몇 개의 토글을 보일지 설정합니다.</string>
     <string name="toggles_style_title">토글 스타일</string>
     <string name="toggles_style_summary">알림 (예전 방식) 또는 타일</string>
     <string name="toggles_display_close">닫기</string>
@@ -417,7 +421,7 @@
     <string name="power_widget_summary">전원 위젯에 사용할 항목을 사용자화합니다.</string>
     <string name="title_expanded_widget">전원 위젯</string>
     <string name="power_widget_buttons">위젯 버튼</string>
-    <string name="power_widget_behavior">위젯 설정</string>
+    <string name="power_widget_behavior">위젯</string>
     <string name="title_expanded_hide_onchange">상태 변경 후 서랍 닫기</string>
     <string name="title_expanded_hide_indicator">상태 표시 숨기기</string>
     <string name="title_expanded_hide_scrollbar">스크롤바 숨기기</string>
@@ -461,7 +465,7 @@
     <string name="cm_sound_mode_soundVibrate">소리 + 진동</string>
     <string name="pref_flash_mode_title">손전등</string>
     <string name="expanded_haptic_feedback_title">터치 시 진동 반응</string>
-    <string name="power_widget_additional_options_cat">부가 옵션</string>
+    <string name="power_widget_additional_options_cat">부가 설정</string>
     <string name="brightness_location_title">밝기 조정 바 위치</string>
     <string name="brightness_slider_top">위</string>
     <string name="brightness_slider_bottom">아래</string>
@@ -485,6 +489,8 @@
     <string name="notifications">알림</string>
     <string name="custom_app">사용자 지정 앱</string>
     <string name="menu_power">전원 메뉴</string>
+    <string name="aokp_ribbon">AOKP 리본</string>
+    <string name="nav_widgets">소프트 키 위젯</string>
     <string name="blank">비워둠</string>
     <string name="none">없음</string>
     <string name="take_screenshot">스크린샷 찍기</string>
@@ -493,11 +499,11 @@
     <string name="ring_vib_silent">벨소리/진동/무음</string>
     <string name="screen_off">화면 끄기</string>
     <string name="google_now">구글 나우</string>
-    <string name="one_target">1 타켓</string>
-    <string name="two_targets">2 타켓</string>
-    <string name="three_targets">3 타켓</string>
-    <string name="four_targets">4 타켓</string>
-    <string name="five_targets">5 타켓</string>
+    <string name="one_target">1개</string>
+    <string name="two_targets">2개</string>
+    <string name="three_targets">3개</string>
+    <string name="four_targets">4개</string>
+    <string name="five_targets">5개</string>
     <string name="always_show_invincible_icons">항상 보임 (투명)</string>
     <string name="always_show">항상 보임</string>
     <string name="default_jb_with_invincible_icons_when_hidden">기본 젤리빈 설정 (숨겨질 때 투명)</string>
@@ -528,7 +534,7 @@
 
     <!-- Navigation Bar (Strings) -->
     <string name="navbar_button_cat">소프트 키 버튼</string>
-    <string name="navbar_hide">소프트 키 숨기기 옵션</string>
+    <string name="navbar_hide">소프트 키 숨기기</string>
     <string name="title_pref_menu_display">메뉴 위치</string>
     <string name="summary_pref_menu_display">큰 메뉴 버튼을 사용하고 있다면 기존의 메뉴 버튼을 지워 주십시오.</string>
     <string name="title_pref_navigation_menu_display">메뉴 가시성</string>
@@ -567,8 +573,8 @@
     <string name="statusbar_hide_summary">상태바가 완전히 숨겨지도록 합니다.</string>
     <string name="navigation_bar_alpha_title">상태바와 소프트 키 배경의 투명도</string>
     <string name="navbar_hide_enable_title">소프트 키 숨기기</string>
-    <string name="drag_handle_opacity_title">소프트 키 핸들의 투명도</string>
-    <string name="drag_handle_width_title">소프트 키 핸들의 너비</string>
+    <string name="drag_handle_opacity_title">핸들의 투명도</string>
+    <string name="drag_handle_width_title">핸들의 너비</string>
     <string name="title_navbar_timeout">소프트 키 표시 시간제한</string>
     <string name="summary_navbar_timeout">소프트 키가 표시되는 시간을 제한합니다.</string>
     <string name="glow_times_title">소프트 키 반응 속도</string>
@@ -577,7 +583,7 @@
     <string name="navbar_actiontitle_menu">활동 : %1$s</string>
     <string name="navbar_longpress_menu">길게 누를시 활동 : %1$s</string>
     <string name="navbar_icon_menu">사용자 지정 아이콘</string>
-    <string name="navbar_delete_menu">소프트 키 제거</string>
+    <string name="navbar_delete_menu">제거</string>
 
     <!-- Auto-Hide Status Bar -->
     <string name="auto_hide_statusbar">상태바 자동 숨김</string>
@@ -658,17 +664,17 @@
 
     <!-- General UI | Tablet Mode -->
 
-    <string name="tablet_cat">태블릿 옵션</string>
+    <string name="tablet_cat">태블릿</string>
     <string name="hide_extras">엑스트라 숨기기</string>
     <string name="hide_extras_summary">시스템 바 항목 숨기기</string>
 
     <!-- General UI | CRT Animation Modifications -->
 
-    <string name="display_category_animation_options_title">애니메이션 옵션</string>
-    <string name="system_power_crt_screen_off_title">CRT 방식 화면 끄기</string>
-    <string name="system_power_crt_screen_off_summary">화면이 꺼질 때 CRT 애니메이션과 같이 꺼집니다.</string>
+    <string name="display_category_animation_options_title">CRT 애니메이션</string>
+    <string name="system_power_crt_screen_off_title">CRT 애니메이션 사용</string>
+    <string name="system_power_crt_screen_off_summary">화면이 꺼질 때 CRT 애니메이션을 사용합니다.</string>
     <string name="system_power_crt_mode_title">CRT 애니메이션 옵션</string>
-    <string name="system_power_crt_mode_dialog_title">CRT 애니메이션 보이기</string>
+    <string name="system_power_crt_mode_dialog_title">CRT 애니메이션 사용</string>
     <string name="system_power_crt_mode_horizontal">수평 방향</string>
     <string name="system_power_crt_mode_vertical">수직 방향</string>
     <string name="system_power_crt_mode_both">기기의 방향에 따름</string>
@@ -681,7 +687,7 @@
     <string name="keyboard_rotation_toggle_title">키보드 강제 회전</string>
     <string name="keyboard_rotation_toggle_summary">키보드가 띄워져 있을 때 화면을 강제로 자동 회전합니다.</string>
     <string name="keyboard_rotation_timeout_title">자동 회전 시간제한</string>
-    <string name="keyboard_rotation_timeout_summary">키보드가 사라진 뒤 <xliff:g id="rotate_timeout">%1$s</xliff:g>초가 지난 뒤 자동 회전 센서를 비활성화 합니다.</string>
+    <string name="keyboard_rotation_timeout_summary">키보드가 사라진 뒤 <xliff:g id="rotate_timeout">%1$</xliff:g>초가 지난 뒤 자동 회전 센서를 비활성화 합니다.</string>
     <string name="keyboard_rotation_dialog">참고 : 이 기능은 키보드가 사용될 때 일시적으로 자동 회전을 활성화합니다. 이미 자동 회전이 활성화 되어있으면 효과가 없습니다.</string>
 
     <!-- General UI | Recents Ram Bar -->
@@ -734,6 +740,39 @@
     <string name="custom_density_dialog_summary">"Changing your LCD density can cause unexpected app behavior. If you encounter market app incompatibility, please return here and restart the process from step 1."</string>
     <string name="custom_density_dialog_button_got">Got it!</string>
     <string name="custom_density_dialog_button_reboot">Reboot like a bau5</string>
+
+   <!-- Ribbon -->
+    <string name="ribbon_instructions">아이콘을 눌러 활돌을 선택하거나 제거합니다.</string>
+    <string name="ribbon_targets_cat">리본 설정</string>
+    <string name="enable_ribbon_text_title">앱 이름 보이기</string>
+    <string name="enable_ribbon_vibrate_title">스와이프 구역을 터치시 햅틱 피드백</string>
+    <string name="enable_ribbon_text_summary">아이콘 아래에 앱 이름이 보이도록 합니다.</string>
+    <string name="ribbon_icon_size_title">아이콘 크기</string>
+    <string name="ribbon_icon_size_summary">아이콘 크기를 설정합니다.</string>
+    <string name="ribbon_lockscreen">잠금화면 리본</string>
+    <string name="ribbon_notifications">알림창 리본</string>
+    <string name="ribbon_quicksettings">빠른 토글 리본</string>
+    <string name="ribbon_swipe">AOKP 스와이프 리본</string>
+    <string name="clone_title">복제할 리본을 선택합니다.</string>
+    <string name="icon_size_normal">일반</string>
+    <string name="icon_size_20">중간</string>
+    <string name="icon_size_15">작게</string>
+    <string name="ribbon_left_enable_title">왼쪽으로부터 스와이프 활성화</string>
+    <string name="ribbon_right_enable_title">오른쪽으로부터 스와이프 활성화</string>
+    <string name="ribbon_bottom_enable_title">아래로부터 스와이프 활성화</string>
+    <string name="ribbon_bottom_warning_title">소프트 키가 있을 동안에는 아래로부터 스와이프할 수 없습니다. 소프트 키를 숨긴 뒤 사용해 주십시오.</string>
+    <string name="ribbon_color_title">스와이프 리본 색상</string>
+    <string name="text_color_title">앱 이름 색상</string>
+    <string name="ribbon_opacity_title">리본 투명도</string>
+    <string name="timeout_spinner_title">리본 자동숨김</string>
+    <string name="ribbon_drag_handle_width_title">핸들 너비</string>
+    <string name="ribbon_drag_handle_height_title">핸들 두께</string>
+    <string name="ribbon_insert">버튼 추가</string>
+    <string name="ribbon_handle_location_title">핸들 위치</string>
+    <string name="ribbon_icon_location_title">아이콘 배치</string>
+    <string name="center">중앙</string>
+    <string name="top">위로부터</string>
+    <string name="bottom">아래로부터</string>
 
     <!-- LED -->
     <string name="led_on">LED 켜기</string>
@@ -876,6 +915,8 @@
     <string name="lockscreen_background_default_wallpaper">기본 배경화면 </string>
     <string name="see_through_title">들여다 보기</string>
     <string name="see_through_summary">잠금화면에서 구동중인 앱 화면을 들여다 볼 수 있습니다.</string>
+    <string name="ls_color_alpha_title">잠금화면 색조</string>
+    <string name="ls_color_alpha_summary">잠금화면의 색조를 변경합니다.</string>
 
     <!--- Lock clock -->
     <string name="lock_clock_title">시계 위젯</string>
@@ -891,6 +932,10 @@
 
     <!-- Hybrid -->
     <string name="hybrid_settings_title">하이브리드 설정</string>
+
+    <string name="hybridmode_title">하이브리드 모드</string>
+    <string name="hybridmode_on">켬</string>
+    <string name="hybridmode_off">끔</string>
 
     <string name="uimode_title">UI 모드</string>
     <string name="uimode_phone">폰 (360dp)</string>
@@ -955,7 +1000,7 @@
     <string name="navbar_height_title">소프트 키 높이</string>
 
     <string name="alert_reboot">다시 부팅 필요</string>
-    <string name="alert_reboot_message">이 변경은 다시 부팅을 필요로 합니다. 다시 부팅하겠습니까?</string>
+    <string name="alert_reboot_message">이 변경은 다시 부팅을 필요로 합니다.  \n다시 부팅하겠습니까?</string>
 	
 
 </resources>
