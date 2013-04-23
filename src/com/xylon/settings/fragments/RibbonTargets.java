@@ -500,13 +500,7 @@ public class RibbonTargets extends SettingsPreferenceFragment implements
         boolean navbarZero = Integer.parseInt(ExtendedPropertiesUtils.getProperty(
                 "com.android.systemui.navbar.dpi", "100")) == 0 && !expanded;
         if (arrayNum == 2) {
-            if (hasNavBarByDefault || navbarZero) {
-                mEnableBottomWarning.setVisibility(View.VISIBLE);
-                mEnableBottomSwitch.setEnabled(false);
-            } else {
-                mEnableBottomWarning.setVisibility(View.GONE);
-                mEnableBottomSwitch.setEnabled(true);
-            }
+            mEnableBottomWarning.setVisibility(View.VISIBLE);
             mEnableBottomSwitch.setVisibility(View.VISIBLE);
             mEnableBottomText.setVisibility(View.VISIBLE);
             mEnableLeftSwitch.setVisibility(View.VISIBLE);
