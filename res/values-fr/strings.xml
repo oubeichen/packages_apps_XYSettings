@@ -62,8 +62,9 @@
 
     <!-- Menu Strings -->
     <string name="menu_nav_bar_reset">Réini. la barre de nav.</string>
-    <string name="menu_user_interface_reset">Réini. l\'arrière-plan de la barre de notif.</string>
+    <string name="menu_user_interface_reset">Réini. de l\'arrière-plan des notifications</string>
     <string name="menu_lockscreens_reset">Réini. l\'arrière-plan de l\'écran de verrouillage</string>
+    <string name="menu_ribbon_rearrange">Réarranger le ruban</string>
     <string name="menu_ribbon_reset">Réinitialiser le ruban</string>
 
     <!-- General Strings -->
@@ -606,10 +607,14 @@
     <string name="ram_bar_button_reset">Réinitialiser les couleurs</string>
 
    <!-- Ribbon -->
+    <string name="ribbon_dialog_arrange_title">Disposition du ruban</string>
     <string name="ribbon_instructions">Appuyer sur l\'icône pour le modifier</string>
     <string name="ribbon_targets_cat">Options du Ruban</string>
     <string name="enable_ribbon_text_title">Afficher le nom de l\'appli</string>
     <string name="enable_ribbon_text_summary">Afficher le nom de l\'appli en-dessous de l\'icône</string>
+    <string name="ribbon_icon_vibrate_title">Vibrer à l\'appui d\'élément</string>
+    <string name="ribbon_icon_space_title">Espace horizontal du ruban</string>
+    <string name="ribbon_icon_space_vertical_title">Espace vertical du ruban</string>
     <string name="enable_ribbon_vibrate_title">Vibrer au toucher de l\'aire de swipe</string>
     <string name="ribbon_icon_size_title">Taille des icônes</string>
     <string name="ribbon_icon_size_summary">Définir la taille de vos icônes</string>
@@ -765,6 +770,8 @@
     <string name="lockscreen_background_default_wallpaper">Fond d\'écran par défaut</string>
     <string name="see_through_title">Voir à travers</string>
     <string name="see_through_summary">Permettre de voir l\'application en cours à travers l\'écran de verrouillage</string>
+    <string name="ls_color_alpha_title">Teinte de l\'écran</string>
+    <string name="ls_color_alpha_summary">Changer la couleur de la teinte de l\'écran de verrouillage.</string>
 
     <!-- Lock Screen -->
     <string name="lockscreen_auto_rotate_title">Rotation auto. de l\'écran de verr.</string>
@@ -775,8 +782,6 @@
     <string name="lockscreen_unlimited_widgets_summary">Attention ** Ajouter trop de widgets peut causer des problèmes de lag avec les principaux lockscreen.</string>
     <string name="lockscreen_longpress_challenge_title">Déverrouiller par Appui Long</string>
     <string name="lockscreen_longpress_challenge_summary">Cela permet à votre appareil d\'être déverrouillé avec les widgets maximisés par un appui long sur l\'icône de verrouillage.</string>
-    <string name="ls_color_alpha_title">Teinte de l\'écran</string>
-    <string name="ls_color_alpha_summary">Permettre de changer la teinte de l\'écran de verrouillage.</string>
 
     <!--- Lock clock -->
     <string name="lock_clock_title">Widget cLock</string>
