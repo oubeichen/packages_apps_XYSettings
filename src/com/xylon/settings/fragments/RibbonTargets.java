@@ -1,4 +1,3 @@
-
 package com.xylon.settings.fragments;
 
 import java.net.URISyntaxException;
@@ -987,7 +986,7 @@ public class RibbonTargets extends SettingsPreferenceFragment implements
     }
 
     public class RibbonDialogReceiver extends BroadcastReceiver {
-        public static final String ACTION_RIBBON_DIALOG_DISMISS = "com.aokp.romcontrol.ACTION_RIBBON_DIALOG_DISMISS";
+        public static final String ACTION_RIBBON_DIALOG_DISMISS = "com.xylon.settings.ACTION_RIBBON_DIALOG_DISMISS";
 
         @Override
         public void onReceive(Context context, Intent intent) {
