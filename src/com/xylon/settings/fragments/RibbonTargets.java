@@ -541,12 +541,16 @@ public class RibbonTargets extends SettingsPreferenceFragment implements
                 com.android.internal.R.bool.config_showNavigationBar);
         boolean navBarAutoHide = Settings.System.getBoolean(mContentRes,
                     Settings.System.NAV_HIDE_ENABLE, false);
-        boolean expanded = Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.EXPANDED_DESKTOP_STATE, 0) == 1;
         boolean navbarZero = Integer.parseInt(ExtendedPropertiesUtils.getProperty(
-                "com.android.systemui.navbar.dpi", "100")) == 0 && !expanded;
+                    "com.android.systemui.navbar.dpi", "100")) == 0;
         if (arrayNum == 2) {
-            mEnableBottomWarning.setVisibility(View.VISIBLE);
+            if (!navbarZero) {
+                mEnableBottomWarning.setVisibility(View.VISIBLE);
+                mEnableBottomSwitch.setEnabled(false);
+            } else {
+                mEnableBottomWarning.setVisibility(View.GONE);
+                mEnableBottomSwitch.setEnabled(true);
+            }
             mEnableBottomSwitch.setVisibility(View.VISIBLE);
             mEnableBottomText.setVisibility(View.VISIBLE);
             mEnableLeftSwitch.setVisibility(View.VISIBLE);
