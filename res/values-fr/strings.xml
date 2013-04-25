@@ -613,11 +613,12 @@
     <string name="enable_ribbon_text_title">Afficher le nom de l\'appli</string>
     <string name="enable_ribbon_text_summary">Afficher le nom de l\'appli en-dessous de l\'icône</string>
     <string name="ribbon_icon_vibrate_title">Vibrer à l\'appui d\'élément</string>
-    <string name="ribbon_icon_space_title">Espace horizontal du ruban</string>
-    <string name="ribbon_icon_space_vertical_title">Espace vertical du ruban</string>
+    <string name="ribbon_icon_space_title">Espace horizontal entre icônes</string>
+    <string name="ribbon_icon_space_vertical_title">Espace vertical entre icônes</string>
     <string name="enable_ribbon_vibrate_title">Vibrer au toucher de l\'aire de swipe</string>
     <string name="ribbon_icon_size_title">Taille des icônes</string>
     <string name="ribbon_icon_size_summary">Définir la taille de vos icônes</string>
+    <string name="ribbon_button_colorize_title">Couleur icône et texte identique</string>
     <string name="ribbon_lockscreen">Ruban Écran de verrouillage</string>
     <string name="ribbon_notifications">Ruban Notifications</string>
     <string name="ribbon_quicksettings">Ruban Quick Settings</string>
@@ -636,7 +637,7 @@
     <string name="timeout_spinner_title">Délai avant disparition du Ruban</string>
     <string name="ribbon_drag_handle_width_title">Largeur de la poignée</string>
     <string name="ribbon_drag_handle_height_title">Hauteur de la poignée</string>
-    <string name="ribbon_insert">Insérer un bouton</string>
+    <string name="ribbon_insert">Ajouter un bouton à la suite</string>
     <string name="ribbon_handle_location_title">Emplacement de la poignée</string>
     <string name="ribbon_icon_location_title">Gravité des icônes</string>
     <string name="center">Centrer</string>
