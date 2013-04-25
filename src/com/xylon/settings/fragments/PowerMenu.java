@@ -1,4 +1,3 @@
-
 package com.xylon.settings.fragments;
 
 import android.content.res.Resources;
@@ -25,12 +24,14 @@ public class PowerMenu extends SettingsPreferenceFragment implements OnPreferenc
     private static final String PREF_AIRPLANE_TOGGLE = "show_airplane_toggle";
     private static final String PREF_EXPANDED_DESKTOP = "power_menu_expanded_desktop";
     private static final String PREF_NAVBAR_HIDE = "show_navbar_hide";
+    private static final String PREF_VOLUME_STATE_TOGGLE = "show_volume_state_toggle";
     private static final String PREF_REBOOT_KEYGUARD = "show_reboot_keyguard";
 
     ListPreference mExpandedDesktopPref;
     SwitchPreference mShowScreenShot;
     SwitchPreference mShowAirplaneToggle;
     SwitchPreference mShowNavBarHide;
+    SwitchPreference mShowVolumeStateToggle;
     SwitchPreference mShowRebootKeyguard;
 
     @Override
@@ -77,6 +78,11 @@ public class PowerMenu extends SettingsPreferenceFragment implements OnPreferenc
                 .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_NAVBAR_HIDE, false));
         mShowNavBarHide.setOnPreferenceChangeListener(this);
 
+        mShowVolumeStateToggle = (SwitchPreference) findPreference(PREF_VOLUME_STATE_TOGGLE);
+        mShowVolumeStateToggle.setChecked(Settings.System.getBoolean(getActivity()
+                .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_VOLUME_STATE_TOGGLE, true));
+        mShowVolumeStateToggle.setOnPreferenceChangeListener(this);
+
         mShowRebootKeyguard = (SwitchPreference) findPreference(PREF_REBOOT_KEYGUARD);
         mShowRebootKeyguard.setChecked(Settings.System.getBoolean(getActivity()
                 .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_REBOOT_KEYGUARD, true));
@@ -118,6 +124,11 @@ public class PowerMenu extends SettingsPreferenceFragment implements OnPreferenc
         } else if (preference == mShowNavBarHide) {
             Settings.System.putBoolean(getActivity().getContentResolver(),
                     Settings.System.POWER_DIALOG_SHOW_NAVBAR_HIDE,
+                    (Boolean) newValue);
+            return true;
+        } else if (preference == mShowVolumeStateToggle) {
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.POWER_DIALOG_SHOW_VOLUME_STATE_TOGGLE,
                     (Boolean) newValue);
             return true;
         } else if (preference == mShowRebootKeyguard) {
