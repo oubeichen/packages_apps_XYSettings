@@ -125,6 +125,7 @@
     <string name="expanded_desktop_only_nav_bar">Hide navigation bar</string>
     <string name="expanded_desktop_only_status_bar">Hide status bar</string>
     <string name="expanded_desktop_both_hidden">Hide navigation and status bar</string>
+    <string name="title_show_volume_state_toggle">Volume states</string>
     <string name="title_show_navbar_hide">Navigation bar menu</string>
     <string name="title_show_reboot_keyguard">Reboot option on lockscreen</string>
 
