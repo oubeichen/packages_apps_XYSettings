@@ -76,6 +76,7 @@
     <!-- Menu Strings -->
     <string name="menu_nav_bar_reset">소프트 키 초기화</string>
     <string name="menu_main_activity_change_locale">언어</string>
+    <string name="menu_ribbon_rearrange">리본 재배치</string>
     <string name="menu_user_interface_reset">알림창 배경화면 초기화</string>
     <string name="menu_lockscreens_reset">잠금화면 배경화면 초기화</string>
     <string name="menu_ribbon_reset">리본 초기화</string>
@@ -129,7 +130,7 @@
     <string name="expanded_desktop_only_nav_bar">소프트 키 숨김</string>
     <string name="expanded_desktop_only_status_bar">상태바 숨김</string>
     <string name="expanded_desktop_both_hidden">상태바 및 소프트 키 숨김</string>
-    <string name="title_show_navbar_hide">소프트 키 메뉴</string>
+    <string name="title_show_navbar_hide">소프트 키 컨트롤</string>
     <string name="title_show_reboot_keyguard">잠금화면에서 다시 부팅 메뉴 보이기</string>
 
     <!-- Status Bar Headers -->
@@ -220,11 +221,11 @@
     <string name="pie_trigger_huge">매우 크게</string>
 
     <string name="pie_restart_launcher_title">활성화/비활성화시 런쳐 다시 시작</string>
-    <string name="pie_restart_launcher_summary">화면 크기를 조정하는 것은 불리한 영향을 가져올 수 있습니다. 이 옵션은 런쳐가 정상적으로 회복하게 만들며, 약간의 블랙아웃 현상이 있습니다. (권장사항)</string>
+    <string name="pie_restart_launcher_summary">화면 크기를 조정하는 것은 좋지 않은 영향을 가져올 수 있습니다. \n이 옵션은 런쳐가 정상적으로 회복하게 만들며, 약간의 블랙아웃 현상이 있습니다. (권장사항)</string>
 
     <!-- The Loner -->
-    <string name="pie_menu_title">메뉴 버튼 항상 유지</string>
-    <string name="pie_menu_summary">필요하지 않을 때라도 메뉴 버튼을 유지합니다.</string>
+    <string name="pie_menu_title">메뉴 버튼 항상 표시</string>
+    <string name="pie_menu_summary">필요하지 않을 때라도 메뉴 버튼을 표시합니다.</string>
 
     <string name="pie_search_title">검색 버튼</string>
     <string name="pie_search_summary">검색 버튼을 파이에 추가합니다.</string>
@@ -236,7 +237,7 @@
     <string name="pie_center_summary">발생 영역의 중앙에 파이를 위치합니다.</string>
 
     <string name="pie_stick_title">회전 방지</string>
-    <string name="pie_stick_summary">화면 회전에도 파이의 위치를 변경하지 않습니다.</string>
+    <string name="pie_stick_summary">화면 회전시에도 파이의 위치를 변경하지 않습니다.</string>
 
     <!-- The Colors -->
     <string name="pie_color_title">색상 설정</string>
@@ -256,7 +257,7 @@
     <string name="text_only">텍스트</string>
     <string name="icon_w_text">아이콘 (오른쪽 텍스트)</string>
     <string name="icon_w_center_text">아이콘 (중앙 텍스트)</string>
-    <string name="circle_mod">AOKP 스타일의 원형 아이콘</string>
+    <string name="circle_mod">AOKP 스타일 원형 아이콘</string>
     <string name="circle_battery">원형 아이콘 (% 없음)</string>
     <string name="circle_battery_w_percent">원형 아이콘 (% 있음 + 점 없음)</string>
     <string name="circle_dotted_w_percent">원형 아이콘 (% 있음 + 점 있음)</string>
@@ -338,7 +339,7 @@
     <string name="toggle_style_tile">타일</string>
     <string name="toggle_style_traditional">알림 (예전 방식)</string>
     <string name="toggle_style_scrollable">알림 (예전 방식 + 스크롤)</string>
-    <string name="toggle_swap_handle_side">Drag handle on right</string>
+    <string name="toggle_swap_handle_side">드래그 핸들을 오른쪽에 배치</string>
     <string name="add_toggles">Change toggles</string>
     <string name="screenshot_delay_title">스크린샷 딜레이</string>
     <string name="screenshot_delay_summary">스크린샷 토글 사용후 작동까지의 딜레이를 설정합니다.</string>
@@ -638,15 +639,15 @@
     <!-- General UI | Other Modifications unknown -->
 
     <string name="custom_carrier_label_title">사용자 지정 통신사 문구</string>
-    <string name="custom_carrier_label_explain">새로운 문구를 입력해 주십시오, 적지 않으면 원본 설정을 적용합니다.</string>
+    <string name="custom_carrier_label_explain">새로운 문구를 입력해 주십시오. \n적지 않으면 원본 설정을 적용합니다.</string>
     <string name="custom_carrier_label_notset">사용자 지정 통신사 문구 지정되지 않음</string>
     <string name="status_bar_notif_count_title">알림 온 횟수 표시</string>
     <string name="status_bar_notif_count_summary">상태바에 알림이 온 횟수를 표시합니다.</string>
-    <string name="show_overflow_title">인앱 메뉴 버튼 표시</string>
+    <string name="show_overflow_title">인 앱 메뉴 버튼 표시</string>
     <string name="show_overflow_summary">앱에 포함되어 있는 메뉴 버튼을 표시합니다.</string>
     <string name="show_overflow_toast_enable">앱을 다시 시작하기 전까지는 메뉴 버튼이 보여지지 않을 것입니다.</string>
     <string name="show_overflow_toast_disable">앱을 다시 시작하시 전까지는 메뉴 버튼이 숨겨지지 않을 것입니다.</string>
-    <string name="notification_behaviour_title">알림창 설정</string>
+    <string name="notification_behaviour_title">알림 설정</string>
     <string name="notification_behaviour_normal">일반</string>
     <string name="notification_behaviour_neverexpand">확장되지 않음</string>
     <string name="notification_behaviour_alwaysexpand">항상 확장되어 있음</string>
@@ -687,20 +688,20 @@
     <string name="keyboard_rotation_toggle_title">키보드 강제 회전</string>
     <string name="keyboard_rotation_toggle_summary">키보드가 띄워져 있을 때 화면을 강제로 자동 회전합니다.</string>
     <string name="keyboard_rotation_timeout_title">자동 회전 시간제한</string>
-    <string name="keyboard_rotation_timeout_summary">키보드가 사라진 뒤 <xliff:g id="rotate_timeout">%1$</xliff:g>초가 지난 뒤 자동 회전 센서를 비활성화 합니다.</string>
+    <string name="keyboard_rotation_timeout_summary">키보드가 사라진 뒤 <xliff:g id="rotate_timeout">%1$s</xliff:g>초가 지난 뒤 자동 회전 센서를 비활성화 합니다.</string>
     <string name="keyboard_rotation_dialog">참고 : 이 기능은 키보드가 사용될 때 일시적으로 자동 회전을 활성화합니다. 이미 자동 회전이 활성화 되어있으면 효과가 없습니다.</string>
 
     <!-- General UI | Recents Ram Bar -->
     <string name="ram_bar">가용 메모리 바</string>
     <string name="ram_bar_note_title">참고</string>
-    <string name="ram_bar_note_summary">이 RAM바는 안드로이드가 얼마나 램을 사용하는지 보여줍니다. 장치가 빠르게 앱을 열 수 있도록 앱이 백그라운드에서 열려 캐시 된 것이 도움이 되오니, 이용에 참고하여 주십시오. 안드로이드 메모리 (RAM) 관리 작동 방법에 대한 자세한 설명은 메뉴의 도움말을 따르십시오.</string>
-    <string name="ram_bar_mode_title">가용 메모리 바 모드</string>
+    <string name="ram_bar_note_summary">이 RAM바는 안드로이드가 얼마나 램을 사용하는지 보여줍니다. \n장치가 빠르게 앱을 열 수 있도록 앱이 백그라운드에서 열려 캐시 된 것이 도움이 되오니, 이용에 참고하여 주십시오. \n안드로이드 메모리 (RAM) 관리 작동 방법에 대한 자세한 설명은 메뉴의 도움말을 따르십시오.</string>
+    <string name="ram_bar_mode_title">가용 메모리 바</string>
     <string name="ram_bar_mode_dialog_title">가용 메모리 바에 표시될 항목</string>
     <string name="ram_bar_none">없음</string>
     <string name="ram_bar_apps">앱</string>
     <string name="ram_bar_cache">앱과 캐시 </string>
     <string name="ram_bar_other">앱과 캐시 그리고 기타</string>
-    <string name="ram_bar_style_cat">가용 메모리 바 스타일</string>
+    <string name="ram_bar_style_cat">스타일</string>
     <string name="ram_bar_color_app_mem_color">앱 메모리 색상</string>
     <string name="ram_bar_color_cache_mem_color">캐시 메모리 색상</string>
     <string name="ram_bar_color_total_mem_color">기타 메모리 색상</string>
@@ -742,11 +743,13 @@
     <string name="custom_density_dialog_button_reboot">Reboot like a bau5</string>
 
    <!-- Ribbon -->
-    <string name="ribbon_instructions">아이콘을 눌러 활돌을 선택하거나 제거합니다.</string>
+    <string name="ribbon_instructions">아이콘을 눌러 활동을 선택하거나 제거합니다.</string>
     <string name="ribbon_targets_cat">리본 설정</string>
     <string name="enable_ribbon_text_title">앱 이름 보이기</string>
-    <string name="enable_ribbon_vibrate_title">스와이프 구역을 터치시 햅틱 피드백</string>
+    <string name="enable_ribbon_vibrate_title">스와이프 구역을 터치 시 진동</string>
     <string name="enable_ribbon_text_summary">아이콘 아래에 앱 이름이 보이도록 합니다.</string>
+    <string name="ribbon_icon_vibrate_title">타겟 클릭 시 진동</string>
+    <string name="ribbon_icon_space_title">타켓들 간의 간격</string>
     <string name="ribbon_icon_size_title">아이콘 크기</string>
     <string name="ribbon_icon_size_summary">아이콘 크기를 설정합니다.</string>
     <string name="ribbon_lockscreen">잠금화면 리본</string>
@@ -760,7 +763,8 @@
     <string name="ribbon_left_enable_title">왼쪽으로부터 스와이프 활성화</string>
     <string name="ribbon_right_enable_title">오른쪽으로부터 스와이프 활성화</string>
     <string name="ribbon_bottom_enable_title">아래로부터 스와이프 활성화</string>
-    <string name="ribbon_bottom_warning_title">소프트 키가 있을 동안에는 아래로부터 스와이프할 수 없습니다. 소프트 키를 숨긴 뒤 사용해 주십시오.</string>
+    <string name="ribbon_bottom_warning_title">소프트 키가 있을 동안에는 아래로부터 스와이프할 수 없습니다. \n소프트 키를 숨긴 뒤 사용해 주십시오.</string>
+    <string name="ribbon_button_colorize_title">아이콘 색상을 이름 색상에 맞춤</string>
     <string name="ribbon_color_title">스와이프 리본 색상</string>
     <string name="text_color_title">앱 이름 색상</string>
     <string name="ribbon_opacity_title">리본 투명도</string>
@@ -775,9 +779,9 @@
     <string name="bottom">아래로부터</string>
 
     <!-- LED -->
-    <string name="led_on">LED 켜기</string>
+    <string name="led_on">LED 켜질 시간</string>
     <string name="led_time_on">LED가 켜져 있을 시간</string>
-    <string name="led_off">LED 끄기</string>
+    <string name="led_off">LED 꺼질 시간</string>
     <string name="led_time_off">LED가 꺼져 있을 시간</string>
     <string name="led_time_seconds">" 초"</string>
     <string name="led_color_click">LED를 눌러 색상 변경</string>
@@ -855,11 +859,11 @@
     <string name="profile_applist_title">앱</string>
 
     <!-- Lock screen misc. settings -->
-    <string name="lockscreen_battery_status_title">배터리 상태</string>
+    <string name="lockscreen_battery_status_title">배터리 상태 표시</string>
     <string name="lockscreen_battery_status_charging">충전중에만</string>
     <string name="lockscreen_battery_status_alwayson">항상 보임</string>
 
-    <string name="ls_shortcuts_title">잠금화면 바로가기</string>
+    <string name="ls_shortcuts_title">잠금화면</string>
 
     <!-- ParanoidAndroid: Lockscreen Shortcuts -->
     <string name="icon_picker_type">아이콘 형태 선택 :</string>
@@ -873,7 +877,7 @@
     <string name="lock_screen_shortcuts_reset">초기화</string>
     <string name="lock_screen_shortcuts_limit">최대 6개 까지만 지원합니다.</string>
     <string name="dialog_delete_title">제거</string>
-    <string name="dialog_delete_message">선택된 바로가기를 제거합니까??</string>
+    <string name="dialog_delete_message">선택된 바로가기를 제거합니까?</string>
 
     <!-- CyanogenMod: Lockscreen Slider Shortcuts -->
     <string name="lockscreen_target_info">타켓 추가하려면 슬라이더를 빈곳으로 이동해 추가합니다.</string>
