@@ -15,6 +15,10 @@
     <SwitchPreference
         android:key="show_airplane_toggle"
         android:title="@string/title_show_airplane_toggle" />
+        
+    <SwitchPreference
+        android:key="show_volume_state_toggle"
+        android:title="@string/title_show_volume_state_toggle" />
 
     <SwitchPreference
         android:key="show_navbar_hide"
