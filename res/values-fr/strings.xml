@@ -253,14 +253,18 @@
     <string name="battery_bar_thickness_title">Épaisseur de la barre de batterie</string>
     <string name="battery_bar_animate_title">Animation lors de la charge</string>
     <string name="battery_bar_animate_summary">L\'animation lors du chargement peut entraîner une expérience utilisateur médiocre. Activer à votre propre discrétion.</string>
-
+    <string name="top_of_navbar">Haut de la barre de nav.</string>
+    <string name="bottom_of_navbar">Bas de la barre de nav.</string>
+    <string name="regular">Normale, partant de la gauche</string>
+    <string name="center_mirrored">Centrée, en mode miroir</string>
+    
     <!-- Statusbar | Signal -->
     <string name="signal_style">Style du signal réseau</string>
     <string name="signal_color_title">Couleur du texte du réseau</string>
     <string name="hide_signal_title">Masquer puissance du signal réseau</string>
     <string name="hide_signal_summary">Ne s\'affiche que quand la puissance du réseau change.</string>
-    <string name="wifi_signal_style">Style du signal WiFi</string>
-    <string name="wifi_signal_color_title">Couleur du texte du WiFi</string>
+    <string name="wifi_signal_style">Style du signal Wi-Fi</string>
+    <string name="wifi_signal_color_title">Couleur du texte du Wi-Fi</string>
     <string name="alt_signal_title">Données mobile séparées</string>
     <string name="alt_signal_summary">Utiliser un mode d\'affichage du réseau qui sépare le signal et les données mobiles (Style GB)</string>
 
@@ -386,10 +390,6 @@
     <string name="glow_times_normal">Normal</string>
     <string name="size_42_dp_default">42 dp (Défaut)</string>
     <string name="size_48_dp_default">48 dp (Défaut)</string>
-    <string name="top_of_navbar">Haut de la barre de nav.</string>
-    <string name="bottom_of_navbar">Bas de la barre de nav.</string>
-    <string name="regular">Normal</string>
-    <string name="center_mirrored">Centrer, mode miroir</string>
     <string name="size_0_dp">0 dp (Off)</string>
 
     <!-- Powerwidget -->
