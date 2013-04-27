@@ -109,6 +109,7 @@
     <string name="expanded_desktop_only_status_bar">Barre d\'état masquée</string>
     <string name="expanded_desktop_both_hidden">Barre de navigation et d\'état masquée</string>
     <string name="title_show_navbar_hide">Raccourcis de navigation</string>
+    <string name="title_show_volume_state_toggle">Modes de son</string>
     <string name="title_show_reboot_keyguard">Redémarrer</string>
 
     <!-- Status Bar Headers -->
@@ -613,8 +614,7 @@
     <string name="enable_ribbon_text_title">Afficher le nom de l\'appli</string>
     <string name="enable_ribbon_text_summary">Afficher le nom de l\'appli en-dessous de l\'icône</string>
     <string name="ribbon_icon_vibrate_title">Vibrer à l\'appui d\'élément</string>
-    <string name="ribbon_icon_space_title">Espace horizontal entre icônes</string>
-    <string name="ribbon_icon_space_vertical_title">Espace vertical entre icônes</string>
+    <string name="ribbon_icon_space_title">Espace entre icônes</string>
     <string name="enable_ribbon_vibrate_title">Vibrer au toucher de l\'aire de swipe</string>
     <string name="ribbon_icon_size_title">Taille des icônes</string>
     <string name="ribbon_icon_size_summary">Définir la taille de vos icônes</string>
@@ -622,7 +622,9 @@
     <string name="ribbon_lockscreen">Ruban Écran de verrouillage</string>
     <string name="ribbon_notifications">Ruban Notifications</string>
     <string name="ribbon_quicksettings">Ruban Quick Settings</string>
-    <string name="ribbon_swipe">Ruban AOKP (swipe)</string>
+    <string name="ribbon_swipe_left">Ruban par Swipe (gauche)</string>
+    <string name="ribbon_swipe_right">Ruban par Swipe (droite)</string>
+    <string name="ribbon_swipe_bottom">Ruban par Swipe (bas)</string>
     <string name="clone_title">Choisir le ruban à cloner</string>
     <string name="icon_size_normal">Normal</string>
     <string name="icon_size_20">Moyen</string>
@@ -630,7 +632,7 @@
     <string name="ribbon_left_enable_title">Swipe par la gauche</string>
     <string name="ribbon_right_enable_title">Swipe par la droite</string>
     <string name="ribbon_bottom_enable_title">Swipe par le bas</string>
-    <string name="ribbon_bottom_warning_title">Vous ne pouvez pas utiliser le Swipe par le bas en ayant la barre de navigation. Utilisez le Bureau étendu ou le Hide NavBar.</string>
+    <string name="ribbon_bottom_warning_title">Vous ne pouvez pas utiliser le Swipe par le bas en ayant la barre de navigation. Utilisez le Bureau étendu, le Hide NavBar, ou une hauteur de 0%.</string>
     <string name="ribbon_color_title">Couleur du Ruban par Swipe</string>
     <string name="text_color_title">Couleur du nom de l\'application</string>
     <string name="ribbon_opacity_title">Opacité du Ruban par Swipe</string>
