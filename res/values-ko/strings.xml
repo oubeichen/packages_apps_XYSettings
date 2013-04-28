@@ -755,7 +755,9 @@
     <string name="ribbon_lockscreen">잠금화면 리본</string>
     <string name="ribbon_notifications">알림창 리본</string>
     <string name="ribbon_quicksettings">빠른 토글 리본</string>
-    <string name="ribbon_swipe">AOKP 스와이프 리본</string>
+    <string name="ribbon_swipe_left">왼쪽 리본</string>
+    <string name="ribbon_swipe_right">오른쪽 리본</string>
+    <string name="ribbon_swipe_bottom">아래쪽 리본</string>
     <string name="clone_title">복제할 리본을 선택합니다.</string>
     <string name="icon_size_normal">일반</string>
     <string name="icon_size_20">중간</string>
