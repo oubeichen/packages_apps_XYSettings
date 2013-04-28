@@ -17,9 +17,11 @@
 
         <PreferenceScreen
             android:key="screen_security"
-            android:fragment="com.android.settings.SecuritySettings"
             android:title="@string/screen_security_category"
             android:summary="@string/screen_security_summary">
+            <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.android.settings"
+                    android:targetClass="com.android.settings.SecuritySettings" />
             <extra android:name="cm_security" android:value="true" />
         </PreferenceScreen>
 

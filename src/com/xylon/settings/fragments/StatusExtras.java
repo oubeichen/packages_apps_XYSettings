@@ -88,6 +88,7 @@ public class StatusExtras extends SettingsPreferenceFragment implements OnPrefer
     CheckBoxPreference mStatusBarNotifCount;
     CheckBoxPreference mStatusbarSliderPreference;
     CheckBoxPreference mStatusBarAutoHide;
+    CheckBoxPreference mHiddenStatusbarPulldown;
     CheckBoxPreference mShowWifiName;
     ListPreference mNotificationsBehavior;
     ColorPickerPreference mNavigationColor;
