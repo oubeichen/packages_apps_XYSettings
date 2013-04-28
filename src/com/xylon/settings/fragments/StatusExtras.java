@@ -69,6 +69,7 @@ public class StatusExtras extends SettingsPreferenceFragment implements OnPrefer
     private static final String PREF_NOTIFICATION_SHOW_WIFI_SSID = "notification_show_wifi_ssid";
     private static final String PREF_NOTIFICATION_BEHAVIOUR = "notifications_behaviour";
     private static final String STATUS_BAR_AUTO_HIDE = "status_bar_auto_hide";
+    private static final String HIDDEN_STATUSBAR_PULLDOWN = "hidden_statusbar_pulldown";
     private static final String NAVIGATION_BAR_COLOR = "nav_bar_color";
 //    private static final String STATUS_BAR_COLOR = "stat_bar_color";
     private static final String PREF_NOTIFICATION_WALLPAPER_RESET = "reset_wallpaper";
@@ -129,6 +130,10 @@ public class StatusExtras extends SettingsPreferenceFragment implements OnPrefer
         mStatusBarAutoHide = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_AUTO_HIDE);
         mStatusBarAutoHide.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
                 Settings.System.AUTO_HIDE_STATUSBAR, 0) == 1));
+
+        mHiddenStatusbarPulldown = (CheckBoxPreference) prefSet.findPreference(HIDDEN_STATUSBAR_PULLDOWN);
+        mHiddenStatusbarPulldown.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                Settings.System.HIDDEN_STATUSBAR_PULLDOWN, 0) == 1));
 
         mStatusBarNotifCount = (CheckBoxPreference) prefSet.findPreference(PREF_STATUS_BAR_NOTIF_COUNT);
         mStatusBarNotifCount.setChecked(Settings.System.getBoolean(getActivity().getContentResolver(), 
@@ -287,6 +292,11 @@ public class StatusExtras extends SettingsPreferenceFragment implements OnPrefer
             value = mStatusBarAutoHide.isChecked();
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.AUTO_HIDE_STATUSBAR, value ? 1 : 0);
+            return true;
+        } else if (preference == mHiddenStatusbarPulldown) {
+            value = mHiddenStatusbarPulldown.isChecked();
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.HIDDEN_STATUSBAR_PULLDOWN, value ? 1 : 0);
             return true;
         } else if (preference == mShowWifiName) {
             Settings.System.putInt(getActivity().getContentResolver(), Settings.System.NOTIFICATION_SHOW_WIFI_SSID,

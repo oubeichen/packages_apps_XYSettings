@@ -599,6 +599,10 @@
     <string name="auto_hide_statusbar">Auto Hide statusbar</string>
     <string name="auto_hide_statusbar_summary">Statusbar hides itself when there are no notifications</string>
 
+    <!-- Hidden Statusbar Pulldown -->
+    <string name="hidden_statusbar_pulldown_title">Hidden Statusbar Pulldown</string>
+    <string name="hidden_statusbar_pulldown_summary">Allows Statusbar to be pulled down when hidden</string>
+
     <!-- Nav Bar Widgets -->
     <string name="navbar_widgets">Navigation Bar Widgets</string>
     <string name="navbar_widgets_instructions">Swipe to view - Click to choose</string>
@@ -883,6 +887,10 @@
     <string name="lockscreen_battery_status_alwayson">Always on</string>
 
     <string name="ls_shortcuts_title">Lockscreen Shortcuts</string>
+
+    <string name="screen_security_category">Screen security</string>
+    <string name="screen_security_title">Lock screen</string>
+    <string name="screen_security_summary">View or change lock screen security, delay and timeout settings</string>
 
     <!-- ParanoidAndroid: Lockscreen Shortcuts -->
     <string name="icon_picker_type">Select icon type:</string>

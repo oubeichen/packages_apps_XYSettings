@@ -15,13 +15,13 @@
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-        <!--PreferenceScreen
+        <PreferenceScreen
             android:key="screen_security"
             android:fragment="com.android.settings.SecuritySettings"
             android:title="@string/screen_security_category"
             android:summary="@string/screen_security_summary">
             <extra android:name="cm_security" android:value="true" />
-        </PreferenceScreen-->
+        </PreferenceScreen>
 
         <ListPreference
             android:key="lockscreen_background"
