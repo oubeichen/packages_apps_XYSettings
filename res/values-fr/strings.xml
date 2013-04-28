@@ -490,6 +490,10 @@
     <string name="auto_hide_statusbar">Masquer auto la barre d\'état</string>
     <string name="auto_hide_statusbar_summary">La barre d\'état sera masquée automatiquement quand il n\'y aura pas de notifications</string>
 
+    <!-- Hidden Statusbar Pulldown -->
+    <string name="hidden_statusbar_pulldown_title">Barre d\'état temporaire</string>
+    <string name="hidden_statusbar_pulldown_summary">Lorsque la barre d\'état est masquée, un swipe vers le bas l\'affichera quelques secondes</string>
+
     <!-- Nav Bar Widgets -->
     <string name="navbar_widgets">Widgets - Barre de Navigation</string>
     <string name="navbar_widgets_instructions">Swipe pour voir - Appuyer pour choisir</string>
@@ -786,6 +790,11 @@
     <string name="lockscreen_longpress_challenge_title">Déverrouiller par Appui Long</string>
     <string name="lockscreen_longpress_challenge_summary">Cela permet à votre appareil d\'être déverrouillé avec les widgets maximisés par un appui long sur l\'icône de verrouillage.</string>
 
+    <!-- Screen security -->
+    <string name="screen_security_category">Sécurité de l\'écran</string>
+    <string name="screen_security_title">Écran de verrouillage</string>
+    <string name="screen_security_summary">Afficher ou modifier les paramètres de sécurité ou de délai de l\'écran de verrouillage.</string>
+    
     <!--- Lock clock -->
     <string name="lock_clock_title">Widget cLock</string>
     <string name="lock_clock_summary">Afficher ou modifier la façon dont le widget \'cLock\' est affiché sur l\'écran d\'accueil ou de verrouillage</string>
