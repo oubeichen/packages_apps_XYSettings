@@ -22,7 +22,6 @@
             <intent android:action="android.intent.action.MAIN"
                     android:targetPackage="com.android.settings"
                     android:targetClass="com.android.settings.SecuritySettings" />
-            <extra android:name="cm_security" android:value="true" />
         </PreferenceScreen>
 
         <ListPreference
@@ -120,6 +119,59 @@
             android:entries="@array/lockscreen_battery_status_entries"
             android:entryValues="@array/lockscreen_battery_status_values"
             android:defaultValue="0" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="additional_options"
+        android:title="@string/additional_options_title">
+
+        <CheckBoxPreference
+            android:key="menu_unlock"
+            android:title="@string/unlock_menu_unlock_title"
+            android:summary="@string/unlock_menu_unlock_summary" />
+
+        <CheckBoxPreference
+            android:key="home_unlock"
+            android:title="@string/unlock_home_unlock_title"
+            android:summary="@string/unlock_home_unlock_summary" />
+
+        <CheckBoxPreference
+            android:key="quick_unlock_control"
+            android:title="@string/unlock_quick_unlock_control_title"
+            android:summary="@string/unlock_quick_unlock_control_summary" />
+
+        <CheckBoxPreference
+            android:key="lockscreen_vibrate"
+            android:persistent="false"
+            android:title="@string/lockscreen_vibrate_enabled_title"
+            android:summary="@string/lockscreen_vibrate_enabled_head"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="delay_and_timeout"
+        android:title="@string/delay_and_timeout_title">
+
+        <CheckBoxPreference
+            android:key="slide_lock_delay_toggle"
+            android:title="@string/slide_lock_delay_title" />
+
+        <ListPreference
+            android:key="slide_lock_timeout_delay"
+            android:dialogTitle="@string/slide_lock_timeout_delay_title"
+            android:title="@string/slide_lock_timeout_delay_title"
+            android:entries="@array/lockscreen_delay_entries"
+            android:entryValues="@array/lockscreen_delay_values"
+            android:dependency="slide_lock_delay_toggle" />
+
+        <ListPreference
+            android:key="slide_lock_screenoff_delay"
+            android:dialogTitle="@string/slide_lock_screenoff_delay_title"
+            android:title="@string/slide_lock_screenoff_delay_title"
+            android:entries="@array/lockscreen_delay_entries"
+            android:entryValues="@array/lockscreen_delay_values"
+            android:dependency="slide_lock_delay_toggle" />
 
     </PreferenceCategory>
 
