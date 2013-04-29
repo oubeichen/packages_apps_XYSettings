@@ -638,7 +638,7 @@
 
     <string name="tablet_cat">平板模式设置</string>
     <string name="hide_extras">隐藏多余内容</string>
-    <string name="hide_extras_summary">隐藏系统栏的一些内容，为更改密度或强制使用平板界面提高兼容性（将重启用户界面）</string>
+    <string name="hide_extras_summary">隐藏系统栏的一些内容，为更改DPI或强制使用平板界面提高兼容性（将重启用户界面）</string>
 
     <!-- General UI | CRT Animation Modifications -->
 
@@ -805,177 +805,170 @@
     <!-- NEW METHOD PEWDIEPIE CODE -->
 
     <!-- Lock screen shortcuts -->
-    <string name="picker_activities">Activities</string>
-    <string name="icon_picker_choose_icon_title">Choose icon</string>
-    <string name="icon_picker_alarm">Alarm</string>
-    <string name="icon_picker_browser">Browser</string>
-    <string name="icon_picker_calendar">Calendar</string>
-    <string name="icon_picker_camera">Camera</string>
-    <string name="icon_picker_chrome">Chrome</string>
-    <string name="icon_picker_email">Email</string>
-    <string name="icon_picker_email2">Email Holo</string>
-    <string name="icon_picker_facebook">Facebook</string>
-    <string name="icon_picker_gallery">Gallery</string>
-    <string name="icon_picker_google_small">Google (small)</string>
-    <string name="icon_picker_googleplus">Google Plus</string>
-    <string name="icon_picker_googletalk">Google Talk</string>
-    <string name="icon_picker_maps">Maps</string>
-    <string name="icon_picker_movie">Movie</string>
-    <string name="icon_picker_music">Music</string>
-    <string name="icon_picker_nav_normal">Navigation</string>
-    <string name="icon_picker_phone">Phone</string>
-    <string name="icon_picker_podcast">Podcast</string>
-    <string name="icon_picker_rss">RSS</string>
-    <string name="icon_picker_search">Search</string>
-    <string name="icon_picker_sms">Messaging</string>
-    <string name="icon_picker_twitter">Twitter</string>
+    <string name="picker_activities">活动</string>
+    <string name="icon_picker_choose_icon_title">选择图标</string>
+    <string name="icon_picker_alarm">闹钟</string>
+    <string name="icon_picker_browser">浏览器</string>
+    <string name="icon_picker_calendar">日历</string>
+    <string name="icon_picker_camera">相机</string>
+    <string name="icon_picker_gallery">图库</string>
+    <string name="icon_picker_google_small">Google（小）</string>
+    <string name="icon_picker_maps">地图</string>
+    <string name="icon_picker_movie">电影</string>
+    <string name="icon_picker_music">音乐</string>
+    <string name="icon_picker_nav_normal">导航</string>
+    <string name="icon_picker_phone">电话</string>
+    <string name="icon_picker_podcast">播客</string>
+    <string name="icon_picker_search">搜索</string>
+    <string name="icon_picker_sms">信息</string>
+
 
     <!-- String for IconPicker -->
-    <string name="icon_picker_title">Choose icon source</string>
-    <string name="icon_picker_system_icons_title">System icons</string>
-    <string name="icon_picker_gallery_title">Gallery</string>
-    <string name="icon_picker_pack_title">Icon pack</string>
+    <string name="icon_picker_title">选择图标来源</string>
+    <string name="icon_picker_system_icons_title">系统图标</string>
+    <string name="icon_picker_gallery_title">图库</string>
+    <string name="icon_picker_pack_title">图标包</string>
 
-    <string name="profile_applist_title">Applications</string>
+    <string name="profile_applist_title">应用程序</string>
 
     <!-- Lock screen misc. settings -->
-    <string name="lockscreen_battery_status_title">Battery status</string>
-    <string name="lockscreen_battery_status_charging">Only when charging</string>
-    <string name="lockscreen_battery_status_alwayson">Always on</string>
+    <string name="lockscreen_battery_status_title">锁屏电量百分比</string>
+    <string name="lockscreen_battery_status_charging">只有充电时显示</string>
+    <string name="lockscreen_battery_status_alwayson">总是在锁屏中显示</string>
 
-    <string name="ls_shortcuts_title">Lockscreen Shortcuts</string>
+    <string name="ls_shortcuts_title">锁屏快捷方式</string>
 
     <!-- ParanoidAndroid: Lockscreen Shortcuts -->
-    <string name="icon_picker_type">Select icon type:</string>
-    <string name="icon_default">Default</string>
-    <string name="icon_presets">Presets</string>
-    <string name="icon_custom">Custom</string>
-    <string name="lock_screen_shortcuts_title">Quick</string>
-    <string name="lock_screen_shortcuts_reset_message">Reset lock screen shortcuts?</string>
-    <string name="lock_screen_shortcuts_summary">View or change custom quick shortcuts</string>
-    <string name="lock_screen_shortcuts_add">Add</string>
-    <string name="lock_screen_shortcuts_reset">Reset</string>
-    <string name="lock_screen_shortcuts_limit">Only 6 shorcuts are allowed!</string>
-    <string name="dialog_delete_title">Delete</string>
-    <string name="dialog_delete_message">Remove selected item?</string>
+    <string name="icon_picker_type">选择图标类型:</string>
+    <string name="icon_default">默认</string>
+    <string name="icon_presets">预设</string>
+    <string name="icon_custom">自定义</string>
+    <string name="lock_screen_shortcuts_title">快捷方式</string>
+    <string name="lock_screen_shortcuts_reset_message">确定删除所有用户创建的快捷方式，恢复到默认值吗？</string>
+    <string name="lock_screen_shortcuts_summary">查看或更改自定义锁屏快捷方式</string>
+    <string name="lock_screen_shortcuts_add">添加</string>
+    <string name="lock_screen_shortcuts_reset">重置</string>
+    <string name="lock_screen_shortcuts_limit">只允许添加 6 个锁屏快捷方式</string>
+    <string name="dialog_delete_title">删除</string>
+    <string name="dialog_delete_message">移除选中的项目？</string>
 
     <!-- CyanogenMod: Lockscreen Slider Shortcuts -->
-    <string name="lockscreen_target_info">Drag the slider to targets to assign shortcuts</string>
-    <string name="lockscreen_target_title">Slider</string>
-    <string name="lockscreen_target_summary">View or change custom slider shortcuts</string>
-    <string name="lockscreen_target_reset">Lock screen shortcuts reset to default</string>
-    <string name="lockscreen_target_save">Lock screen shortcuts saved</string>
-    <string name="lockscreen_target_reset_title">Reset</string>
-    <string name="lockscreen_target_reset_message">Delete all user created lock screen shortcuts and restore to default?</string>
-    <string name="lockscreen_target_empty">Empty</string>
-    <string name="lockscreen_target_edit_title">Edit shortcut and icon</string>
-    <string name="lockscreen_target_edit_msg">Select or change the desired application or activity and the associated icon</string>
+    <string name="lockscreen_target_info">拖拽解锁来设置快捷方式</string>
+    <string name="lockscreen_target_title">锁屏快捷方式</string>
+    <string name="lockscreen_target_summary">查看或者修改快捷方式</string>
+    <string name="lockscreen_target_reset">锁屏界面快捷方式恢复默认</string>
+    <string name="lockscreen_target_save">锁屏快捷方式已保存</string>
+    <string name="lockscreen_target_reset_title">重置</string>
+    <string name="lockscreen_target_reset_message">清除所有创建的快捷方式并且恢复到默认状态？</string>
+    <string name="lockscreen_target_empty">空</string>
+    <string name="lockscreen_target_edit_title">编辑目标与图标</string>
+    <string name="lockscreen_target_edit_msg">选择或更改需要的程序及相关图标</string>
 
     <!-- AOKP Lockscreen Customizations -->
-    <string name="lockscreen_maximize_widgets_title">Maximize widgets</string>
-    <string name="lockscreen_maximize_widgets_summary">Show widgets maximized and the unlock minimized when the screen is turned on</string>
-    <string name="lockscreen_hide_initial_page_hints_title">Hide initial page hints</string>
-    <string name="lockscreen_hide_initial_page_hints_summary">Set wether the hints for the left and right widgets are shown when the screen is turned on.</string>
-    <string name="lockscreen_use_widget_container_carousel_title">Use widget carousel</string>
-    <string name="lockscreen_use_widget_container_carousel_summary">Use a carousel animation when switching between lockscreen widgets.</string>
+    <string name="lockscreen_maximize_widgets_title">最大化部件</string>
+    <string name="lockscreen_maximize_widgets_summary">开启屏幕时最大化锁屏部件，最小化解锁按键。</string>
+    <string name="lockscreen_hide_initial_page_hints_title">隐藏初始页面提示</string>
+    <string name="lockscreen_hide_initial_page_hints_summary">设置当屏幕开启时是否隐藏左右两边的小部件页面提示</string>
+    <string name="lockscreen_use_widget_container_carousel_title">小部件页面旋转动画</string>
+    <string name="lockscreen_use_widget_container_carousel_summary">在切换小部件页面时使用连页旋转的动画效果</string>
 
     <!-- Lock Screen -->
-    <string name="lockscreen_auto_rotate_title">Allow lockscreen rotation</string>
-    <string name="lockscreen_auto_rotate_summary">Lockscreen will have ability to rotate via device orientation. This is independent of Auto-rotation in display</string>
-    <string name="lockscreen_all_widgets_title">Allow all widgets</string>
-    <string name="lockscreen_all_widgets_summary">Warning** Some widgets are not intended to be used on the lockscreen, The widget developer, Team XYE are not responsible for your choice of lockscreen widgets. Choose responsibly.</string>
-    <string name="lockscreen_unlimited_widgets_title">Allow unlimited widgets</string>
-    <string name="lockscreen_unlimited_widgets_summary">Warning** Adding too many widgets can cause major lag issues with lockscreen.</string>
-    <string name="lockscreen_longpress_challenge_title">Enable longpress to unlock</string>
-    <string name="lockscreen_longpress_challenge_summary">This enables your device to be unlocked with the widgets maximised by long pressing the lock icon.</string>
+    <string name="lockscreen_auto_rotate_title">允许锁屏时旋转</string>
+    <string name="lockscreen_auto_rotate_summary">允许在锁屏状态时旋转屏幕，该选项独立生效，与显示界面的自动旋转无关。</string>
+    <string name="lockscreen_all_widgets_title">允许所有小部件</string>
+    <string name="lockscreen_all_widgets_summary">警告** 一些小部件并不适用于锁屏界面，小部件作者及XYE对你的选择不承担责任。请谨慎选择。</string>
+    <string name="lockscreen_unlimited_widgets_title">不限制使用的小部件数量</string>
+    <string name="lockscreen_unlimited_widgets_summary">警告** 添加过多的小部件将导致锁屏界面不流畅。</string>
+    <string name="lockscreen_longpress_challenge_title">开启长按解锁</string>
+    <string name="lockscreen_longpress_challenge_summary">开启设置后，长按上锁图标可以解锁并最大化锁屏部件</string>
 
     <!-- Lock Screen Interface -->
-    <string name="lockscreen_custom_background_title">Background</string>
-    <string name="lockscreen_custom_background_dialog_title">Choose color</string>
-    <string name="lockscreen_background_result_successful">Background changed successfully</string>
-    <string name="lockscreen_background_result_not_successful">Background could not be changed</string>
-    <string name="lockscreen_background_color_fill">Color fill</string>
-    <string name="lockscreen_background_custom_image">Custom image</string>
-    <string name="lockscreen_background_default_wallpaper">Default wallpaper</string>
-    <string name="see_through_title">See through</string>
-    <string name="see_through_summary">Allows to see the application behind the lock screen.</string>
-    <string name="ls_color_alpha_title">Lockscreen Tint Color</string>
-    <string name="ls_color_alpha_summary">Allows to change the tint of the lock screen.</string>
+    <string name="lockscreen_custom_background_title">锁屏背景</string>
+    <string name="lockscreen_custom_background_dialog_title">选择颜色</string>
+    <string name="lockscreen_background_result_successful">背景已更改</string>
+    <string name="lockscreen_background_result_not_successful">背景未更改</string>
+    <string name="lockscreen_background_color_fill">纯色</string>
+    <string name="lockscreen_background_custom_image">图片</string>
+    <string name="lockscreen_background_default_wallpaper">默认</string>
+    <string name="see_through_title">透视</string>
+    <string name="see_through_summary">允许看到锁屏界面背后的内容</string>
+    <string name="ls_color_alpha_title">锁屏色调</string>
+    <string name="ls_color_alpha_summary">修改锁屏的色调</string>
 
     <!--- Lock clock -->
-    <string name="lock_clock_title">Clock widget</string>
-    <string name="lock_clock_summary">View or change how the \'cLock\' Home and Lock screen widgets will display</string>
+    <string name="lock_clock_title">时钟部件</string>
+    <string name="lock_clock_summary">查看和编辑时钟部件在桌面和锁屏界面的显示</string>
 
     <!-- Hybrid -->
-    <string name="hybrid_settings_title">Hybrid settings</string>
+    <string name="hybrid_settings_title">混合特性</string>
 
-    <string name="hybridmode_title">Hybrid Mode</string>
-    <string name="hybridmode_on">On</string>
-    <string name="hybridmode_off">Off</string>
+    <string name="hybridmode_title">混合模式</string>
+    <string name="hybridmode_on">开启</string>
+    <string name="hybridmode_off">关闭</string>
 
-    <string name="uimode_title">UI Mode</string>
-    <string name="uimode_phone">Phone (360dp)</string>
-    <string name="uimode_phablet">Phablet (600dp)</string>
-    <string name="uimode_tablet">Tablet (720/1000dp)</string>
+    <string name="uimode_title">UI模式</string>
+    <string name="uimode_phone">手机(360dp)</string>
+    <string name="uimode_phablet">平板手机 (600dp)</string>
+    <string name="uimode_tablet">平板电脑 (720/1000dp)</string>
 
-    <string name="dpi_settings_title">System Density</string>
-    <string name="system_dpi_title">System Density</string>
-    <string name="system_dpi_summary">Current system density:</string>
-    <string name="system_dpi_standar_title">Standard density</string>
-    <string name="system_dpi_standar_summary">Select the density from a list</string>
-    <string name="system_dpi_custom_title">Specify custom density</string>
-    <string name="system_dpi_custom_hint">120 to 480</string>
-    <string name="system_dpi_custom_summary">Select a custom density from 120 to 480</string>
+    <string name="dpi_settings_title">系统DPI设置</string>
+    <string name="system_dpi_title">系统DPI</string>
+    <string name="system_dpi_summary">当前系统DPI：</string>
+    <string name="system_dpi_standar_title">标准DPI</string>
+    <string name="system_dpi_standar_summary">在列表中选择一个DPI</string>
+    <string name="system_dpi_custom_title">自定义DPI</string>
+    <string name="system_dpi_custom_hint">120 至 480</string>
+    <string name="system_dpi_custom_summary">选择一个 120 到 480 的DPI</string>
 
-    <string name="appsuimode_title">Apps UI Mode</string>
+    <string name="appsuimode_title">应用程序UI模式</string>
 
-    <string name="apps_dpi_title">Apps Density</string>
-    <string name="apps_dpi_summary">Current apps density:</string>
-    <string name="apps_dpi_custom_title">Specify density</string>
-    <string name="apps_dpi_custom_hint">120 to 480</string>
-    <string name="apps_dpi_custom_summary">Select a density from 120 to 480</string>
+    <string name="apps_dpi_title">应用程序DPI</string>
+    <string name="apps_dpi_summary">当前程序DPI:</string>
+    <string name="apps_dpi_custom_title">自定义DPI</string>
+    <string name="apps_dpi_custom_hint">120 至 480</string>
+    <string name="apps_dpi_custom_summary">选择一个 120 到 480 的DPI</string>
 
-    <string name="dpi_groups_title">DPI Groups</string>
-    <string name="dpi_groups_summary">Define which apps should be in each DPI group</string>
-    <string name="dpi_group_title">DPI Group</string>
-    <string name="dpi_groups_apps">applications</string>
-    <string name="dpi_group_add_app">Add application</string>
-    <string name="dpi_group_app_list">Applications list</string>
-    <string name="dpi_group_alert_add_app_title">Choose an application</string>
-    <string name="dpi_groups_alert_remove_app">Remove application</string>
-    <string name="dpi_groups_remove_app">Remove %s application from group?</string>
-    <string name="dpi_groups_backuprestore_title">Backup and restore</string>
-    <string name="dpi_groups_auto_backup">Auto Backup</string>
-    <string name="dpi_groups_auto_backup_summary">Save your configuration with every change</string>
-    <string name="dpi_groups_backup_title">Backup</string>
-    <string name="dpi_groups_backup_summary">Backup your configuration</string>
-    <string name="dpi_groups_restore_title">Restore</string>
-    <string name="dpi_groups_restore_summary">Restore your configuration</string>
-    <string name="dpi_groups_backup_done">Backup of configuration file done</string>
-    <string name="dpi_groups_restore_done">Configuration file restored</string>
-    <string name="dpi_groups_restore_default_title">Restore default groups</string>
-    <string name="dpi_groups_restore_default_summary">Remove custom DPI groups and leave the default groups</string>
-    <string name="dpi_groups_delete_title">Delete DPI group</string>
-    <string name="dpi_groups_delete_summary">Do you want to delete this DPI group?</string>
-    <string name="customdpigroup">Add group</string>
-    <string name="customdpigroup_summary">Add a custom dpi group</string>
-    <string name="custom_dpi">Current dpi:</string>
-    <string name="customdpigroup_group_exists">The selected custom dpi group already exists.</string>
-    <string name="per_app_layout_title">Per App Layout</string>
-    <string name="per_app_layout_summary">Define layout for each app</string>
-    <string name="per_app_layout_list_title">Application list</string>
-    <string name="per_app_layout_alert_title">Select a layout</string>
-    <string name="widgets_title">Widgets</string>
-    <string name="widgets_summary">Define the list of widgets</string>
-    <string name="add_widget">Add widget</string>
-    <string name="widget_list">Widgets list</string>
-    <string name="widget_alert_remove_widget">Remove widget</string>
-    <string name="widget_remove_widget">Remove %s widget from list?</string>
-    <string name="widget_add_title">Choose an application</string>
+    <string name="dpi_groups_title">DPI 应用组</string>
+    <string name="dpi_groups_summary">定义哪个应用在哪个DPI组内</string>
+    <string name="dpi_group_title">DPI 应用组</string>
+    <string name="dpi_groups_apps">应用程序</string>
+    <string name="dpi_group_add_app">添加应用程序</string>
+    <string name="dpi_group_app_list">应用程序列表</string>
+    <string name="dpi_group_alert_add_app_title">选择一个程序</string>
+    <string name="dpi_groups_alert_remove_app">移除应用程序</string>
+    <string name="dpi_groups_remove_app">将 %s 从这个组移除？</string>
+    <string name="dpi_groups_backuprestore_title">备份和恢复设置</string>
+    <string name="dpi_groups_auto_backup">自动备份</string>
+    <string name="dpi_groups_auto_backup_summary">每次修改时都保存配置</string>
+    <string name="dpi_groups_backup_title">备份</string>
+    <string name="dpi_groups_backup_summary">备份你的设置</string>
+    <string name="dpi_groups_restore_title">恢复</string>
+    <string name="dpi_groups_restore_summary">恢复你的设置</string>
+    <string name="dpi_groups_backup_done">备份设置完成</string>
+    <string name="dpi_groups_restore_done">恢复设置完成</string>
+    <string name="dpi_groups_restore_default_title">恢复默认程序组</string>
+    <string name="dpi_groups_restore_default_summary">移除自定义DPI组，只保留默认组</string>
+    <string name="dpi_groups_delete_title">删除DPI组</string>
+    <string name="dpi_groups_delete_summary">你确定想要删除这个DPI组吗？</string>
+    <string name="customdpigroup">添加组</string>
+    <string name="customdpigroup_summary">添加一个自定义的DPI组</string>
+    <string name="custom_dpi">当前DPI：</string>
+    <string name="customdpigroup_group_exists">自定义的DPI组已经存在</string>
+    <string name="per_app_layout_title">单独应用程序布局</string>
+    <string name="per_app_layout_summary">为每个程序单独设置布局</string>
+    <string name="per_app_layout_list_title">应用程序列表</string>
+    <string name="per_app_layout_alert_title">选择一个布局</string>
+    <string name="widgets_title">小部件</string>
+    <string name="widgets_summary">定义小部件列表</string>
+    <string name="add_widget">添加小部件</string>
+    <string name="widget_list">小部件列表</string>
+    <string name="widget_alert_remove_widget">删除小部件</string>
+    <string name="widget_remove_widget">从列表删除 %s 部件？</string>
+    <string name="widget_add_title">选择一个应用程序</string>
 
-    <string name="navbar_height_title">Navigation Bar Height</string>
+    <string name="navbar_height_title">导航栏高度</string>
 
-    <string name="alert_reboot">A reboot is needed</string>
-    <string name="alert_reboot_message">This change needs a reboot in order to take effect, do you want to reboot now?</string>
+    <string name="alert_reboot">需要重启</string>
+    <string name="alert_reboot_message">这个改动需要重启来完成设置，是否重启？</string>
 
 </resources>
