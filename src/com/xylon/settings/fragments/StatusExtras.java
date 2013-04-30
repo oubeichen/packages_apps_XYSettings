@@ -60,6 +60,7 @@ import com.xylon.settings.widgets.SeekBarPreference;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class StatusExtras extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
+    private static final String TAG = "Status Extras";
 
     private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
     private static final String PREF_STATUS_BAR_NOTIF_COUNT = "status_bar_notif_count";
@@ -68,11 +69,11 @@ public class StatusExtras extends SettingsPreferenceFragment implements OnPrefer
     private static final String PREF_NOTIFICATION_WALLPAPER_ALPHA = "notification_wallpaper_alpha";
     private static final String PREF_NOTIFICATION_SHOW_WIFI_SSID = "notification_show_wifi_ssid";
     private static final String PREF_NOTIFICATION_BEHAVIOUR = "notifications_behaviour";
-    private static final String STATUS_BAR_AUTO_HIDE = "status_bar_auto_hide";
     private static final String HIDDEN_STATUSBAR_PULLDOWN = "hidden_statusbar_pulldown";
     private static final String NAVIGATION_BAR_COLOR = "nav_bar_color";
 //    private static final String STATUS_BAR_COLOR = "stat_bar_color";
     private static final String PREF_NOTIFICATION_WALLPAPER_RESET = "reset_wallpaper";
+    private static final String PREF_LIST_EXPANDED_DESKTOP = "expanded_desktop";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
     private static final int REQUEST_PICK_CUSTOM_ICON = 202;
@@ -87,10 +88,10 @@ public class StatusExtras extends SettingsPreferenceFragment implements OnPrefer
     Preference mResetWallpaper;
     CheckBoxPreference mStatusBarNotifCount;
     CheckBoxPreference mStatusbarSliderPreference;
-    CheckBoxPreference mStatusBarAutoHide;
     CheckBoxPreference mHiddenStatusbarPulldown;
     CheckBoxPreference mShowWifiName;
     ListPreference mNotificationsBehavior;
+    ListPreference mExpandedDesktopListPref;
     ColorPickerPreference mNavigationColor;
 //    ColorPickerPreference mStatusColor;
 
@@ -128,10 +129,6 @@ public class StatusExtras extends SettingsPreferenceFragment implements OnPrefer
         mResetWallpaper = (Preference) findPreference(PREF_NOTIFICATION_WALLPAPER_RESET);
         mWallpaperAlpha = (Preference) findPreference(PREF_NOTIFICATION_WALLPAPER_ALPHA);
 
-        mStatusBarAutoHide = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_AUTO_HIDE);
-        mStatusBarAutoHide.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                Settings.System.AUTO_HIDE_STATUSBAR, 0) == 1));
-
         mHiddenStatusbarPulldown = (CheckBoxPreference) prefSet.findPreference(HIDDEN_STATUSBAR_PULLDOWN);
         mHiddenStatusbarPulldown.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
                 Settings.System.HIDDEN_STATUSBAR_PULLDOWN, 0) == 1));
@@ -150,6 +147,14 @@ public class StatusExtras extends SettingsPreferenceFragment implements OnPrefer
         mNotificationsBehavior.setValue(String.valueOf(CurrentBehavior));
         mNotificationsBehavior.setSummary(mNotificationsBehavior.getEntry());
         mNotificationsBehavior.setOnPreferenceChangeListener(this);
+
+        // Expanded desktop
+        mExpandedDesktopListPref = (ListPreference) findPreference(PREF_LIST_EXPANDED_DESKTOP);
+        mExpandedDesktopListPref.setOnPreferenceChangeListener(this);
+        int expandedDesktopValue = Settings.System.getInt(getContentResolver(),
+                Settings.System.EXPANDED_DESKTOP_STYLE, 0);
+        mExpandedDesktopListPref.setValue(String.valueOf(expandedDesktopValue));
+        updateExpandedDesktop(expandedDesktopValue);
 
         mShowWifiName = (CheckBoxPreference) findPreference(PREF_NOTIFICATION_SHOW_WIFI_SSID);
         mShowWifiName.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
@@ -289,11 +294,6 @@ public class StatusExtras extends SettingsPreferenceFragment implements OnPrefer
             .create()
             .show();
             return true;
-        } else if (preference == mStatusBarAutoHide) {
-            value = mStatusBarAutoHide.isChecked();
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.AUTO_HIDE_STATUSBAR, value ? 1 : 0);
-            return true;
         } else if (preference == mHiddenStatusbarPulldown) {
             value = mHiddenStatusbarPulldown.isChecked();
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
@@ -335,6 +335,10 @@ public class StatusExtras extends SettingsPreferenceFragment implements OnPrefer
             Settings.System.putInt(mContentRes,
                     Settings.System.NAVIGATION_BAR_COLOR, intHex);
             return true;
+        } else if (preference == mExpandedDesktopListPref) {
+            int expandedDesktopValue = Integer.valueOf((String) newValue);
+            updateExpandedDesktop(expandedDesktopValue);
+            return true;
 /**        } else if (preference == mStatusColor) {
             String hex = ColorPickerPreference.convertToARGB(
                     Integer.valueOf(String.valueOf(newValue)));
@@ -353,6 +357,31 @@ public class StatusExtras extends SettingsPreferenceFragment implements OnPrefer
         File wallpaper = new File(dir, WALLPAPER_NAME);
 
         return Uri.fromFile(wallpaper);
+    }
+
+    private void updateExpandedDesktop(int value) {
+        ContentResolver cr = getContentResolver();
+        Resources res = getResources();
+        int summary = -1;
+
+        Settings.System.putInt(cr, Settings.System.EXPANDED_DESKTOP_STYLE, value);
+
+        if (value == 0) {
+            // Expanded desktop deactivated
+            Settings.System.putInt(cr, Settings.System.POWER_MENU_EXPANDED_DESKTOP_ENABLED, 0);
+            Settings.System.putInt(cr, Settings.System.EXPANDED_DESKTOP_STATE, 0);
+            summary = R.string.expanded_desktop_disabled;
+        } else if (value == 1) {
+            Settings.System.putInt(cr, Settings.System.POWER_MENU_EXPANDED_DESKTOP_ENABLED, 1);
+            summary = R.string.expanded_desktop_status_bar;
+        } else if (value == 2) {
+            Settings.System.putInt(cr, Settings.System.POWER_MENU_EXPANDED_DESKTOP_ENABLED, 1);
+            summary = R.string.expanded_desktop_no_status_bar;
+        }
+
+        if (mExpandedDesktopListPref != null && summary != -1) {
+            mExpandedDesktopListPref.setSummary(res.getString(summary));
+        }
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
