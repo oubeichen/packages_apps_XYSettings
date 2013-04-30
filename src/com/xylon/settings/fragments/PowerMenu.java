@@ -85,7 +85,7 @@ public class PowerMenu extends SettingsPreferenceFragment implements OnPreferenc
                     Settings.System.POWER_MENU_EXPANDED_DESKTOP_ENABLED,
                     (Boolean) value ? 1 : 0);
             return true;
-        if (preference == mShowScreenShot) {
+        } else if (preference == mShowScreenShot) {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.POWER_DIALOG_SHOW_SCREENSHOT,
                     (Boolean) value ? 1 : 0);
@@ -112,26 +112,5 @@ public class PowerMenu extends SettingsPreferenceFragment implements OnPreferenc
             return true;
         }
         return false;
-    }
-
-    private void updateExpandedDesktopSummary(int value) {
-        Resources res = getResources();
-
-        if (value == 0) {
-            /* expanded desktop deactivated */
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.POWER_MENU_EXPANDED_DESKTOP_ENABLED, 0);
-            mExpandedDesktopPref.setSummary(res.getString(R.string.expanded_desktop_disabled));
-        } else if (value == 1) {
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.POWER_MENU_EXPANDED_DESKTOP_ENABLED, 1);
-            String statusBarPresent = res.getString(R.string.expanded_desktop_summary_status_bar);
-            mExpandedDesktopPref.setSummary(res.getString(R.string.summary_expanded_desktop, statusBarPresent));
-        } else if (value == 2) {
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.POWER_MENU_EXPANDED_DESKTOP_ENABLED, 1);
-            String statusBarPresent = res.getString(R.string.expanded_desktop_summary_no_status_bar);
-            mExpandedDesktopPref.setSummary(res.getString(R.string.summary_expanded_desktop, statusBarPresent));
-        }
     }
 }
