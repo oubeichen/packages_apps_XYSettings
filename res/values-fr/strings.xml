@@ -795,6 +795,32 @@
     <string name="screen_security_title">Écran de verrouillage</string>
     <string name="screen_security_summary">Afficher ou modifier les paramètres de sécurité ou de délai de l\'écran de verrouillage.</string>
     
+    <string name="additional_options_title">Options supplémentaires</string>
+    <string name="unlock_menu_unlock_title">Déverrouillage par Menu</string>
+    <string name="unlock_menu_unlock_summary">Appuyer sur le bouton de Menu déverrouille l\'appareil</string>
+    <string name="unlock_home_unlock_title">Déverrouillage par Accueil</string>
+    <string name="unlock_home_unlock_summary">Appuyer sur le bouton Accueil déverrouille l\'appareil</string>
+    <string name="unlock_quick_unlock_control_title">Déverrouillage rapide</string>
+    <string name="unlock_quick_unlock_control_summary">Déverrouiller automatiquement lorsque le code PIN / mot de passe correct est entré.</string>
+
+    <string name="delay_and_timeout_title">Délai de verrouillage</string>
+    <string name="slide_lock_delay_title">Délai du verrouillage de l\'écran</string>
+    <string name="slide_lock_timeout_delay_title">Délai après temps écoulé</string>
+    <string name="slide_lock_screenoff_delay_title">Délai après avoir été éteint</string>
+    <string name="slide_lock_delay_none">Désactivé</string>
+    <string name="slide_lock_delay_1s">1 seconde</string>
+    <string name="slide_lock_delay_5s">5 secondes</string>
+    <string name="slide_lock_delay_10s">10 secondes</string>
+    <string name="slide_lock_delay_15s">15 secondes</string>
+    <string name="slide_lock_delay_30s">30 secondes</string>
+    <string name="slide_lock_delay_1m">1 minute</string>
+    <string name="slide_lock_delay_5m">5 minutes</string>
+    <string name="slide_lock_delay_10m">10 minutes</string>
+    <string name="slide_lock_delay_30m">30 minutes</string>
+
+    <string name="lockscreen_vibrate_enabled_title">Vibreur</string>
+    <string name="lockscreen_vibrate_enabled_head">Vibrer lors du déverrouillage</string>
+
     <!--- Lock clock -->
     <string name="lock_clock_title">Widget cLock</string>
     <string name="lock_clock_summary">Afficher ou modifier la façon dont le widget \'cLock\' est affiché sur l\'écran d\'accueil ou de verrouillage</string>
