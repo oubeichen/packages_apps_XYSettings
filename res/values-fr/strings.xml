@@ -103,11 +103,12 @@
     <string name="title_show_screenshot">Capture d\'écran</string>
     <string name="title_show_airplane_toggle">Mode avion</string>
     <string name="power_menu_expanded_desktop">Bureau étendu</string>
-    <string name="expanded_desktop_summary">Afficher ou modifier les modes de bureau étendu</string>
-    <string name="expanded_desktop_disabled">Off</string>
-    <string name="expanded_desktop_only_nav_bar">Barre de navigation masquée</string>
-    <string name="expanded_desktop_only_status_bar">Barre d\'état masquée</string>
-    <string name="expanded_desktop_both_hidden">Barre de navigation et d\'état masquée</string>
+    <string name="expanded_desktop_cat">Avancé</string>
+    <string name="expanded_desktop_summary_status_bar">Barre d\'état visible</string>
+    <string name="expanded_desktop_summary_no_status_bar">Barre d\'état masquée</string>
+    <string name="expanded_desktop_status_bar">Barre d\'état visible</string>
+    <string name="expanded_desktop_no_status_bar">Barre d\'état masquée</string>
+    <string name="expanded_desktop_disabled">Désactivé</string>
     <string name="title_show_navbar_hide">Raccourcis de navigation</string>
     <string name="title_show_volume_state_toggle">Modes de son</string>
     <string name="title_show_reboot_keyguard">Redémarrer</string>
@@ -486,10 +487,6 @@
     <string name="navbar_icon_menu">Icône personnalisé</string>
     <string name="navbar_delete_menu">Supprimer le bouton</string>
     
-    <!-- Auto-Hide Status Bar -->
-    <string name="auto_hide_statusbar">Masquer auto la barre d\'état</string>
-    <string name="auto_hide_statusbar_summary">La barre d\'état sera masquée automatiquement quand il n\'y aura pas de notifications</string>
-
     <!-- Hidden Statusbar Pulldown -->
     <string name="hidden_statusbar_pulldown_title">Barre d\'état temporaire</string>
     <string name="hidden_statusbar_pulldown_summary">Lorsque la barre d\'état est masquée, un swipe vers le bas l\'affichera quelques secondes</string>
