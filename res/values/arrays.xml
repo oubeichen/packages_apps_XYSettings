@@ -1180,10 +1180,10 @@
 
     <!-- Hidden Statusbar Pulldown -->
     <string-array name="hidden_statusbar_pulldown_timeout_entries" translatable="false">
-        <item>2.5 seconds</item>
-        <item>5 seconds</item>
-        <item>7.5 seconds</item>
-        <item>10 seconds</item>
+        <item>@string/time_2_5_seconds</item>
+        <item>@string/time_5_seconds</item>
+        <item>@string/time_7_5_seconds</item>
+        <item>@string/time_10_seconds</item>
     </string-array>
     <string-array name="hidden_statusbar_pulldown_timeout_values" translatable="false">
         <item>2500</item>
