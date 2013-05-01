@@ -60,17 +60,6 @@
             android:title="@string/lock_screen_shortcuts_title"
             android:summary="@string/lock_screen_shortcuts_summary" />
 
-    </PreferenceCategory>
-
-        <CheckBoxPreference
-                android:key="lockscreen_auto_rotate"
-                android:title="@string/lockscreen_auto_rotate_title"
-                android:summary="@string/lockscreen_auto_rotate_summary" />
-
-    <PreferenceCategory
-            android:key="misc"
-            android:title="@string/misc_short">
-
         <PreferenceScreen
             android:key="lock_clock"
             android:title="@string/lock_clock_title"
@@ -79,6 +68,12 @@
                     android:targetPackage="com.cyanogenmod.lockclock"
                     android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
         </PreferenceScreen>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+            android:key="misc"
+            android:title="@string/misc_short">
 
         <CheckBoxPreference
             android:key="lockscreen_maximize_widgets"
@@ -119,6 +114,11 @@
             android:entries="@array/lockscreen_battery_status_entries"
             android:entryValues="@array/lockscreen_battery_status_values"
             android:defaultValue="0" />
+            
+        <CheckBoxPreference
+            android:key="lockscreen_auto_rotate"
+            android:title="@string/lockscreen_auto_rotate_title"
+            android:summary="@string/lockscreen_auto_rotate_summary" />
 
     </PreferenceCategory>
 
