@@ -490,6 +490,8 @@
     <!-- Hidden Statusbar Pulldown -->
     <string name="hidden_statusbar_pulldown_title">Barre d\'état temporaire</string>
     <string name="hidden_statusbar_pulldown_summary">Lorsque la barre d\'état est masquée, un swipe vers le bas l\'affichera quelques secondes</string>
+    <string name="hidden_statusbar_pulldown_timeout_title">Délai de la barre d\'état</string>
+    <string name="hidden_statusbar_pulldown_timeout_summary">Délai pendant lequel la barre d\'état reste affichée</string>
 
     <!-- Nav Bar Widgets -->
     <string name="navbar_widgets">Widgets - Barre de Navigation</string>
@@ -729,7 +731,7 @@
     <string name="lockscreen_battery_status_title">État de la batterie</string>
     <string name="lockscreen_battery_status_charging">Lors du chargement</string>
     <string name="lockscreen_battery_status_alwayson">Toujours afficher</string>
-    <string name="ls_shortcuts_title">Raccourcis écran de verrouillage</string>
+    <string name="ls_shortcuts_title">Raccourcis et applications</string>
 
     <!-- ParanoidAndroid: Lockscreen Shortcuts -->
     <string name="icon_picker_type">Sélectionner le type de l\'icône:</string>
@@ -788,11 +790,11 @@
     <string name="lockscreen_longpress_challenge_summary">Cela permet à votre appareil d\'être déverrouillé avec les widgets maximisés par un appui long sur l\'icône de verrouillage.</string>
 
     <!-- Screen security -->
-    <string name="screen_security_category">Sécurité de l\'écran</string>
+    <string name="screen_security_category">Sécurité</string>
     <string name="screen_security_title">Écran de verrouillage</string>
-    <string name="screen_security_summary">Afficher ou modifier les paramètres de sécurité ou de délai de l\'écran de verrouillage.</string>
+    <string name="screen_security_summary">Afficher ou modifier les paramètres de sécurité</string>
     
-    <string name="additional_options_title">Options supplémentaires</string>
+    <string name="additional_options_title">Déverrouillage</string>
     <string name="unlock_menu_unlock_title">Déverrouillage par Menu</string>
     <string name="unlock_menu_unlock_summary">Appuyer sur le bouton de Menu déverrouille l\'appareil</string>
     <string name="unlock_home_unlock_title">Déverrouillage par Accueil</string>
