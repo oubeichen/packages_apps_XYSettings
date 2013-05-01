@@ -598,7 +598,9 @@
 
     <!-- Hidden Statusbar Pulldown -->
     <string name="hidden_statusbar_pulldown_title">Hidden Statusbar Pulldown</string>
-    <string name="hidden_statusbar_pulldown_summary">Allows Statusbar to be pulled down when hidden</string>
+    <string name="hidden_statusbar_pulldown_summary">Allows Statusbar to be pulled down when hidden in fullscreen apps</string>
+    <string name="hidden_statusbar_pulldown_timeout_title">Hidden Statusbar Pulldown Timeout</string>
+    <string name="hidden_statusbar_pulldown_timeout_summary">Timeout for hidden Statusbar window</string>
 
     <!-- Nav Bar Widgets -->
     <string name="navbar_widgets">Navigation Bar Widgets</string>

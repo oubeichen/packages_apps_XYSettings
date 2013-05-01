@@ -70,6 +70,7 @@ public class StatusExtras extends SettingsPreferenceFragment implements OnPrefer
     private static final String PREF_NOTIFICATION_SHOW_WIFI_SSID = "notification_show_wifi_ssid";
     private static final String PREF_NOTIFICATION_BEHAVIOUR = "notifications_behaviour";
     private static final String HIDDEN_STATUSBAR_PULLDOWN = "hidden_statusbar_pulldown";
+    private static final String HIDDEN_STATUSBAR_PULLDOWN_TIMEOUT = "hidden_statusbar_pulldown_timeout";
     private static final String NAVIGATION_BAR_COLOR = "nav_bar_color";
 //    private static final String STATUS_BAR_COLOR = "stat_bar_color";
     private static final String PREF_NOTIFICATION_WALLPAPER_RESET = "reset_wallpaper";
@@ -92,6 +93,7 @@ public class StatusExtras extends SettingsPreferenceFragment implements OnPrefer
     CheckBoxPreference mShowWifiName;
     ListPreference mNotificationsBehavior;
     ListPreference mExpandedDesktopListPref;
+    ListPreference mHiddenStatusbarPulldownTimeout;
     ColorPickerPreference mNavigationColor;
 //    ColorPickerPreference mStatusColor;
 
@@ -132,6 +134,11 @@ public class StatusExtras extends SettingsPreferenceFragment implements OnPrefer
         mHiddenStatusbarPulldown = (CheckBoxPreference) prefSet.findPreference(HIDDEN_STATUSBAR_PULLDOWN);
         mHiddenStatusbarPulldown.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
                 Settings.System.HIDDEN_STATUSBAR_PULLDOWN, 0) == 1));
+
+        mHiddenStatusbarPulldownTimeout = (ListPreference) findPreference(HIDDEN_STATUSBAR_PULLDOWN_TIMEOUT);
+        mHiddenStatusbarPulldownTimeout.setOnPreferenceChangeListener(this);
+        mHiddenStatusbarPulldownTimeout.setValue(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.HIDDEN_STATUSBAR_PULLDOWN_TIMEOUT, 10000) + "");
 
         mStatusBarNotifCount = (CheckBoxPreference) prefSet.findPreference(PREF_STATUS_BAR_NOTIF_COUNT);
         mStatusBarNotifCount.setChecked(Settings.System.getBoolean(getActivity().getContentResolver(), 
@@ -338,6 +345,11 @@ public class StatusExtras extends SettingsPreferenceFragment implements OnPrefer
         } else if (preference == mExpandedDesktopListPref) {
             int expandedDesktopValue = Integer.valueOf((String) newValue);
             updateExpandedDesktop(expandedDesktopValue);
+            return true;
+        } else if (preference == mHiddenStatusbarPulldownTimeout) {
+            int val = Integer.parseInt((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.HIDDEN_STATUSBAR_PULLDOWN_TIMEOUT, val);
             return true;
 /**        } else if (preference == mStatusColor) {
             String hex = ColorPickerPreference.convertToARGB(
