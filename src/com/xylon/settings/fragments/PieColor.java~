@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.xylon.settings.fragments;
+package com.android.settings.vanir.fragments;
 
 import android.app.Activity;
 import android.content.ContentResolver;
