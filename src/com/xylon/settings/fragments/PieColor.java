@@ -1,7 +1,24 @@
+/*
+ * Copyright (C) 2012 ParanoidAndroid Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
-package com.xylon.settings.fragments;
+package com.android.settings.vanir.fragments;
 
 import android.app.Activity;
+import android.content.ContentResolver;
+import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
@@ -15,10 +32,10 @@ import android.util.Log;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 
-import com.xylon.settings.R;
-import com.xylon.settings.SettingsPreferenceFragment;
-import com.xylon.settings.Utils;
-import com.xylon.settings.util.Helpers;
+import com.android.settings.R;
+import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.Utils;
+import com.vanir.util.Helpers;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
@@ -34,6 +51,8 @@ public class PieColor extends SettingsPreferenceFragment implements OnPreference
     private static final String PIE_CHEVRON_LEFT = "pie_chevron_left";
     private static final String PIE_CHEVRON_RIGHT = "pie_chevron_right";
     private static final String PIE_BUTTON_COLOR = "pie_button_color";
+
+    private Context mContext;
 
     CheckBoxPreference mEnableColor;
     ColorPickerPreference mPieBg;
@@ -51,6 +70,7 @@ public class PieColor extends SettingsPreferenceFragment implements OnPreference
         super.onCreate(savedInstanceState);
         // Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.pie_color);
+        mContext = getActivity();
 
         mEnableColor = (CheckBoxPreference) findPreference(PIE_ENABLE_COLOR);
         mEnableColor.setChecked(Settings.System.getInt(getContentResolver(),
