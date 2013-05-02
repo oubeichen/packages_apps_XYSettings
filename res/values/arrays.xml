@@ -719,27 +719,15 @@
     </string-array>
 
     <!-- Expanded desktop -->
-    <string-array name="expanded_desktop_entries">
+    <string-array name="expanded_desktop_entries" translatable="false">
         <item>@string/expanded_desktop_disabled</item>
-        <item>@string/expanded_desktop_only_nav_bar</item>
-        <item>@string/expanded_desktop_only_status_bar</item>
-        <item>@string/expanded_desktop_both_hidden</item>
+        <item>@string/expanded_desktop_status_bar</item>
+        <item>@string/expanded_desktop_no_status_bar</item>	
     </string-array>
 
     <string-array name="expanded_desktop_values" translatable="false">
         <item>0</item>
         <item>1</item>
-        <item>2</item>
-        <item>3</item>
-    </string-array>
-
-    <string-array name="expanded_desktop_entries_no_navbar">
-        <item>@string/expanded_desktop_disabled</item>
-        <item>@string/expanded_desktop_only_status_bar</item>
-    </string-array>
-
-    <string-array name="expanded_desktop_values_no_navbar" translatable="false">
-        <item>0</item>
         <item>2</item>
     </string-array>
 
@@ -992,6 +980,31 @@
         <item>1</item>
     </string-array>
 
+    <string-array name="lockscreen_delay_entries" translatable="false">
+        <item>@string/slide_lock_delay_none</item>
+        <item>@string/slide_lock_delay_1s</item>
+        <item>@string/slide_lock_delay_5s</item>
+        <item>@string/slide_lock_delay_10s</item>
+        <item>@string/slide_lock_delay_15s</item>
+        <item>@string/slide_lock_delay_30s</item>
+        <item>@string/slide_lock_delay_1m</item>
+        <item>@string/slide_lock_delay_5m</item>
+        <item>@string/slide_lock_delay_10m</item>
+        <item>@string/slide_lock_delay_30m</item>
+    </string-array>
+    <string-array name="lockscreen_delay_values" translatable="false">
+        <item>0</item>
+        <item>1000</item>
+        <item>5000</item>
+        <item>10000</item>
+        <item>15000</item>
+        <item>30000</item>
+        <item>60000</item>
+        <item>300000</item>
+        <item>600000</item>
+        <item>1800000</item>
+    </string-array>
+
     <!-- Custom lock screen background-->
     <string-array name="lockscreen_background_entries" translatable="false">
         <item>@string/lockscreen_background_color_fill</item>
@@ -1163,6 +1176,20 @@
         <item>0</item>
         <item>1</item>
         <item>2</item>
+    </string-array>
+
+    <!-- Hidden Statusbar Pulldown -->
+    <string-array name="hidden_statusbar_pulldown_timeout_entries" translatable="false">
+        <item>@string/time_2_5_seconds</item>
+        <item>@string/time_5_seconds</item>
+        <item>@string/time_7_5_seconds</item>
+        <item>@string/time_10_seconds</item>
+    </string-array>
+    <string-array name="hidden_statusbar_pulldown_timeout_values" translatable="false">
+        <item>2500</item>
+        <item>5000</item>
+        <item>7500</item>
+        <item>10000</item>
     </string-array>
 
 </resources>

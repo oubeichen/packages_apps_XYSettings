@@ -70,6 +70,16 @@ public class Lockscreen extends SettingsPreferenceFragment implements Preference
     private static final String BACKGROUND_PREF = "lockscreen_background";
     private static final String PREF_LS_COLOR_ALPHA = "lock_color_alpha";
 
+    // CyanogenMod Additions
+    private static final String SLIDE_LOCK_DELAY_TOGGLE = "slide_lock_delay_toggle";
+    private static final String SLIDE_LOCK_TIMEOUT_DELAY = "slide_lock_timeout_delay";
+    private static final String SLIDE_LOCK_SCREENOFF_DELAY = "slide_lock_screenoff_delay";
+    private static final String MENU_UNLOCK_PREF = "menu_unlock";
+    private static final String HOME_UNLOCK_PREF = "home_unlock";
+    private static final String LOCKSCREEN_QUICK_UNLOCK_CONTROL = "quick_unlock_control";
+    private static final String KEY_VIBRATE_PREF = "lockscreen_vibrate";
+
+
     private static final int REQUEST_CODE_BG_WALLPAPER = 199;
 
     private static final int LOCKSCREEN_BACKGROUND_COLOR_FILL = 0;
@@ -87,6 +97,14 @@ public class Lockscreen extends SettingsPreferenceFragment implements Preference
     CheckBoxPreference mSeeThrough;
     ListPreference mCustomBackground;
     ListPreference mBatteryStatus;
+
+    CheckBoxPreference mSlideLockDelayToggle;
+    ListPreference mSlideLockTimeoutDelay;
+    ListPreference mSlideLockScreenOffDelay;
+    CheckBoxPreference mVibratePref;
+    CheckBoxPreference mMenuUnlock;
+    CheckBoxPreference mHomeUnlock;
+    CheckBoxPreference mQuickUnlockScreen;
 
     private File mWallpaperImage;
     private File mWallpaperTemporary;
@@ -147,8 +165,80 @@ public class Lockscreen extends SettingsPreferenceFragment implements Preference
         mWallpaperImage = new File(getActivity().getFilesDir() + "/lockwallpaper");
         mWallpaperTemporary = new File(getActivity().getCacheDir() + "/lockwallpaper.tmp");
 
+        mSlideLockDelayToggle = (CheckBoxPreference) prefSet.findPreference(SLIDE_LOCK_DELAY_TOGGLE);
+        mSlideLockDelayToggle.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.SCREEN_LOCK_SLIDE_DELAY_TOGGLE, 0) == 1);
+
+        mSlideLockTimeoutDelay = (ListPreference) prefSet.findPreference(SLIDE_LOCK_TIMEOUT_DELAY);
+        int slideTimeoutDelay = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.SCREEN_LOCK_SLIDE_TIMEOUT_DELAY, 5000);
+        mSlideLockTimeoutDelay.setValue(String.valueOf(slideTimeoutDelay));
+        updateSlideAfterTimeoutSummary();
+        mSlideLockTimeoutDelay.setOnPreferenceChangeListener(this);
+
+        mSlideLockScreenOffDelay = (ListPreference) prefSet.findPreference(SLIDE_LOCK_SCREENOFF_DELAY);
+        int slideScreenOffDelay = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.SCREEN_LOCK_SLIDE_SCREENOFF_DELAY, 0);
+        mSlideLockScreenOffDelay.setValue(String.valueOf(slideScreenOffDelay));
+        updateSlideAfterScreenOffSummary();
+        mSlideLockScreenOffDelay.setOnPreferenceChangeListener(this);
+
+        // Quick Unlock Screen Control
+        mQuickUnlockScreen = (CheckBoxPreference) prefSet.findPreference(LOCKSCREEN_QUICK_UNLOCK_CONTROL);
+        mQuickUnlockScreen.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL, 0) == 1);
+
+        // Menu Unlock
+        mMenuUnlock = (CheckBoxPreference) prefSet.findPreference(MENU_UNLOCK_PREF);
+        mMenuUnlock.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.MENU_UNLOCK_SCREEN, 0) == 1);
+
+        // Home Unlock
+        mHomeUnlock = (CheckBoxPreference) prefSet.findPreference(HOME_UNLOCK_PREF);
+        mHomeUnlock.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.HOME_UNLOCK_SCREEN, 0) == 1);
+
+        // Vibrate on unlock
+        mVibratePref = (CheckBoxPreference) prefSet.findPreference(KEY_VIBRATE_PREF);
+        mVibratePref.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.LOCKSCREEN_VIBRATE_ENABLED, 1) == 1);
+
         setBatteryStatusSummary();
         updateCustomBackgroundSummary();
+    }
+
+    private void updateSlideAfterTimeoutSummary() {
+        // Update summary message with current value
+        long currentTimeout = Settings.System.getInt(getActivity().getApplicationContext()
+                .getContentResolver(),
+                Settings.System.SCREEN_LOCK_SLIDE_TIMEOUT_DELAY, 5000);
+        final CharSequence[] entries = mSlideLockTimeoutDelay.getEntries();
+        final CharSequence[] values = mSlideLockTimeoutDelay.getEntryValues();
+        int best = 0;
+        for (int i = 0; i < values.length; i++) {
+            long timeout = Long.valueOf(values[i].toString());
+            if (currentTimeout >= timeout) {
+                best = i;
+            }
+        }
+        mSlideLockTimeoutDelay.setSummary(entries[best]);
+    }
+
+    private void updateSlideAfterScreenOffSummary() {
+        // Update summary message with current value
+        long currentTimeout = Settings.System.getInt(getActivity().getApplicationContext()
+                .getContentResolver(),
+                Settings.System.SCREEN_LOCK_SLIDE_SCREENOFF_DELAY, 0);
+        final CharSequence[] entries = mSlideLockScreenOffDelay.getEntries();
+        final CharSequence[] values = mSlideLockScreenOffDelay.getEntryValues();
+        int best = 0;
+        for (int i = 0; i < values.length; i++) {
+            long timeout = Long.valueOf(values[i].toString());
+            if (currentTimeout >= timeout) {
+                best = i;
+            }
+        }
+        mSlideLockScreenOffDelay.setSummary(entries[best]);
     }
 
     private void updateCustomBackgroundSummary() {
@@ -228,9 +318,33 @@ public class Lockscreen extends SettingsPreferenceFragment implements Preference
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.LOCKSCREEN_SEE_THROUGH,
                     mSeeThrough.isChecked() ? 1 : 0);
+        } else if (preference == mSlideLockDelayToggle) {
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.SCREEN_LOCK_SLIDE_DELAY_TOGGLE,
+                    isToggled(preference) ? 1 : 0);
+        } if (preference == mQuickUnlockScreen) {
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL,
+                    isToggled(preference) ? 1 : 0);
+        } else if (preference == mMenuUnlock) {
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.MENU_UNLOCK_SCREEN,
+                    isToggled(preference) ? 1 : 0);
+        } else if (preference == mHomeUnlock) {
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.HOME_UNLOCK_SCREEN,
+                    isToggled(preference) ? 1 : 0);
+        }  else if (preference == mVibratePref) {
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.LOCKSCREEN_VIBRATE_ENABLED,
+                    isToggled(preference) ? 1 : 0);
         }
 
         return super.onPreferenceTreeClick(preferenceScreen, preference);
+    }
+
+    private boolean isToggled(Preference pref) {
+        return ((CheckBoxPreference) pref).isChecked();
     }
 
     @Override
@@ -282,6 +396,19 @@ public class Lockscreen extends SettingsPreferenceFragment implements Preference
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.LOCKSCREEN_COLOR_ALPHA, intHex);
+            return true;
+        } else if (preference == mSlideLockTimeoutDelay) {
+            int slideTimeoutDelay = Integer.valueOf((String) objValue);
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.SCREEN_LOCK_SLIDE_TIMEOUT_DELAY,
+                    slideTimeoutDelay);
+            updateSlideAfterTimeoutSummary();
+            return true;
+        } else if (preference == mSlideLockScreenOffDelay) {
+            int slideScreenOffDelay = Integer.valueOf((String) objValue);
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.SCREEN_LOCK_SLIDE_SCREENOFF_DELAY, slideScreenOffDelay);
+            updateSlideAfterScreenOffSummary();
             return true;
         }
         return false;

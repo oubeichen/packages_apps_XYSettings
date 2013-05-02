@@ -103,11 +103,12 @@
     <string name="title_show_screenshot">Capture d\'écran</string>
     <string name="title_show_airplane_toggle">Mode avion</string>
     <string name="power_menu_expanded_desktop">Bureau étendu</string>
-    <string name="expanded_desktop_summary">Afficher ou modifier les modes de bureau étendu</string>
-    <string name="expanded_desktop_disabled">Off</string>
-    <string name="expanded_desktop_only_nav_bar">Barre de navigation masquée</string>
-    <string name="expanded_desktop_only_status_bar">Barre d\'état masquée</string>
-    <string name="expanded_desktop_both_hidden">Barre de navigation et d\'état masquée</string>
+    <string name="expanded_desktop_cat">Avancé</string>
+    <string name="expanded_desktop_summary_status_bar">Barre d\'état visible</string>
+    <string name="expanded_desktop_summary_no_status_bar">Barre d\'état masquée</string>
+    <string name="expanded_desktop_status_bar">Barre d\'état visible</string>
+    <string name="expanded_desktop_no_status_bar">Barre d\'état masquée</string>
+    <string name="expanded_desktop_disabled">Désactivé</string>
     <string name="title_show_navbar_hide">Raccourcis de navigation</string>
     <string name="title_show_volume_state_toggle">Modes de son</string>
     <string name="title_show_reboot_keyguard">Redémarrer</string>
@@ -486,13 +487,11 @@
     <string name="navbar_icon_menu">Icône personnalisé</string>
     <string name="navbar_delete_menu">Supprimer le bouton</string>
     
-    <!-- Auto-Hide Status Bar -->
-    <string name="auto_hide_statusbar">Masquer auto la barre d\'état</string>
-    <string name="auto_hide_statusbar_summary">La barre d\'état sera masquée automatiquement quand il n\'y aura pas de notifications</string>
-
     <!-- Hidden Statusbar Pulldown -->
     <string name="hidden_statusbar_pulldown_title">Barre d\'état temporaire</string>
     <string name="hidden_statusbar_pulldown_summary">Lorsque la barre d\'état est masquée, un swipe vers le bas l\'affichera quelques secondes</string>
+    <string name="hidden_statusbar_pulldown_timeout_title">Délai de la barre d\'état</string>
+    <string name="hidden_statusbar_pulldown_timeout_summary">Délai pendant lequel la barre d\'état reste affichée</string>
 
     <!-- Nav Bar Widgets -->
     <string name="navbar_widgets">Widgets - Barre de Navigation</string>
@@ -690,6 +689,7 @@
     <string name="time_5_5_seconds">5,5 secondes</string>
     <string name="time_6_seconds">6 secondes</string>
     <string name="time_7_seconds">7 secondes</string>
+    <string name="time_7_5_seconds">7,5 secondes</string>
     <string name="time_8_seconds">8 secondes</string>
     <string name="time_9_seconds">9 secondes</string>
     <string name="time_10_seconds">10 secondes</string>
@@ -732,7 +732,7 @@
     <string name="lockscreen_battery_status_title">État de la batterie</string>
     <string name="lockscreen_battery_status_charging">Lors du chargement</string>
     <string name="lockscreen_battery_status_alwayson">Toujours afficher</string>
-    <string name="ls_shortcuts_title">Raccourcis écran de verrouillage</string>
+    <string name="ls_shortcuts_title">Raccourcis et applications</string>
 
     <!-- ParanoidAndroid: Lockscreen Shortcuts -->
     <string name="icon_picker_type">Sélectionner le type de l\'icône:</string>
@@ -791,10 +791,36 @@
     <string name="lockscreen_longpress_challenge_summary">Cela permet à votre appareil d\'être déverrouillé avec les widgets maximisés par un appui long sur l\'icône de verrouillage.</string>
 
     <!-- Screen security -->
-    <string name="screen_security_category">Sécurité de l\'écran</string>
+    <string name="screen_security_category">Sécurité</string>
     <string name="screen_security_title">Écran de verrouillage</string>
-    <string name="screen_security_summary">Afficher ou modifier les paramètres de sécurité ou de délai de l\'écran de verrouillage.</string>
+    <string name="screen_security_summary">Afficher ou modifier les paramètres de sécurité</string>
     
+    <string name="additional_options_title">Déverrouillage</string>
+    <string name="unlock_menu_unlock_title">Déverrouillage par Menu</string>
+    <string name="unlock_menu_unlock_summary">Appuyer sur le bouton de Menu déverrouille l\'appareil</string>
+    <string name="unlock_home_unlock_title">Déverrouillage par Accueil</string>
+    <string name="unlock_home_unlock_summary">Appuyer sur le bouton Accueil déverrouille l\'appareil</string>
+    <string name="unlock_quick_unlock_control_title">Déverrouillage rapide</string>
+    <string name="unlock_quick_unlock_control_summary">Déverrouiller automatiquement lorsque le code PIN / mot de passe correct est entré.</string>
+
+    <string name="delay_and_timeout_title">Délai de verrouillage</string>
+    <string name="slide_lock_delay_title">Délai du verrouillage de l\'écran</string>
+    <string name="slide_lock_timeout_delay_title">Délai après temps écoulé</string>
+    <string name="slide_lock_screenoff_delay_title">Délai après avoir été éteint</string>
+    <string name="slide_lock_delay_none">Désactivé</string>
+    <string name="slide_lock_delay_1s">1 seconde</string>
+    <string name="slide_lock_delay_5s">5 secondes</string>
+    <string name="slide_lock_delay_10s">10 secondes</string>
+    <string name="slide_lock_delay_15s">15 secondes</string>
+    <string name="slide_lock_delay_30s">30 secondes</string>
+    <string name="slide_lock_delay_1m">1 minute</string>
+    <string name="slide_lock_delay_5m">5 minutes</string>
+    <string name="slide_lock_delay_10m">10 minutes</string>
+    <string name="slide_lock_delay_30m">30 minutes</string>
+
+    <string name="lockscreen_vibrate_enabled_title">Vibreur</string>
+    <string name="lockscreen_vibrate_enabled_head">Vibrer lors du déverrouillage</string>
+
     <!--- Lock clock -->
     <string name="lock_clock_title">Widget cLock</string>
     <string name="lock_clock_summary">Afficher ou modifier la façon dont le widget \'cLock\' est affiché sur l\'écran d\'accueil ou de verrouillage</string>

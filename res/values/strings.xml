@@ -119,13 +119,14 @@
     <string name="title_show_screenshot">Screenshot</string>
     <string name="title_show_airplane_toggle">Airplane mode</string>
     <string name="power_menu_expanded_desktop">Expanded desktop</string>
+    <string name="expanded_desktop_cat">Advanced</string>
     <string name="summary_expanded_desktop">%1$s</string>
-    <string name="expanded_desktop_summary">Show or change expanded desktop mode</string>
+    <string name="expanded_desktop_summary_status_bar">Status bar visible</string>
+    <string name="expanded_desktop_summary_no_status_bar">Status bar hidden</string>
     <string name="expanded_desktop_disabled">Off</string>
-    <string name="expanded_desktop_only_nav_bar">Hide navigation bar</string>
-    <string name="expanded_desktop_only_status_bar">Hide status bar</string>
-    <string name="expanded_desktop_both_hidden">Hide navigation and status bar</string>
     <string name="title_show_volume_state_toggle">Volume states</string>
+    <string name="expanded_desktop_status_bar">Status bar visible</string>
+    <string name="expanded_desktop_no_status_bar">Status bar hidden</string>
     <string name="title_show_navbar_hide">Navigation bar menu</string>
     <string name="title_show_reboot_keyguard">Reboot option on lockscreen</string>
 
@@ -595,13 +596,11 @@
     <string name="navbar_icon_menu">Custom icon</string>
     <string name="navbar_delete_menu">Delete button</string>
 
-    <!-- Auto-Hide Status Bar -->
-    <string name="auto_hide_statusbar">Auto Hide statusbar</string>
-    <string name="auto_hide_statusbar_summary">Statusbar hides itself when there are no notifications</string>
-
     <!-- Hidden Statusbar Pulldown -->
     <string name="hidden_statusbar_pulldown_title">Hidden Statusbar Pulldown</string>
-    <string name="hidden_statusbar_pulldown_summary">Allows Statusbar to be pulled down when hidden</string>
+    <string name="hidden_statusbar_pulldown_summary">Allows Statusbar to be pulled down when hidden in fullscreen apps</string>
+    <string name="hidden_statusbar_pulldown_timeout_title">Hidden Statusbar Pulldown Timeout</string>
+    <string name="hidden_statusbar_pulldown_timeout_summary">Timeout for hidden Statusbar window</string>
 
     <!-- Nav Bar Widgets -->
     <string name="navbar_widgets">Navigation Bar Widgets</string>
@@ -834,6 +833,7 @@
     <string name="time_5_5_seconds">5.5 seconds</string>
     <string name="time_6_seconds">6 seconds</string>
     <string name="time_7_seconds">7 seconds</string>
+    <string name="time_7_5_seconds">7.5 seconds</string>
     <string name="time_8_seconds">8 seconds</string>
     <string name="time_9_seconds">9 seconds</string>
     <string name="time_10_seconds">10 seconds</string>
@@ -948,6 +948,36 @@
     <string name="see_through_summary">Allows to see the application behind the lock screen.</string>
     <string name="ls_color_alpha_title">Lockscreen Tint Color</string>
     <string name="ls_color_alpha_summary">Allows to change the tint of the lock screen.</string>
+
+    <!-- Screen security - Screen security   -->
+    <string name="additional_options_title">Additional options</string>
+    <string name="unlock_menu_unlock_title">Menu unlock</string>
+    <string name="unlock_menu_unlock_summary">Pressing the menu button unlocks the device</string>
+    <string name="unlock_home_unlock_title">Home unlock</string>
+    <string name="unlock_home_unlock_summary">Pressing the home button unlocks the device</string>
+    <string name="unlock_quick_unlock_control_title">Quick unlock</string>
+    <string name="unlock_quick_unlock_control_summary">Unlock automatically when the correct PIN/password is entered</string>
+
+    <!-- Slide lock delay -->
+    <string name="delay_and_timeout_title">Lock delay</string>
+    <string name="slide_lock_delay_title">Delay screen lock</string>
+    <string name="slide_lock_timeout_delay_title">Delay after timeout</string>
+    <string name="slide_lock_screenoff_delay_title">Delay after turned off</string>
+    <string name="slide_lock_delay_none">None</string>
+    <string name="slide_lock_delay_1s">1 second</string>
+    <string name="slide_lock_delay_5s">5 seconds</string>
+    <string name="slide_lock_delay_10s">10 seconds</string>
+    <string name="slide_lock_delay_15s">15 seconds</string>
+    <string name="slide_lock_delay_30s">30 seconds</string>
+    <string name="slide_lock_delay_1m">1 minute</string>
+    <string name="slide_lock_delay_5m">5 minutes</string>
+    <string name="slide_lock_delay_10m">10 minutes</string>
+    <string name="slide_lock_delay_30m">30 minutes</string>
+
+    <!-- Lock screen vibrate settings -->
+    <string name="lockscreen_vibrate_enabled_title">Vibrate</string>
+    <string name="lockscreen_vibrate_enabled_head">Vibrate when unlocking</string>
+
 
     <!--- Lock clock -->
     <string name="lock_clock_title">Clock widget</string>

@@ -1,28 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <ListPreference
-        android:key="power_menu_expanded_desktop"
-        android:title="@string/power_menu_expanded_desktop"
-        android:entries="@array/expanded_desktop_entries"
-        android:entryValues="@array/expanded_desktop_values"
-        android:persistent="false" />
+    <SwitchPreference
+         android:key="show_expanded_desktop"
+         android:title="@string/power_menu_expanded_desktop" />
+
+    <SwitchPreference
+        android:key="show_airplane_toggle"
+        android:title="@string/title_show_airplane_toggle" />
 
     <SwitchPreference
         android:key="show_screenshot"
         android:title="@string/title_show_screenshot" />
 
     <SwitchPreference
-        android:key="show_airplane_toggle"
-        android:title="@string/title_show_airplane_toggle" />
+        android:key="show_navbar_hide"
+        android:title="@string/title_show_navbar_hide" />
         
     <SwitchPreference
         android:key="show_volume_state_toggle"
         android:title="@string/title_show_volume_state_toggle" />
-
-    <SwitchPreference
-        android:key="show_navbar_hide"
-        android:title="@string/title_show_navbar_hide" />
 
     <SwitchPreference
         android:key="show_reboot_keyguard"
