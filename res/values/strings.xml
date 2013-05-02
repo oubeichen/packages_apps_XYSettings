@@ -497,7 +497,7 @@
     <string name="screenshot">Screenshot</string>
     <string name="menu">Menu</string>
     <string name="open_ime_switcher">Open IME Switcher</string>
-    <string name="kill_app">Kill app</string>
+    <string name="kill_app">Kill app (derped for now)</string>
     <string name="lastapp">Last app</string>
     <string name="power">Power</string>
     <string name="notifications">Notifications</string>
