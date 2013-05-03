@@ -55,12 +55,6 @@
             android:summary="@string/lockscreen_target_summary" />
 
         <PreferenceScreen
-            android:key="lock_screen_shortcuts"
-            android:fragment="com.xylon.settings.fragments.Shortcuts"
-            android:title="@string/lock_screen_shortcuts_title"
-            android:summary="@string/lock_screen_shortcuts_summary" />
-
-        <PreferenceScreen
             android:key="lock_clock"
             android:title="@string/lock_clock_title"
             android:summary="@string/lock_clock_summary">
