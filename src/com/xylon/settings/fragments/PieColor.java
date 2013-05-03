@@ -32,9 +32,9 @@ import android.util.Log;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 
-import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.Utils;
+import com.xylon.settings.R;
+import com.xylon.settings.SettingsPreferenceFragment;
+import com.xylon.settings.Utils;
 import com.xylon.settings.util.Helpers;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
