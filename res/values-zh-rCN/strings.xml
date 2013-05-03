@@ -330,8 +330,9 @@
     <string name="toggle_action_title">%1$s &amp; 动作图标</string>
     <string name="toggle_action_title_alt">%1$s &amp; 长按动作图标</string>
     <string name="toggle_longpress_title">%1$s 长按动作</string>
-    <string name="custom_toggle_action">使用指导</string>
     <string name="custom_toggle_desc">"基本模式，点击开关将切换动作，长按执行所显示开关的长按动作，适用于用户希望自己切换到要执行的应用程序。高级模式，点击开关将切换并执行动作，长按执行所显示开关的长按动作，适用于用户希望用一次点击切换并执行动作。"</string>
+    <string name="custom_help_title">使用指导</string>
+    <string name="custom_help_summary">更多消息</string>
     <string name="custom_toggle_okay">取消</string>
     <string name="custom_toggle_cat">自定义开关</string>
     <string name="custom_button_cat">自定义开关动作</string>
@@ -341,9 +342,6 @@
     <string name="boot_action_summary">系统启动后将执行第一个动作</string>
     <string name="match_icon_action_title">执行所显示的动作</string>
     <string name="match_icon_action_summary">执行当前显示的动作后再切换为下一个动作图标</string>
-    <string name="advanced_toggle_title">高级或基本动作</string>
-    <string name="advanced_toggle_summaryon">高级（点击和长按执行动作）</string>
-    <string name="advanced_toggle_summaryoff">基本（仅长按执行动作）</string>
     <string name="action_toggle_title">开关动作</string>
     <string name="action_toggle_summary">顺序从左到右</string>
     <string name="no_dclick">无操作</string>
@@ -369,6 +367,7 @@
     <string name="toggle_fcharge">快速充电</string>
     <string name="toggle_data">数据</string>
     <string name="toggle_silent">静音</string>
+    <string name="toggle_swagger">无用</string>
     <string name="toggle_sync">同步</string>
     <string name="toggle_torch">手电</string>
     <string name="toggle_usb_tether">USB绑定</string>
@@ -560,9 +559,13 @@
     <string name="navbar_icon_menu">自定义图标</string>
     <string name="navbar_delete_menu">删除虚拟键</string>
 
+    <!-- Auto-Hide Status Bar -->
+    <string name="auto_hide_statusbar">自动隐藏状态栏</string>
+    <string name="auto_hide_statusbar_summary">当没有通知时自动隐藏状态栏</string>
+
     <!-- Hidden Statusbar Pulldown -->
-    <string name="hidden_statusbar_pulldown_title">Hidden Statusbar Pulldown</string>
-    <string name="hidden_statusbar_pulldown_summary">允许的状态被拉下来时，隐藏在全屏应用程序</string>
+    <string name="hidden_statusbar_pulldown_title">隐藏状态栏下拉</string>
+    <string name="hidden_statusbar_pulldown_summary">允许状态栏在使用全屏应用程序时拉下来</string>
     <string name="hidden_statusbar_pulldown_timeout_title">隐藏状态栏下拉超时</string>
     <string name="hidden_statusbar_pulldown_timeout_summary">隐藏状态栏窗口超时</string>
 
@@ -807,26 +810,7 @@
     <string name="laserbeam">激光束</string>
 
     <!-- NEW METHOD PEWDIEPIE CODE -->
-
-    <!-- Lock screen shortcuts -->
-    <string name="picker_activities">活动</string>
-    <string name="icon_picker_choose_icon_title">选择图标</string>
-    <string name="icon_picker_alarm">闹钟</string>
-    <string name="icon_picker_browser">浏览器</string>
-    <string name="icon_picker_calendar">日历</string>
-    <string name="icon_picker_camera">相机</string>
-    <string name="icon_picker_gallery">图库</string>
-    <string name="icon_picker_google_small">Google（小）</string>
-    <string name="icon_picker_maps">地图</string>
-    <string name="icon_picker_movie">电影</string>
-    <string name="icon_picker_music">音乐</string>
-    <string name="icon_picker_nav_normal">导航</string>
-    <string name="icon_picker_phone">电话</string>
-    <string name="icon_picker_podcast">播客</string>
-    <string name="icon_picker_search">搜索</string>
-    <string name="icon_picker_sms">信息</string>
-
-
+    
     <!-- String for IconPicker -->
     <string name="icon_picker_title">选择图标来源</string>
     <string name="icon_picker_system_icons_title">系统图标</string>
@@ -845,21 +829,6 @@
     <string name="screen_security_category">屏幕保护</string>
     <string name="screen_security_title">锁屏</string>
     <string name="screen_security_summary">查看或更改屏幕锁定安全，延迟和超时的设置</string>
-
-    <!-- ParanoidAndroid: Lockscreen Shortcuts -->
-    <string name="icon_picker_type">选择图标类型:</string>
-    <string name="icon_default">默认</string>
-    <string name="icon_presets">预设</string>
-    <string name="icon_custom">自定义</string>
-    <string name="lock_screen_shortcuts_title">快捷方式</string>
-    <string name="lock_screen_shortcuts_reset_message">确定删除所有用户创建的快捷方式，恢复到默认值吗？</string>
-    <string name="lock_screen_shortcuts_summary">查看或更改自定义锁屏快捷方式</string>
-    <string name="lock_screen_shortcuts_add">添加</string>
-    <string name="lock_screen_shortcuts_reset">重置</string>
-    <string name="lock_screen_shortcuts_limit">只允许添加 6 个锁屏快捷方式</string>
-    <string name="dialog_delete_title">删除</string>
-    <string name="dialog_delete_message">移除选中的项目？</string>
-
     <!-- CyanogenMod: Lockscreen Slider Shortcuts -->
     <string name="lockscreen_target_info">拖拽解锁来设置快捷方式</string>
     <string name="lockscreen_target_title">锁屏快捷方式</string>
