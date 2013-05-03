@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.FragmentTransaction;
 import android.content.BroadcastReceiver;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.CursorLoader;
 import android.content.DialogInterface;
@@ -14,6 +15,7 @@ import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
+import android.database.ContentObserver;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -25,6 +27,7 @@ import android.graphics.drawable.StateListDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -108,6 +111,8 @@ public class QuickToggles extends SettingsPreferenceFragment implements
     ListPreference mOnDoubleClick;
     ListPreference mNumberOfActions;
     CustomTogglePref mCustomToggles;
+    PreferenceGroup mCustomCat;
+    PreferenceGroup mCustomButtons;
 
     BroadcastReceiver mReceiver;
     ArrayList<String> mToggles;
@@ -154,9 +159,6 @@ public class QuickToggles extends SettingsPreferenceFragment implements
         for (int i = 0; i < actionqty; i++) {
             mActions[i] = AwesomeConstants.getProperName(mContext, mActionCodes[i]);
         }
-
-        boolean isAdvanced = Settings.System.getBoolean(getContentResolver(),
-                Settings.System.CUSTOM_TOGGLE_ADVANCED, false);
 
         mEnabledToggles = findPreference(PREF_ENABLE_TOGGLES);
 
