@@ -31,10 +31,10 @@ import android.preference.Preference.OnPreferenceClickListener;
 import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
 
-import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.Utils;
-import com.vanir.util.Helpers;
+import com.xylon.settings.R;
+import com.xylon.settings.SettingsPreferenceFragment;
+import com.xylon.settings.Utils;
+import com.xylon.settings.util.Helpers;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class Pie extends SettingsPreferenceFragment
