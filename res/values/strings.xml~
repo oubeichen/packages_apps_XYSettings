@@ -231,8 +231,8 @@
     <string name="pie_stick_summary">If checked Pie will stay in place no matter which orientation option is choosen</string>
     <string name="pie_restart_launcher_title">Restart Launcher</string>
     <string name="pie_restart_launcher_summary">Changing screensize can have adverse effects. This option allows your launcher to regain sanity, the cost is a slight blackout (recommended)</string>
-    <string name="all_color">Custom Colors</string>
-    <string name="stock_color">Default Colors</string>
+    <string name="all_colors">Custom Colors</string>
+    <string name="stock_colorss">Default Colors</string>
 
     <!-- Battery style -->
     <string name="battery_icon_title">Battery style</string>
